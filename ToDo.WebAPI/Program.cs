@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -16,10 +15,10 @@ using TodoApp.Infrastructure.Repository;
 using TodoApp.Infrastructure.Map;
 
 
-=======
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
@@ -34,6 +33,11 @@ using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.Domain.Services;
 
+using Microsoft.EntityFrameworkCore;
+using Todo.Infrastructure.Database;
+using Todo.Infrastructure.Services;
+using TodoApp.Core.Domain.Interface;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -43,6 +47,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnectionString")
     )
+
 
 ); builder.Services.AddAutoMapper(typeof(MappingProfile));
 
@@ -121,16 +126,16 @@ builder.Services.AddIdentity<ApplicationUser,
     ApplicationRole>()//Now it understood that we have to enable the identity services
     .AddEntityFrameworkStores<ApplicationDbContext>()//using entity framework to store the data and exact dbcontext we are using is ApplicationDBContext
 
-<<<<<<< HEAD
+
     .AddDefaultTokenProviders()//predefined token provider lai enable garxa
 
     .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()//whats the exact repository layer to use as we cannot use dbcontext directly in the userManager class
 
     .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();//this is the repository layer for manipulating the roles data
-=======
+
     .AddDefaultTokenProviders();//predefined token provider lai enable garxa
-    
-    
+
+
 
 
 
@@ -151,9 +156,9 @@ builder.Services.AddAuthentication(options =>
         ValidAudience = builder.Configuration["Jwt:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
-    
+
 });
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+
 builder.Services.AddRazorPages();
 
 
@@ -168,15 +173,22 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
         options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
     });
+
+);
+
+builder.Services.AddScoped<ITodoServices, TodoServices>();
+
+builder.Services.AddRazorPages();
+
+
+builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -187,7 +199,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-<<<<<<< HEAD
 
 app.UseAuthentication();//for reading identity cookie
 app.UseAuthorization();//validates access permission of the user
@@ -198,10 +209,12 @@ app.MapControllers();
 app.Run();
 
 app.UseAuthorization();
-=======
+
 app.UseAuthentication();//for reading identity cookie
 app.UseAuthorization();//validates access permission of the user
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+
+app.UseAuthorization();
+and service registration)
 
 app.MapControllers();
 
