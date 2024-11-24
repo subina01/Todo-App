@@ -90,6 +90,7 @@ Global
 		{1F1C7960-E9E0-48A9-BAF1-6AB7ACAE4982}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F1C7960-E9E0-48A9-BAF1-6AB7ACAE4982}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F1C7960-E9E0-48A9-BAF1-6AB7ACAE4982}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
 <<<<<<< HEAD
 <<<<<<< HEAD

@@ -29,7 +29,7 @@ Global
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Debug | Any CPU.Build.0 = Debug | Any CPU
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Release | Any CPU.ActiveCfg = Release | Any CPU
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Release | Any CPU.Build.0 = Release | Any CPU
-				EndGlobalSection
+                                EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
@@ -39,10 +39,11 @@ Global
 EndGlobalSection
 
 
-				GlobalSection(ExtensibilityGlobals) = postSolution
+
+                                GlobalSection(ExtensibilityGlobals) = postSolution
 
 <<<<<<< HEAD
-								SolutionGuid = { FD3227B4 - 4BC7 - 48F3 - B8D7 - 2FDAE77E2271}
+                                                                SolutionGuid = { FD3227B4 - 4BC7 - 48F3 - B8D7 - 2FDAE77E2271}
 EndGlobalSection
 EndGlobal
 =======
