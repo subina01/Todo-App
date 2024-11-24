@@ -124,40 +124,39 @@ namespace Todo.Infrastructure.Migrations
 
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
-
             modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                  {
+                      b.Property<int>("Id")
+                          .ValueGeneratedOnAdd()
+                          .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                      SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CompletionDate")
-                        .HasColumnType("datetime2");
+                      b.Property<DateTime>("CompletionDate")
+                          .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                      b.Property<string>("Description")
+                          .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DueDate")
-                        .HasColumnType("datetime2");
+                      b.Property<DateTime>("DueDate")
+                          .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
+                      b.Property<DateTime>("StartDate")
+                          .HasColumnType("datetime2");
 
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
+                      b.Property<string>("Status")
+                          .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TaskType")
-                        .HasColumnType("nvarchar(max)");
+                      b.Property<string>("TaskType")
+                          .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
+                      b.Property<string>("UserName")
+                          .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                      b.HasKey("Id");
 
-                    b.ToTable("TodoData");
-                });
+                      b.ToTable("TodoData");
+                  });
 
 
 
@@ -318,10 +317,6 @@ namespace Todo.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
-
-
-
-
 
         }
     }
