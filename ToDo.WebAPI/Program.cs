@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+>>>>>>> 9155eda(feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +41,16 @@ using TodoApp.Core.Domain.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+using Microsoft.EntityFrameworkCore;
+using Todo.Infrastructure.Database;
+using Todo.Infrastructure.Services;
+using TodoApp.Core.Domain.Interface;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+and service registration)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnectionString")
@@ -173,11 +193,16 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
         options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
     });
+
+builder.Services.AddScoped<ITodoServices, TodoServices>();
+
+builder.Services.AddRazorPages();
+
+
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-
 
 var app = builder.Build();
 
@@ -189,9 +214,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseAuthentication();//for reading identity cookie
 app.UseAuthorization();//validates access permission of the user
->>>>>>> 7b60dfd(feat(auth): Add jwt based authentication)
+
 
 app.MapControllers();
 
@@ -205,6 +231,9 @@ app.UseAuthorization();//validates access permission of the user
 
 app.UseAuthorization();
 and service registration)
+
+
+app.UseAuthorization();
 
 app.MapControllers();
 
