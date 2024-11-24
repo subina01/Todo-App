@@ -19,9 +19,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 =======
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+=======
+﻿using Microsoft.EntityFrameworkCore;
+>>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
+>>>>>>> b701d45 (feat(infrastructure): add application db context and service implementation)
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,10 +51,13 @@ namespace Todo.Infrastructure.Database
 >>>>>>> c99b1a6 (refactor(repository): implement DTOs in repository methods for task operations)
 =======
 >>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
+=======
+>>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
 
 namespace Todo.Infrastructure.Database
 {
     public class ApplicationDbContext : DbContext
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
@@ -65,7 +73,11 @@ namespace Todo.Infrastructure.Database
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 =======
+<<<<<<< HEAD
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+=======
+>>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
+>>>>>>> b701d45 (feat(infrastructure): add application db context and service implementation)
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<ToDo> TodoData { get; set; }

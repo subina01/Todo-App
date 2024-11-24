@@ -24,15 +24,22 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
   <ItemGroup>
     <Folder Include="Services\" />
   </ItemGroup>
 
+<<<<<<< HEAD
 >>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
 =======
 >>>>>>> c99b1a6 (refactor(repository): implement DTOs in repository methods for task operations)
 =======
 >>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
 =======
+<<<<<<< HEAD
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+=======
+>>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
+>>>>>>> b701d45 (feat(infrastructure): add application db context and service implementation)
 </Project>

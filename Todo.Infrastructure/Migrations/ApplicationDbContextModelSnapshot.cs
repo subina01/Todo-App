@@ -145,7 +145,11 @@ namespace Todo.Infrastructure.Migrations
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 =======
+<<<<<<< HEAD
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+=======
+>>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
+>>>>>>> b701d45 (feat(infrastructure): add application db context and service implementation)
             modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
                 {
                     b.Property<int>("Id")
@@ -365,7 +369,11 @@ namespace Todo.Infrastructure.Migrations
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 =======
+<<<<<<< HEAD
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+=======
+>>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
+>>>>>>> b701d45 (feat(infrastructure): add application db context and service implementation)
 #pragma warning restore 612, 618
         }
     }
