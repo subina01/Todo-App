@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Ignore Visual Studio settings folder
 .vs/
 
@@ -35,4 +36,10 @@ bin/
 **/bin/
 
 >>>>>>> a01c3c5 (chore: remove bin and obj directories from Git tracking)
+<<<<<<< HEAD
 >>>>>>> 4bf37bf (chore: remove bin and obj directories from Git tracking)
+=======
+=======
+.vs/
+>>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
+>>>>>>> e4238f5 (feat(core): complete core layer implementation)

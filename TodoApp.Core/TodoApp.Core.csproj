@@ -16,6 +16,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 =======
@@ -47,7 +48,12 @@
 =======
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
+=======
+=======
+>>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
+>>>>>>> e4238f5 (feat(core): complete core layer implementation)
   </ItemGroup>
 
 </Project>
