@@ -22,12 +22,6 @@ namespace Todo.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
@@ -131,15 +125,6 @@ namespace Todo.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-<<<<<<< HEAD
-=======
->>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
-=======
->>>>>>> c99b1a6 (refactor(repository): implement DTOs in repository methods for task operations)
-=======
->>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
-=======
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
             modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
                 {
                     b.Property<int>("Id")
@@ -173,12 +158,7 @@ namespace Todo.Infrastructure.Migrations
 
                     b.ToTable("TodoData");
                 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+
 
             modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationRole", b =>
                 {
@@ -264,18 +244,15 @@ namespace Todo.Infrastructure.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                     b.Property<int>("UserType")
                         .HasColumnType("int");
 
-=======
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
-=======
+
                     b.Property<int>("UserType")
                         .HasColumnType("int");
 
->>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -339,16 +316,8 @@ namespace Todo.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
-<<<<<<< HEAD
-=======
->>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
-=======
->>>>>>> c99b1a6 (refactor(repository): implement DTOs in repository methods for task operations)
-=======
->>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
-=======
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
-#pragma warning restore 612, 618
+
+
         }
     }
 }
