@@ -400,6 +400,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
+=======
+>>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
