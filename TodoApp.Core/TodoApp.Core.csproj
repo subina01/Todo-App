@@ -8,8 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+=======
+>>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
   </ItemGroup>
 
 </Project>

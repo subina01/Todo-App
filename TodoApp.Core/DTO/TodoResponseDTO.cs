@@ -9,6 +9,10 @@ namespace TodoApp.Core.DTO
     public class TodoResponseDTO
     {
         public int Id { get; set; }
+<<<<<<< HEAD
+=======
+
+>>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
         public string? UserName { get; set; }
         public string? TaskType { get; set; }
 
