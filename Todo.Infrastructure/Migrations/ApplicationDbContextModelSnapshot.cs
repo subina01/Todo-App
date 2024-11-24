@@ -30,6 +30,7 @@ namespace Todo.Infrastructure.Migrations
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 <<<<<<< HEAD
@@ -173,7 +174,12 @@ namespace Todo.Infrastructure.Migrations
 =======
 =======
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
+=======
+=======
+>>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
+>>>>>>> 765cc0b (feat(infrastructure): add application db context and service implementation)
             modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
                 {
                     b.Property<int>("Id")
@@ -207,6 +213,7 @@ namespace Todo.Infrastructure.Migrations
 
                     b.ToTable("TodoData");
                 });
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -436,7 +443,12 @@ namespace Todo.Infrastructure.Migrations
 =======
 =======
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
+=======
+=======
+>>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
+>>>>>>> 765cc0b (feat(infrastructure): add application db context and service implementation)
 #pragma warning restore 612, 618
         }
     }
