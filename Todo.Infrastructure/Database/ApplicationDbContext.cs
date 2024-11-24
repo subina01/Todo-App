@@ -55,4 +55,3 @@ namespace TodoApp.Infrastructure.Database
         }
     }
 }
-

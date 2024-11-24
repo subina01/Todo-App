@@ -245,7 +245,6 @@ namespace Todo.Infrastructure.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-<<<<<<< HEAD
 
                     b.Property<int>("UserType")
                         .HasColumnType("int");
@@ -255,11 +254,6 @@ namespace Todo.Infrastructure.Migrations
                         .HasColumnType("int");
 
 
-=======
-                    b.Property<int>("UserType")
-                        .HasColumnType("int");
-
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")

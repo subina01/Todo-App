@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 using Microsoft.AspNetCore.Authorization;
@@ -14,17 +13,9 @@ using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 
 using Microsoft.AspNetCore.Http;
-=======
-﻿using Microsoft.AspNetCore.Authorization;
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.Core.Domain.IdentityEntities;
-<<<<<<< HEAD
-
-=======
-using TodoApp.Core.Domain.Interface;
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 using TodoApp.Core.DTO;
 
 namespace todo.WebAPI.Controllers
@@ -35,7 +26,6 @@ namespace todo.WebAPI.Controllers
     [Route("api/")]
     [ApiController]
     [AllowAnonymous]
-<<<<<<< HEAD
 
     [Route("api/[controller]")]
 
@@ -43,8 +33,6 @@ namespace todo.WebAPI.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-=======
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
     public class AccountController : ControllerBase
     {
         //business logic provided by asp.net core Identity
@@ -54,23 +42,17 @@ namespace todo.WebAPI.Controllers
         private readonly IJwtService jwtService;
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
-<<<<<<< HEAD
 
         private readonly IJwtService jwtService;
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
       public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
-=======
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.roleManager = roleManager;
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
             this.jwtService = jwtService;
         }
 
@@ -124,11 +106,6 @@ namespace todo.WebAPI.Controllers
                 UserName = register.Name,
                 Email = register.Email,
                 Name = register.Name,
-<<<<<<< HEAD
-=======
-                
-            };
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 
                 var user = new ApplicationUser
                 {
@@ -153,9 +130,9 @@ namespace todo.WebAPI.Controllers
                     Message = "Registration failed."
                 });
             }
-            
 
-            
+
+
 
 
 
@@ -167,11 +144,6 @@ namespace todo.WebAPI.Controllers
             var authenticationResponse = jwtService.CreateJwtToken(user);
             //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
             return Ok(authenticationResponse);
-<<<<<<< HEAD
-
-=======
-           
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
         }
 
         [HttpPost]
@@ -199,7 +171,6 @@ namespace todo.WebAPI.Controllers
 
 
         }
-<<<<<<< HEAD
 
 
         //sign the user in after sucessful registration
@@ -248,8 +219,5 @@ return Ok(new
            
         }
 
-=======
-       
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
     }
 }
