@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -21,4 +22,8 @@
   </ItemGroup>
 
 
+=======
+  </ItemGroup>
+
+>>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
 </Project>
