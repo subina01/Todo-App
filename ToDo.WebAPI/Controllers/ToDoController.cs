@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+=======
+﻿using Microsoft.AspNetCore.Http;
+>>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.Core.Domain.Entities;
 using TodoApp.Core.Domain.Interface;
@@ -20,14 +24,23 @@ namespace todo.WebAPI.Controllers
         public ToDoController(ITodoServices services)
         {
             _services = services;
+<<<<<<< HEAD
         }
 
         [HttpPost]
+=======
+            Console.WriteLine("The breakpoint has hit here");
+        }
+
+        [HttpPost]
+        [Route("")]
+>>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
         public async Task<IActionResult> AddTask([FromBody] ToDo tododata)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
+<<<<<<< HEAD
             }
             await _services.AddTask(tododata);
 <<<<<<< HEAD
@@ -44,7 +57,25 @@ namespace todo.WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
+<<<<<<< HEAD
 >>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
+=======
+=======
+
+            }
+            await _services.AddTask(tododata);
+            return Ok
+            (new
+            {
+                Message = "Task Added!"
+            });
+
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+>>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+>>>>>>> 3702509 (refactor(controller): update controller methods to integrate request and response DTOs)
         public async Task<IActionResult> GetTaskById(int id)
         {
             var GetTask = await _services.GetTaskById(id);
@@ -52,21 +83,34 @@ namespace todo.WebAPI.Controllers
         }
 
         [HttpGet]
+<<<<<<< HEAD
+=======
+        [Route("")]
+>>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
         public async Task<IActionResult> GetAllTasks()
         {
             var GetAllTasks = await _services.GetAllTasks();
             return Ok(GetAllTasks);
         }
 
+<<<<<<< HEAD
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
         {
+=======
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
+        {
+
+>>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
             if (tododata == null)
             {
                 return BadRequest(ModelState);
             }
             var Updatetodo = await _services.UpdateTask(id, tododata);
             return Ok(Updatetodo);
+<<<<<<< HEAD
         }
 
         [HttpDelete("{id}")]
@@ -78,10 +122,30 @@ namespace todo.WebAPI.Controllers
 <<<<<<< HEAD
 
         [HttpPut("Status/{id}")]
+<<<<<<< HEAD
         [Authorize(Roles = "Admin,User")]
 =======
         [HttpPut("Status/{id}")]
 >>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
+=======
+=======
+
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+
+        public async Task<IActionResult> DeleteTask(int id)
+        {
+
+            var DeleteTasks = await _services.DeleteTask(id);
+            return Ok(DeleteTasks);
+        }
+
+        [HttpPut]
+        [Route("Status/{id}")]
+>>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+>>>>>>> 3702509 (refactor(controller): update controller methods to integrate request and response DTOs)
         public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
         {
             if (tododata == null)

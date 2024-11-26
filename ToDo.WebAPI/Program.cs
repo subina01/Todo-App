@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -13,16 +14,28 @@ using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.Domain.Services;
+=======
+using Microsoft.EntityFrameworkCore;
+using Todo.Infrastructure.Database;
+using Todo.Infrastructure.Services;
+using TodoApp.Core.Domain.Interface;
+
+>>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnectionString")
     )
 );
 
+<<<<<<< HEAD
 // Register services for Dependency Injection (DI)
 builder.Services.AddScoped<ITodoServices, TodoRepository>();  // Scoped lifetime for Todo services
 builder.Services.AddTransient<IJwtService, JwtService>();      // Transient lifetime for JWT services
@@ -113,3 +126,31 @@ app.UseAuthorization();     // Add authorization middleware to check the user's 
 app.MapControllers(); 
 
 app.Run(); 
+=======
+builder.Services.AddScoped<ITodoServices, TodoRepository>();
+
+builder.Services.AddRazorPages();
+
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
+>>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
