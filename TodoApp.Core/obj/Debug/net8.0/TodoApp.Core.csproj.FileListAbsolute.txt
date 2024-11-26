@@ -1,6 +1,7 @@
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\bin\Debug\net8.0\TodoApp.Core.deps.json
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\bin\Debug\net8.0\TodoApp.Core.dll
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\bin\Debug\net8.0\TodoApp.Core.pdb
+C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\obj\Debug\net8.0\TodoApp.Core.csproj.AssemblyReference.cache
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\obj\Debug\net8.0\TodoApp.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\obj\Debug\net8.0\TodoApp.Core.AssemblyInfoInputs.cache
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\obj\Debug\net8.0\TodoApp.Core.AssemblyInfo.cs
@@ -10,4 +11,3 @@ C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\obj\Debug\ne
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\obj\Debug\net8.0\refint\TodoApp.Core.dll
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\obj\Debug\net8.0\TodoApp.Core.pdb
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\obj\Debug\net8.0\ref\TodoApp.Core.dll
-C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\TodoApp.Core\obj\Debug\net8.0\TodoApp.Core.csproj.AssemblyReference.cache
