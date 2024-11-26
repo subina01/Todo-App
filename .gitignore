@@ -1,4 +1,5 @@
 .vs/
+<<<<<<< HEAD
 /bin/
 /obj/
 obj/
@@ -6,3 +7,7 @@ bin/
 **/obj/
 **/bin/
 
+=======
+bin/
+obj/
+>>>>>>> 3fcf119 (chore: update .gitignore to exclude bin and obj folders)
