@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Ignore Visual Studio settings folder
 .vs/
 
@@ -42,4 +43,12 @@ bin/
 =======
 .vs/
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
+<<<<<<< HEAD
 >>>>>>> e4238f5 (feat(core): complete core layer implementation)
+=======
+=======
+.vs/
+bin/
+obj/
+>>>>>>> 0917c94 (chore: update .gitignore to exclude bin and obj folders)
+>>>>>>> 5124e6e (chore: update .gitignore to exclude bin and obj folders)
