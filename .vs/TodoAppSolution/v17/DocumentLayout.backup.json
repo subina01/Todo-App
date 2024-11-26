@@ -1,0 +1,74 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\subia\\OneDrive\\Desktop\\Intern\\TodoAppSolution\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{61A4ED95-C421-48CB-A546-52B6A2E7C360}|Todo.Infrastructure\\Todo.Infrastructure.csproj|c:\\users\\subia\\onedrive\\desktop\\intern\\todoappsolution\\todo.infrastructure\\repository\\todorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61A4ED95-C421-48CB-A546-52B6A2E7C360}|Todo.Infrastructure\\Todo.Infrastructure.csproj|solutionrelative:todo.infrastructure\\repository\\todorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}|ToDo.WebAPI\\todo.WebAPI.csproj|c:\\users\\subia\\onedrive\\desktop\\intern\\todoappsolution\\todo.webapi\\controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}|ToDo.WebAPI\\todo.WebAPI.csproj|solutionrelative:todo.webapi\\controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC7E53EF-54BC-4E5D-8EBA-71085A88FDFD}|TodoApp.Core\\TodoApp.Core.csproj|c:\\users\\subia\\onedrive\\desktop\\intern\\todoappsolution\\todoapp.core\\domain\\interface\\itodoservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC7E53EF-54BC-4E5D-8EBA-71085A88FDFD}|TodoApp.Core\\TodoApp.Core.csproj|solutionrelative:todoapp.core\\domain\\interface\\itodoservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TodoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\subia\\OneDrive\\Desktop\\Intern\\TodoAppSolution\\Todo.Infrastructure\\Repository\\TodoRepository.cs",
+              "RelativeDocumentMoniker": "Todo.Infrastructure\\Repository\\TodoRepository.cs",
+              "ToolTip": "C:\\Users\\subia\\OneDrive\\Desktop\\Intern\\TodoAppSolution\\Todo.Infrastructure\\Repository\\TodoRepository.cs",
+              "RelativeToolTip": "Todo.Infrastructure\\Repository\\TodoRepository.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAhwG8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T04:33:02.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ITodoServices.cs",
+              "DocumentMoniker": "C:\\Users\\subia\\OneDrive\\Desktop\\Intern\\TodoAppSolution\\TodoApp.Core\\Domain\\Interface\\ITodoServices.cs",
+              "RelativeDocumentMoniker": "TodoApp.Core\\Domain\\Interface\\ITodoServices.cs",
+              "ToolTip": "C:\\Users\\subia\\OneDrive\\Desktop\\Intern\\TodoAppSolution\\TodoApp.Core\\Domain\\Interface\\ITodoServices.cs",
+              "RelativeToolTip": "TodoApp.Core\\Domain\\Interface\\ITodoServices.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T04:32:45.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ToDoController.cs",
+              "DocumentMoniker": "C:\\Users\\subia\\OneDrive\\Desktop\\Intern\\TodoAppSolution\\ToDo.WebAPI\\Controllers\\ToDoController.cs",
+              "RelativeDocumentMoniker": "ToDo.WebAPI\\Controllers\\ToDoController.cs",
+              "ToolTip": "C:\\Users\\subia\\OneDrive\\Desktop\\Intern\\TodoAppSolution\\ToDo.WebAPI\\Controllers\\ToDoController.cs",
+              "RelativeToolTip": "ToDo.WebAPI\\Controllers\\ToDoController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAIA3wEIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T04:31:02.264Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
