@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vs/
 /bin/
 /obj/
@@ -10,3 +11,8 @@ bin/
 =======
 .vs/
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
+=======
+.vs/
+bin/
+obj/
+>>>>>>> 0917c94 (chore: update .gitignore to exclude bin and obj folders)
