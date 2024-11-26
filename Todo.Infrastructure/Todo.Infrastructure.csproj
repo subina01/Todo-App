@@ -21,20 +21,20 @@
 
 
 
- <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-
 
  <ItemGroup>
     <Folder Include="Services\" />
   </ItemGroup>
 
 
-  <ItemGroup>
+
+ <ItemGroup>
     <Folder Include="Services\" />
   </ItemGroup>
 
+
+<ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
 
 </Project>
