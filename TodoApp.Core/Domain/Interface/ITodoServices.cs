@@ -40,6 +40,24 @@ EndGlobalSection
 
         GlobalSection(ExtensibilityGlobals) = postSolution
 
+<<<<<<< HEAD
                 SolutionGuid = { FD3227B4 - 4BC7 - 48F3 - B8D7 - 2FDAE77E2271}
 EndGlobalSection
 EndGlobal
+=======
+{
+    public interface ITodoServices
+    {
+
+        public  Task<IEnumerable<GetAllTasksResponseDTO>> GetAllTasks();
+
+        public Task<GetAllTaskByIdResponseDTO> GetTaskById(int id);
+
+
+        public Task AddTask(ToDo tododata);
+        public Task<UpdateTaskResponseDTO> UpdateTask(int id, UpdateTaskRequestDTO updateTodoTask);
+        public  Task<UpdateStatusResponseDTO> UpdateTaskStatus(int id, UpdateStatusRequestDTO newStatus);
+        public Task<DeleteTaskResponseDTO> DeleteTask(int id);
+    }
+}
+>>>>>>> 83c617e (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
