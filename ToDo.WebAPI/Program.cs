@@ -1,63 +1,21 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
->>>>>>> 9155eda(feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using TodoApp.Core.Domain.IdentityEntities;
-using TodoApp.Core.Domain.Interface;
-using TodoApp.Core.Services;
-using TodoApp.Infrastructure.Database;
-using TodoApp.Infrastructure.Repository;
-using TodoApp.Infrastructure.Map;
 
-
-
-
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using Todo.Infrastructure.Database;
-using Todo.Infrastructure.Services;
-using TodoApp.Core.Domain.IdentityEntities;
-using TodoApp.Core.Domain.Interface;
-using TodoApp.Core.Domain.Services;
-
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
 using Microsoft.EntityFrameworkCore;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.Interface;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-and service registration)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnectionString")
     )
 );
 
-// Register services for Dependency Injection (DI)
+//ter services for Dependency Injection (DI)
 builder.Services.AddScoped<ITodoServices, TodoRepository>();  // Scoped lifetime for Todo services
 builder.Services.AddTransient<IJwtService, JwtService>();      // Transient lifetime for JWT services
 
@@ -195,15 +153,36 @@ builder.Services.AddControllers()
     });
 
 builder.Services.AddScoped<ITodoServices, TodoServices>();
+=======
+builder.Services.AddScoped<ITodoServices, TodoRepository>();
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 
 builder.Services.AddRazorPages();
 
 
 builder.Services.AddControllers();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
+=======
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+>>>>>>> bba28cd(refactor(controller): update controller methods to integrate request and response DTOs)
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
+=======
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+>>>>>>> bba28cd(refactor(controller): update controller methods to integrate request and response DTOs)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -214,14 +193,29 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> bba28cd (refactor(controller): update controller methods to integrate request and response DTOs)
 app.UseAuthentication();//for reading identity cookie
 app.UseAuthorization();//validates access permission of the user
 
+<<<<<<< HEAD
+=======
+app.UseAuthorization();
+>>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
+=======
+
+app.UseAuthorization();
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+>>>>>>> bba28cd(refactor(controller): update controller methods to integrate request and response DTOs)
 
 app.MapControllers();
 
 app.Run();
+<<<<<<< HEAD
 
 
 app.UseAuthorization();
@@ -238,3 +232,15 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+>>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
+=======
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+>>>>>>> bba28cd(refactor(controller): update controller methods to integrate request and response DTOs)

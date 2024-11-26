@@ -1,47 +1,13 @@
-public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
 
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-
-﻿using Microsoft.AspNetCore.Http;
-
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using TodoApp.Core.Domain.Entities;
-using TodoApp.Core.Domain.Interface;
-using TodoApp.Core.DTO;
-
-namespace todo.WebAPI.Controllers
+return Ok(new
 {
-
-        if (tododata == null)
-        {
-           _services = services;
-      }
-
-[HttpPost]
-Console.WriteLine("The breakpoint has hit here");
+        Message = "Task Added!"
+});
         }
-       
-        
-        [HttpPost]
-[Route("")]
-public async Task<IActionResult> AddTask([FromBody] ToDo tododata)
-{
-        if (!ModelState.IsValid)
-        {
-                return BadRequest();
-        }
-        await _services.AddTask(tododata);
-        return Ok(new
-        {
-                Message = "Task Added!"
-        });
-}
 
-[HttpGet("{id}")]
+        [HttpGet("{id}")]
 [Authorize(Roles = "Admin,User")]
+
 return Ok(new { Message = "Task Added!" });
         }
 
@@ -54,10 +20,12 @@ return Ok
 {
         Message = "Task Added!"
 });
+>>>>>>> bba28cd(refactor(controller): update controller methods to integrate request and response DTOs)
 
         }
 
         [HttpGet]
+
 
 [Route("{id}")]
 [Authorize(Roles = "Admin,User")]
@@ -222,53 +190,81 @@ public async Task<IActionResult> GetAllTasks()
 public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
 {
 
+
+
+
+  public async Task<IActionResult> GetTaskById(int id)
+{
+        var GetTask = await _services.GetTaskById(id);
+        return Ok(GetTask);
+}
+
+[HttpGet]
+
+public async Task<IActionResult> GetAllTasks()
+{
+        var GetAllTasks = await _services.GetAllTasks();
+        return Ok(GetAllTasks);
+}
+
+
+[HttpPut("{id}")]
+public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
+{
         [HttpPut]
         [Route("{id}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
         {
 
 
+                [HttpPut]
+                [Route("{id}")]
+                public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
+                {
+
+
+                        if (tododata == null)
+                        {
+                                return BadRequest(ModelState);
+                        }
+                        var Updatetodo = await _services.UpdateTask(id, tododata);
+                        return Ok(Updatetodo);
+
+                }
+
+
+
+                [HttpPut("Status/{id}")]
+                [Authorize(Roles = "Admin,User")]
+
+
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+
+        public async Task<IActionResult> DeleteTask(int id)
+        {
+
+                var DeleteTasks = await _services.DeleteTask(id);
+                return Ok(DeleteTasks);
+        }
+
+        [HttpPut]
+        [Route("Status/{id}")]
+
+        public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
+        {
                 if (tododata == null)
                 {
-                        return BadRequest(ModelState);
+                        return BadRequest();
                 }
-                var Updatetodo = await _services.UpdateTask(id, tododata);
-                return Ok(Updatetodo);
-
+                var UpdateStatus = await _services.UpdateTaskStatus(id, tododata);
+                return Ok(UpdateStatus);
         }
-
-
-
-        [HttpPut("Status/{id}")]
-        [Authorize(Roles = "Admin,User")]
-
-
-        }
-
-[HttpDelete]
-[Route("{id}")]
-
+}
 public async Task<IActionResult> DeleteTask(int id)
-{
-
-        var DeleteTasks = await _services.DeleteTask(id);
-        return Ok(DeleteTasks);
-}
-
-[HttpPut]
-[Route("Status/{id}")]
-
-public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
-{
-        if (tododata == null)
-        {
-                return BadRequest();
-        }
-        var UpdateStatus = await _services.UpdateTaskStatus(id, tododata);
-        return Ok(UpdateStatus);
-}
-}
-        public async Task<IActionResult> DeleteTask(int id)
 {
 
         var DeleteTasks = await _services.DeleteTask(id);
@@ -288,4 +284,52 @@ tododata)
         }
         var UpdateStatus = await _services.UpdateTaskStatus(id, tododata);
         return Ok(UpdateStatus);
+        if (tododata == null)
+        {
+                return BadRequest(ModelState);
+        }
+        var Updatetodo = await _services.UpdateTask(id, tododata);
+        return Ok(Updatetodo);
+
+}
+
+[HttpDelete("{id}")]
+public async Task<IActionResult> DeleteTask(int id)
+{
+        var DeleteTasks = await _services.DeleteTask(id);
+        return Ok(DeleteTasks);
+}
+
+
+[Authorize(Roles = "Admin,User")]
+
+
+        }
+
+        [HttpDelete]
+[Route("{id}")]
+[Authorize(Roles = "Admin,User")]
+
+public async Task<IActionResult> DeleteTask(int id)
+{
+
+        var DeleteTasks = await _services.DeleteTask(id);
+        return Ok(DeleteTasks);
+}
+
+[HttpPut]
+[Route("Status/{id}")]
+
+
+public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
+{
+        if (tododata == null)
+        {
+                return BadRequest();
+        }
+        var UpdateStatus = await _services.UpdateTaskStatus(id, tododata);
+        return Ok(UpdateStatus);
+}
+    }
+
 }
