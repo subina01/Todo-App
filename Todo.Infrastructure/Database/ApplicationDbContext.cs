@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 =======
@@ -26,7 +27,13 @@ using Microsoft.EntityFrameworkCore;
 =======
 ﻿using Microsoft.EntityFrameworkCore;
 >>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
+<<<<<<< HEAD
 >>>>>>> b701d45 (feat(infrastructure): add application db context and service implementation)
+=======
+=======
+﻿using Microsoft.EntityFrameworkCore;
+>>>>>>> 7dda02d (refactor(repository): implement DTOs in repository methods for task operations)
+>>>>>>> 21f4e66 (refactor(repository): implement DTOs in repository methods for task operations)
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +45,7 @@ using TodoApp.Core.Domain.Entities;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 using TodoApp.Core.Domain.IdentityEntities;
@@ -53,10 +61,13 @@ namespace Todo.Infrastructure.Database
 >>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
 =======
 >>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
+=======
+>>>>>>> 7dda02d (refactor(repository): implement DTOs in repository methods for task operations)
 
 namespace Todo.Infrastructure.Database
 {
     public class ApplicationDbContext : DbContext
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,7 +88,12 @@ namespace Todo.Infrastructure.Database
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 =======
 >>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
+<<<<<<< HEAD
 >>>>>>> b701d45 (feat(infrastructure): add application db context and service implementation)
+=======
+=======
+>>>>>>> 7dda02d (refactor(repository): implement DTOs in repository methods for task operations)
+>>>>>>> 21f4e66 (refactor(repository): implement DTOs in repository methods for task operations)
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<ToDo> TodoData { get; set; }
