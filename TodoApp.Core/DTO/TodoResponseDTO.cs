@@ -10,9 +10,12 @@ namespace TodoApp.Core.DTO
     {
         public int Id { get; set; }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
+=======
+>>>>>>> e8c83a0 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
         public string? UserName { get; set; }
         public string? TaskType { get; set; }
 
