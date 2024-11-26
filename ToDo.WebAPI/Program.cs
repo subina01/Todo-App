@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -45,16 +46,22 @@ using TodoApp.Core.Domain.Services;
 =======
 >>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 =======
+=======
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 using Microsoft.EntityFrameworkCore;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.Interface;
 
+<<<<<<< HEAD
 >>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
+=======
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -67,12 +74,16 @@ var builder = WebApplication.CreateBuilder(args);
 =======
 
 >>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
+=======
+
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnectionString")
     )
 );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -217,21 +228,30 @@ builder.Services.AddControllers()
     });
 =======
 builder.Services.AddScoped<ITodoServices, TodoServices>();
+=======
+builder.Services.AddScoped<ITodoServices, TodoRepository>();
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 
 builder.Services.AddRazorPages();
 
 
 builder.Services.AddControllers();
+<<<<<<< HEAD
 >>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
+=======
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
+=======
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -243,16 +263,22 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.UseAuthentication();//for reading identity cookie
 app.UseAuthorization();//validates access permission of the user
 =======
 
 app.UseAuthorization();
 >>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
+=======
+
+app.UseAuthorization();
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 
 app.MapControllers();
 
 app.Run();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
@@ -260,3 +286,5 @@ app.Run();
 >>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 =======
 >>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
+=======
+>>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
