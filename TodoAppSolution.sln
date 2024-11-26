@@ -17,6 +17,7 @@ EndProject
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "todo.WebAPI", "ToDo.WebAPI\todo.WebAPI.csproj", "{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}"
@@ -66,7 +67,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.UI", "TodoApp.UI\To
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.WebAPI", "ToDo.WebAPI\ToDo.WebAPI.csproj", "{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}"
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
+<<<<<<< HEAD
 >>>>>>> e4238f5 (feat(core): complete core layer implementation)
+=======
+=======
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "todo.WebAPI", "ToDo.WebAPI\todo.WebAPI.csproj", "{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}"
+>>>>>>> e8c83a0 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
+>>>>>>> 8273131 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +89,7 @@ Global
 		{61A4ED95-C421-48CB-A546-52B6A2E7C360}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61A4ED95-C421-48CB-A546-52B6A2E7C360}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61A4ED95-C421-48CB-A546-52B6A2E7C360}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -134,7 +142,12 @@ Global
 =======
 =======
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
+<<<<<<< HEAD
 >>>>>>> e4238f5 (feat(core): complete core layer implementation)
+=======
+=======
+>>>>>>> e8c83a0 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
+>>>>>>> 8273131 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Release|Any CPU.ActiveCfg = Release|Any CPU
