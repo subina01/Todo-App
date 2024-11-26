@@ -10,8 +10,14 @@ namespace TodoApp.Core.Domain.Interface
 
 {
 
+
         public interface ITodoServices
         {
+
+                public Task<IEnumerable<GetAllTasksResponseDTO>> GetAllTasks();
+
+                public Task<GetAllTaskByIdResponseDTO> GetTaskById(int id);
+
 
 
                 public Task<IEnumerable<GetAllTasksResponseDTO>> GetAllTasks();
@@ -28,6 +34,7 @@ namespace TodoApp.Core.Domain.Interface
                         public Task<DeleteTaskResponseDTO> DeleteTask(int id);
 
                 }
+
 
 
 
@@ -103,3 +110,23 @@ namespace TodoApp.Core.Domain.Interface
                 public Task<UpdateTaskResponseDTO> UpdateTask(int id, UpdateTaskRequestDTO updateTodoTask);
                 public Task<UpdateStatusResponseDTO> UpdateTaskStatus(int id, UpdateStatusRequestDTO newStatus);
                 public Task<DeleteTaskResponseDTO> DeleteTask(int id);
+                public Task<IEnumerable<TodoResponseDTO>> GetAllTasks();
+
+                public Task<IEnumerable<GetAllTasksResponseDTO>> GetAllTasks();
+
+                public Task<GetAllTaskByIdResponseDTO> GetTaskById(int id);
+
+
+
+                Task AddTask(ToDo tododata);
+                Task<string> UpdateTask(int id, TodoResponseDTO updateTodoTask);
+                Task<string> UpdateTaskStatus(int id, TodoResponseDTO newStatus);
+                Task<string> DeleteTask(int id);
+
+                public Task AddTask(ToDo tododata);
+                public Task<UpdateTaskResponseDTO> UpdateTask(int id, UpdateTaskRequestDTO updateTodoTask);
+                public Task<UpdateStatusResponseDTO> UpdateTaskStatus(int id, UpdateStatusRequestDTO newStatus);
+                public Task<DeleteTaskResponseDTO> DeleteTask(int id);
+
+        }
+}
