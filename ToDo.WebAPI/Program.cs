@@ -1,4 +1,5 @@
 
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ using TodoApp.Core.Services;
 using TodoApp.Infrastructure.Database;
 using TodoApp.Infrastructure.Repository;
 using TodoApp.Infrastructure.Map;
+
 
 
 
@@ -47,9 +49,17 @@ using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.Domain.Services;
+
+using Microsoft.EntityFrameworkCore;
+using Todo.Infrastructure.Database;
+using Todo.Infrastructure.Services;
+using TodoApp.Core.Domain.Interface;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
@@ -127,6 +137,7 @@ builder.Services.AddSwaggerGen(options =>
 
 );
 
+
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
 builder.Services.AddTransient<IJwtService, JwtService>();
 //enable identity in this project
@@ -145,6 +156,10 @@ builder.Services.AddIdentity<ApplicationUser,
 
 
 
+
+// Register services for Dependency Injection (DI)
+builder.Services.AddScoped<ITodoServices, TodoRepository>();  // Scoped lifetime for Todo services
+builder.Services.AddTransient<IJwtService, JwtService>();      // Transient lifetime for JWT services
 
 // Enable Identity services for authentication and authorization
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
@@ -253,9 +268,36 @@ app.UseAuthentication();//for reading identity cookie
 app.UseAuthorization();//validates access permission of the user
 
 
+app.Run();
+
+builder.Services.AddScoped<ITodoServices, TodoRepository>();
+
+builder.Services.AddRazorPages();
+
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+>>>>>>> a89f9ed(refactor(controller): update controller methods to integrate request and response DTOs)
+
 app.MapControllers();
 
 app.Run();
+<<<<<<< HEAD
 
 app.UseAuthorization();
 
@@ -268,3 +310,6 @@ and service registration)
 app.MapControllers();
 
 app.Run();
+=======
+>>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+>>>>>>> a89f9ed(refactor(controller): update controller methods to integrate request and response DTOs)
