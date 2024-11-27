@@ -404,6 +404,8 @@ builder.Services.AddSwaggerGen();
 >>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
 =======
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
