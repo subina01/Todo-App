@@ -1,8 +1,24 @@
 [
   {
     "ContainingType": "todo.WebAPI.Controllers.AccountController",
+    "Method": "Login",
+    "RelativePath": "api/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "TodoApp.Core.DTO.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "todo.WebAPI.Controllers.AccountController",
     "Method": "Register",
-    "RelativePath": "api/Account/Register",
+    "RelativePath": "api/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
