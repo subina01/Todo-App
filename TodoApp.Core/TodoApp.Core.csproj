@@ -10,12 +10,16 @@
     <PackageReference Include="AutoMapper" Version="13.0.1" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
 =======
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
 =======
 >>>>>>> 0f689a6 (feat(core): complete core layer implementation)
+=======
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
   </ItemGroup>
 
 </Project>

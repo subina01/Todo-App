@@ -1,33 +1,58 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
+=======
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
+using TodoApp.Core.Domain.IdentityEntities;
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 using TodoApp.Core.DTO;
 
 namespace todo.WebAPI.Controllers
 {
+<<<<<<< HEAD
     [Route("api/")]
     [ApiController]
     [AllowAnonymous]
+=======
+    [Route("api/[controller]")]
+    [ApiController]
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
     public class AccountController : ControllerBase
     {
         //business logic provided by asp.net core Identity
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly RoleManager<ApplicationRole> roleManager;
+<<<<<<< HEAD
         private readonly IJwtService jwtService;
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
+=======
+
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.roleManager = roleManager;
+<<<<<<< HEAD
             this.jwtService = jwtService;
         }
 
         [HttpPost]
         [Route("register")]
+=======
+        }
+
+        [HttpPost]
+        [Route("Register")]
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
         public async Task<IActionResult> Register([FromBody] RegisterDTO register)
         {
             if (!ModelState.IsValid)
@@ -55,12 +80,20 @@ namespace todo.WebAPI.Controllers
                 });
             }
             //creating object for application user class
+<<<<<<< HEAD
             ApplicationUser user = new ApplicationUser
             {
                 UserName = register.Name,
                 Email = register.Email,
                 Name = register.Name,
                 
+=======
+            var user = new ApplicationUser
+            {
+                UserName = register.Name,
+                Email = register.Email,
+                Name = register.Name
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
             };
 
             //creating the user
@@ -72,6 +105,7 @@ namespace todo.WebAPI.Controllers
                     Message = "Registration failed."
                 });
             }
+<<<<<<< HEAD
             
 
             
@@ -110,5 +144,18 @@ namespace todo.WebAPI.Controllers
 
         }
        
+=======
+
+            //sign the user in after sucessful registration
+            await signInManager.SignInAsync(user, isPersistent: false);
+            //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
+            return Ok(new
+            {
+                Message = "Registration sucessful."
+               
+            });
+           
+        }
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
     }
 }
