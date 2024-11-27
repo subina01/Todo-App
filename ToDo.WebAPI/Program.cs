@@ -24,10 +24,12 @@ using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.Domain.Services;
-
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
+using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -179,6 +181,14 @@ builder.Services.AddScoped<ITodoServices, TodoRepository>();
 
 
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
+
+
+    
+    .AddDefaultTokenProviders()//predefined token provider lai enable garxa
+
+    .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()//whats the exact repository layer to use as we cannot use dbcontext directly in the userManager class
+
+    .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();//this is the repository layer for manipulating the roles data
 
 builder.Services.AddRazorPages();
 

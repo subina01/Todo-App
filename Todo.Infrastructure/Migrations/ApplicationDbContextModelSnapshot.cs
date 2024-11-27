@@ -33,6 +33,7 @@ namespace Todo.Infrastructure.Migrations
 
 
 
+
                          SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                          b.Property<string>("ClaimType")
@@ -129,45 +130,49 @@ namespace Todo.Infrastructure.Migrations
 
                         b.ToTable("AspNetUserTokens", (string)null);
                     });
-                {
+
+                modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+
+                    {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
                     {
                         b.Property<int>("Id")
-                            .ValueGeneratedOnAdd()
+                        .ValueGeneratedOnAdd()
 
 
-                b.Property<DateTime>("CompletionDate")
-                    .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CompletionDate")
+                        .HasColumnType("datetime2");
 
                         b.Property<string>("Description")
-                            .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)");
 
                         b.Property<DateTime>("DueDate")
-                            .HasColumnType("datetime2");
+                        .HasColumnType("datetime2");
 
                         b.Property<DateTime>("StartDate")
-                            .HasColumnType("datetime2");
+                        .HasColumnType("datetime2");
 
                         b.Property<string>("Status")
-                            .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)");
 
                         b.Property<string>("TaskType")
-                            .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)");
 
                         b.Property<string>("UserName")
-                            .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)");
 
                         b.HasKey("Id");
 
                         b.ToTable("TodoData");
                     });
 
-                    b.ToTable("TodoData");
-                });
                 b.ToTable("TodoData");
             });
+            b.ToTable("TodoData");
+        });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
@@ -175,18 +180,18 @@ namespace Todo.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+        SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ClaimValue")
+        b.Property<string>("ClaimValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("UserId")
+        b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("Id");
+        b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
@@ -198,121 +203,129 @@ namespace Todo.Infrastructure.Migrations
                     b.Property<string>("LoginProvider")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("ProviderKey")
+    b.Property<string>("ProviderKey")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("ProviderDisplayName")
+    b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("UserId")
+    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("LoginProvider", "ProviderKey");
+    b.HasKey("LoginProvider", "ProviderKey");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("AspNetUserLogins", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
-                {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+    {
+        b.Property<Guid>("UserId")
+            .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
+        b.Property<Guid>("RoleId")
+            .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("UserId", "RoleId");
+        b.HasKey("UserId", "RoleId");
 
-                    b.HasIndex("RoleId");
+        b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetUserRoles", (string)null);
-                });
+        b.ToTable("AspNetUserRoles", (string)null);
+    });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
-                {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+    {
+        b.Property<Guid>("UserId")
+            .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+        b.Property<string>("LoginProvider")
+            .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+        b.Property<string>("Name")
+            .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
+        b.Property<string>("Value")
+            .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UserId", "LoginProvider", "Name");
+        b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("AspNetUserTokens", (string)null);
-                });
-            modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
-                                     {
-                                         b.Property<int>("Id")
-                                             .ValueGeneratedOnAdd()
-                                             .HasColumnType("int");
+        b.ToTable("AspNetUserTokens", (string)null);
+    });
 
-                                         SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
+                         {
+                             b.Property<int>("Id")
+                                 .ValueGeneratedOnAdd()
+                                 .HasColumnType("int");
 
-                                         b.Property<DateTime>("CompletionDate")
-                                             .HasColumnType("datetime2");
+                             SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                                         b.Property<string>("Description")
-                                             .HasColumnType("nvarchar(max)");
+                             b.Property<DateTime>("CompletionDate")
+                                 .HasColumnType("datetime2");
 
-                                         b.Property<DateTime>("DueDate")
-                                             .HasColumnType("datetime2");
+                             b.Property<string>("Description")
+                                 .HasColumnType("nvarchar(max)");
 
-                                         b.Property<DateTime>("StartDate")
-                                             .HasColumnType("datetime2");
+                             b.Property<DateTime>("DueDate")
+                                 .HasColumnType("datetime2");
 
-                                         b.Property<string>("Status")
-                                             .HasColumnType("nvarchar(max)");
+                             b.Property<DateTime>("StartDate")
+                                 .HasColumnType("datetime2");
 
-                                         b.Property<string>("TaskType")
-                                             .HasColumnType("nvarchar(max)");
+                             b.Property<string>("Status")
+                                 .HasColumnType("nvarchar(max)");
 
-                                         b.Property<string>("UserName")
-                                             .HasColumnType("nvarchar(max)");
+                             b.Property<string>("TaskType")
+                                 .HasColumnType("nvarchar(max)");
 
-                                         b.HasKey("Id");
+                             b.Property<string>("UserName")
+                                 .HasColumnType("nvarchar(max)");
+
+                             b.HasKey("Id");
 
 
 
-                                         b.ToTable("TodoData");
-                                     });
+                             b.ToTable("TodoData");
+                         });
 
-            b.ToTable("TodoData");
+b.ToTable("TodoData");
         });
 
-                    b.ToTable("TodoData");
+b.ToTable("TodoData");
                 });
-  modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationRole", b =>
-                 b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
 
-    b.Property<string>("ConcurrencyStamp")
-                                    .IsConcurrencyToken()
-                                    .HasColumnType("nvarchar(max)");
+modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationRole", b =>
+               b.Property<Guid>("Id")
 
-    b.Property<string>("Name")
-                                    .HasMaxLength(256)
-                                    .HasColumnType("nvarchar(256)");
 
-    b.Property<string>("NormalizedName")
-                                    .HasMaxLength(256)
-                                    .HasColumnType("nvarchar(256)");
+            modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationRole", b =>
+                {
+                    b.Property<Guid>("Id")
 
-    b.HasKey("Id");
+                            .ValueGeneratedOnAdd()
+                            .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ConcurrencyStamp")
+                                                    .IsConcurrencyToken()
+                                                    .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                                                    .HasMaxLength(256)
+                                                    .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                                                    .HasMaxLength(256)
+                                                    .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
                         .HasDatabaseName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
-    b.ToTable("AspNetRoles", (string)null);
+                    b.ToTable("AspNetRoles", (string)null);
                 });
 
 modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationUser", b =>
@@ -371,9 +384,13 @@ modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationUser", b =>
                                                         .HasMaxLength(256)
                                                         .HasColumnType("nvarchar(256)");
 
+
         b.Property<int>("UserType")
                                                              .HasColumnType("int");
 
+
+        b.Property<int>("UserType")
+                           .HasColumnType("int");
 
         b.Property<int>("UserType")
                                                         .HasColumnType("int");
@@ -382,6 +399,8 @@ modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationUser", b =>
                                                                   .HasColumnType("int");
         b.Property<int>("UserType")
                                              .HasColumnType("int");
+
+
 
 
         b.HasIndex("NormalizedEmail")
