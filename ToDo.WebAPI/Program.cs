@@ -1,5 +1,6 @@
 
 
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -49,17 +50,14 @@ using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.Domain.Services;
-
 using Microsoft.EntityFrameworkCore;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.Interface;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
@@ -136,7 +134,6 @@ builder.Services.AddSwaggerGen(options =>
 
 
 );
-
 
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
 builder.Services.AddTransient<IJwtService, JwtService>();
@@ -297,7 +294,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-<<<<<<< HEAD
+
 
 app.UseAuthorization();
 
@@ -310,6 +307,3 @@ and service registration)
 app.MapControllers();
 
 app.Run();
-=======
->>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
->>>>>>> a89f9ed(refactor(controller): update controller methods to integrate request and response DTOs)

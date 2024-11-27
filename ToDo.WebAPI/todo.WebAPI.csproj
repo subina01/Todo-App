@@ -8,9 +8,12 @@
 
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
 =======
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
