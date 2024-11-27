@@ -19,7 +19,16 @@ obj/
 **/obj/
 =======
 .vs/
+<<<<<<< HEAD
 bin/
 obj/
 >>>>>>> 3fcf119 (chore: update .gitignore to exclude bin and obj folders)
+<<<<<<< HEAD
 >>>>>>> 5f8b743 (chore: update .gitignore to exclude bin, obj, and .vs directories)
+=======
+=======
+/bin/
+/obj/
+
+>>>>>>> a01c3c5 (chore: remove bin and obj directories from Git tracking)
+>>>>>>> 4bf37bf (chore: remove bin and obj directories from Git tracking)
