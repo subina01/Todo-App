@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("todo.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87b39c69aabfbabf91e93840b744daf4be2513db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c90400b2f73bdcee9775f5e4b83a74f3e4c5f647")]
 [assembly: System.Reflection.AssemblyProductAttribute("todo.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("todo.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
