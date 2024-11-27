@@ -24,6 +24,7 @@ namespace Todo.Infrastructure.Migrations
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
@@ -131,6 +132,8 @@ namespace Todo.Infrastructure.Migrations
 >>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
 =======
 >>>>>>> c99b1a6 (refactor(repository): implement DTOs in repository methods for task operations)
+=======
+>>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
             modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
                 {
                     b.Property<int>("Id")
@@ -164,6 +167,7 @@ namespace Todo.Infrastructure.Migrations
 
                     b.ToTable("TodoData");
                 });
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -321,6 +325,8 @@ namespace Todo.Infrastructure.Migrations
 >>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
 =======
 >>>>>>> c99b1a6 (refactor(repository): implement DTOs in repository methods for task operations)
+=======
+>>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
 #pragma warning restore 612, 618
         }
     }

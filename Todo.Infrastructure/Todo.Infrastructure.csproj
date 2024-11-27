@@ -21,6 +21,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   <ItemGroup>
     <Folder Include="Services\" />
@@ -29,4 +30,6 @@
 >>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
 =======
 >>>>>>> c99b1a6 (refactor(repository): implement DTOs in repository methods for task operations)
+=======
+>>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
 </Project>
