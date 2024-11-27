@@ -110,12 +110,12 @@ namespace todo.WebAPI.Controllers
                     Email = register.Email,
                     Name = register.Name
           ApplicationUser user = new ApplicationUser
-         {
-             UserName = register.Name,
-             Email = register.Email,
-             Name = register.Name,
+          {
+              UserName = register.Name,
+              Email = register.Email,
+              Name = register.Name,
 
-         };
+          };
 
                     //creating the user
                     var response = await userManager.CreateAsync(user, register.Password);
