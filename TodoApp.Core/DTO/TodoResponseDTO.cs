@@ -14,6 +14,7 @@ namespace TodoApp.Core.DTO
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
@@ -32,7 +33,12 @@ namespace TodoApp.Core.DTO
 =======
 =======
 >>>>>>> 83c617e (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
+<<<<<<< HEAD
 >>>>>>> 76a6841 (Removed unused files and assemblies)
+=======
+=======
+>>>>>>> ca4de06 (feat(core): complete core layer implementation)
+>>>>>>> c21a00c (feat(core): complete core layer implementation)
         public string? UserName { get; set; }
         public string? TaskType { get; set; }
 

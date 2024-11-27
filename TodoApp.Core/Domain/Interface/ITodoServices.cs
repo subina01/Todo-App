@@ -17,10 +17,15 @@ namespace TodoApp.Core.Domain.Interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 0f689a6 (feat(core): complete core layer implementation)
 =======
+<<<<<<< HEAD
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+=======
+>>>>>>> ca4de06 (feat(core): complete core layer implementation)
+>>>>>>> c21a00c (feat(core): complete core layer implementation)
         public  Task<IEnumerable<GetAllTasksResponseDTO>> GetAllTasks();
 
         public Task<GetAllTaskByIdResponseDTO> GetTaskById(int id);
@@ -80,6 +85,11 @@ namespace TodoApp.Core.Domain.Interface
 =======
 =======
 >>>>>>> 83c617e (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
+<<<<<<< HEAD
 >>>>>>> 76a6841 (Removed unused files and assemblies)
+=======
+=======
+>>>>>>> ca4de06 (feat(core): complete core layer implementation)
+>>>>>>> c21a00c (feat(core): complete core layer implementation)
     }
 }

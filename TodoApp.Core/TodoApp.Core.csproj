@@ -13,6 +13,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
@@ -31,7 +32,12 @@
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 =======
 >>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
+<<<<<<< HEAD
 >>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
+=======
+=======
+>>>>>>> ca4de06 (feat(core): complete core layer implementation)
+>>>>>>> c21a00c (feat(core): complete core layer implementation)
   </ItemGroup>
 
 </Project>
