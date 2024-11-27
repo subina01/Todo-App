@@ -33,6 +33,7 @@ namespace todo.WebAPI.Controllers
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
     [Route("api/")]
@@ -63,6 +64,9 @@ namespace todo.WebAPI.Controllers
 =======
 =======
     [Route("api/[controller]")]
+=======
+    [Route("api/")]
+>>>>>>> fb41d9c (feat(login): Add login functionality and its DTO)
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -124,9 +128,16 @@ namespace todo.WebAPI.Controllers
         }
 
         [HttpPost]
+<<<<<<< HEAD
         [Route("Register")]
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+=======
+        [Route("register")]
+>>>>>>> fb41d9c (feat(login): Add login functionality and its DTO)
+>>>>>>> 5e24ca5 (t rm --cached -r TodoApp.Core/bin/ feat(login): Add login functionality and its DTO)
         public async Task<IActionResult> Register([FromBody] RegisterDTO register)
         {
             if (!ModelState.IsValid)
@@ -330,6 +341,34 @@ namespace todo.WebAPI.Controllers
             });
            
         }
+<<<<<<< HEAD
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> Login([FromBody] LoginDTO login)
+        {
+            var user = await userManager.FindByNameAsync(login.UserName);
+            if (user == null)
+            {
+                return BadRequest("User is not registered");
+            }
+            var response = await signInManager.PasswordSignInAsync(user, login.Password,false, false);
+            if (!response.Succeeded)
+            {
+                return BadRequest(new
+                {
+                    Message = "Login failed."
+                });
+
+            }
+
+            return Ok(new
+            {
+                Message = "Login sucessful"
+            });
+        }
+>>>>>>> fb41d9c (feat(login): Add login functionality and its DTO)
     }
 }
