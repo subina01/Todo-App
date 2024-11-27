@@ -33,6 +33,7 @@ namespace Todo.Infrastructure.Migrations
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 <<<<<<< HEAD
@@ -41,7 +42,12 @@ namespace Todo.Infrastructure.Migrations
 =======
 =======
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
+=======
+=======
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
@@ -148,6 +154,7 @@ namespace Todo.Infrastructure.Migrations
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
 =======
@@ -191,7 +198,12 @@ namespace Todo.Infrastructure.Migrations
 =======
 =======
 >>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
+<<<<<<< HEAD
 >>>>>>> b67024d (feat(infrastructure): add application db context and service implementation)
+=======
+=======
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
             modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
                 {
                     b.Property<int>("Id")
@@ -236,6 +248,7 @@ namespace Todo.Infrastructure.Migrations
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 <<<<<<< HEAD
@@ -244,7 +257,12 @@ namespace Todo.Infrastructure.Migrations
 =======
 =======
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
+=======
+=======
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
 
             modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationRole", b =>
                 {
@@ -335,6 +353,7 @@ namespace Todo.Infrastructure.Migrations
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     b.Property<int>("UserType")
                         .HasColumnType("int");
 
@@ -362,7 +381,12 @@ namespace Todo.Infrastructure.Migrations
                         .HasColumnType("int");
 
 >>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+<<<<<<< HEAD
 >>>>>>> 0ac0018 (feat(auth): Add jwt based authentication)
+=======
+=======
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -429,6 +453,7 @@ namespace Todo.Infrastructure.Migrations
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
 =======
@@ -472,7 +497,12 @@ namespace Todo.Infrastructure.Migrations
 =======
 =======
 >>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
+<<<<<<< HEAD
 >>>>>>> b67024d (feat(infrastructure): add application db context and service implementation)
+=======
+=======
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
 #pragma warning restore 612, 618
         }
     }

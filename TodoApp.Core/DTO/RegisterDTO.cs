@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 using TodoApp.Core.Domain.Enum;
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
@@ -31,7 +32,12 @@ using TodoApp.Core.Domain.Enum;
 =======
 using TodoApp.Core.Domain.Enum;
 >>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+<<<<<<< HEAD
 >>>>>>> 0ac0018 (feat(auth): Add jwt based authentication)
+=======
+=======
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
 
 namespace TodoApp.Core.DTO
 {
@@ -41,6 +47,7 @@ namespace TodoApp.Core.DTO
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         [Required(ErrorMessage = "Name can't be blank")]
 =======
         [Required(ErrorMessage ="Name can't be blank")]
@@ -61,11 +68,18 @@ namespace TodoApp.Core.DTO
 =======
         [Required(ErrorMessage = "Name can't be blank")]
 >>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+<<<<<<< HEAD
 >>>>>>> 0ac0018 (feat(auth): Add jwt based authentication)
+=======
+=======
+        [Required(ErrorMessage ="Name can't be blank")]
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
         public string? Name { get; set; }
 
         [Required(ErrorMessage = "Email can't be blank")]
         [EmailAddress]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -133,7 +147,21 @@ namespace TodoApp.Core.DTO
         public string? ConfirmPassword { get; set; }
          public UserTypeOptions UserType { get; set; }
 >>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+<<<<<<< HEAD
 >>>>>>> 0ac0018 (feat(auth): Add jwt based authentication)
+=======
+=======
+        public string? Email {  get; set; }
+
+        [Required(ErrorMessage = "Password can't be blank")]
+        [DataType(DataType.Password)]
+        public string? Password { get; set; }
+        [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+        [DataType(DataType.Password)]
+        public string? ConfirmPassword {  get; set; }
+        
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
       
     }
 }

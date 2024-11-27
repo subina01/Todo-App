@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -51,9 +52,14 @@ using TodoApp.Core.Domain.Services;
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 =======
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 using Microsoft.EntityFrameworkCore;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
+using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 
 <<<<<<< HEAD
@@ -192,11 +198,15 @@ app.Run();
 =======
 >>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
+<<<<<<< HEAD
 builder.Services.AddTransient<IJwtService, JwtService>();
+=======
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 //enable identity in this project
 builder.Services.AddIdentity<ApplicationUser,
     ApplicationRole>()//Now it understood that we have to enable the identity services
     .AddEntityFrameworkStores<ApplicationDbContext>()//using entity framework to store the data and exact dbcontext we are using is ApplicationDBContext
+<<<<<<< HEAD
 
     .AddDefaultTokenProviders();//predefined token provider lai enable garxa
     
@@ -246,6 +256,14 @@ builder.Services.AddScoped<ITodoServices, TodoRepository>();
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 
+=======
+    
+    .AddDefaultTokenProviders()//predefined token provider lai enable garxa
+    
+    .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()//whats the exact repository layer to use as we cannot use dbcontext directly in the userManager class
+    
+    .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();//this is the repository layer for manipulating the roles data
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 builder.Services.AddRazorPages();
 
 

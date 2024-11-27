@@ -18,6 +18,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 =======
@@ -59,7 +60,13 @@
 =======
 =======
 >>>>>>> 0f689a6 (feat(core): complete core layer implementation)
+<<<<<<< HEAD
 >>>>>>> 80c19f0 (feat(core): complete core layer implementation)
+=======
+=======
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
   </ItemGroup>
 
 </Project>
