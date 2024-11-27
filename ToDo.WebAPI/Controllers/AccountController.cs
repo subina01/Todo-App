@@ -16,6 +16,7 @@ using TodoApp.Core.DTO;
 namespace todo.WebAPI.Controllers
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     [Route("api/")]
     [ApiController]
     public class AccountController : ControllerBase
@@ -23,6 +24,9 @@ namespace todo.WebAPI.Controllers
         // Business logic provided by ASP.NET Core Identity
 =======
     [Route("api/[controller]")]
+=======
+    [Route("api/")]
+>>>>>>> 25050fb (feat(login): Add login functionality and its DTO)
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -65,9 +69,16 @@ namespace todo.WebAPI.Controllers
         }
 
         [HttpPost]
+<<<<<<< HEAD
         [Route("Register")]
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
+=======
+=======
+        [Route("register")]
+>>>>>>> eb11733 (feat(login): Add login functionality and its DTO)
+>>>>>>> 25050fb (feat(login): Add login functionality and its DTO)
         public async Task<IActionResult> Register([FromBody] RegisterDTO register)
         {
             if (!ModelState.IsValid)
@@ -203,6 +214,31 @@ namespace todo.WebAPI.Controllers
             });
            
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+        }
+
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> Login([FromBody] LoginDTO login)
+        {
+            var user = await userManager.FindByNameAsync(login.UserName);
+            if (user == null)
+            {
+                return BadRequest("User is not registered");
+            }
+            var response = await signInManager.PasswordSignInAsync(user, login.Password,false, false);
+            if (!response.Succeeded)
+            {
+                return BadRequest(new
+                {
+                    Message = "Login failed."
+                });
+
+            }
+
+            return Ok(new
+            {
+                Message = "Login sucessful"
+            });
         }
     }
 }
