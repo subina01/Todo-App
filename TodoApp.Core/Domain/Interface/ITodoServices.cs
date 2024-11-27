@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35431.28
@@ -29,7 +29,7 @@ Global
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Debug | Any CPU.Build.0 = Debug | Any CPU
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Release | Any CPU.ActiveCfg = Release | Any CPU
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Release | Any CPU.Build.0 = Release | Any CPU
-        EndGlobalSection
+				EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
@@ -38,10 +38,11 @@ Global
 { 61A4ED95 - C421 - 48CB - A546 - 52B6A2E7C360} = { CF4D2D10 - 1B36 - 4F00 - ACE1 - 8337B9977BBD}
 EndGlobalSection
 
-        GlobalSection(ExtensibilityGlobals) = postSolution
+
+				GlobalSection(ExtensibilityGlobals) = postSolution
 
 <<<<<<< HEAD
-                SolutionGuid = { FD3227B4 - 4BC7 - 48F3 - B8D7 - 2FDAE77E2271}
+								SolutionGuid = { FD3227B4 - 4BC7 - 48F3 - B8D7 - 2FDAE77E2271}
 EndGlobalSection
 EndGlobal
 =======
