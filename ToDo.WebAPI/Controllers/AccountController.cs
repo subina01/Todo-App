@@ -96,11 +96,8 @@ namespace todo.WebAPI.Controllers
                 });
             }
             //creating object for application user class
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
             ApplicationUser user = new ApplicationUser
             {
                 UserName = register.Name,
@@ -112,7 +109,7 @@ namespace todo.WebAPI.Controllers
                     UserName = register.Name,
                     Email = register.Email,
                     Name = register.Name
-         ApplicationUser user = new ApplicationUser
+          ApplicationUser user = new ApplicationUser
          {
              UserName = register.Name,
              Email = register.Email,
@@ -125,18 +122,65 @@ namespace todo.WebAPI.Controllers
             //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
             if (!response.Succeeded)
             {
-                return BadRequest(new
+                var user = new ApplicationUser
                 {
-                    Message = "Registration failed."
-                });
+                    UserName = register.Name,
+                    Email = register.Email,
+                    Name = register.Name
+                };
+
+                //creating the user
+                var response = await userManager.CreateAsync(user, register.Password);
+                //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
+                if (!response.Succeeded)
+                {
+                    return BadRequest(new
+                    {
+                        Message = "Registration failed."
+                    });
+                }
+
+
+
+
+
+
+
+
+
+
+                //sign the user in after sucessful registration
+                await signInManager.SignInAsync(user, isPersistent: false);
+                var authenticationResponse = jwtService.CreateJwtToken(user);
+                //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
+                return Ok(authenticationResponse);
             }
 
+            [HttpPost]
+            [Route("login")]
+            public async Task<IActionResult> Login([FromBody] LoginDTO login)
+            {
+                var user = await userManager.FindByNameAsync(login.UserName);
+                if (user == null)
+                {
+                    return BadRequest("User is not registered");
+                }
+                var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
+                if (!response.Succeeded)
+                {
+                    return BadRequest(new
+                    {
+                        Message = "Login failed."
+                    });
+
+                }
+
+                var authenticationResponse = jwtService.CreateJwtToken(user);
+
+                return Ok(authenticationResponse);
 
 
-
-
-
-
+            }
 
 
             //sign the user in after sucessful registration
@@ -144,6 +188,7 @@ namespace todo.WebAPI.Controllers
             var authenticationResponse = jwtService.CreateJwtToken(user);
             //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
             return Ok(authenticationResponse);
+
         }
 
         [HttpPost]
@@ -175,41 +220,6 @@ namespace todo.WebAPI.Controllers
 
         //sign the user in after sucessful registration
         await signInManager.SignInAsync(user, isPersistent: false);
-        var authenticationResponse = jwtService.CreateJwtToken(user);
-            //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
-            return Ok(authenticationResponse);
-
-    }
-
-        [HttpPost]
-[Route("login")]
-public async Task<IActionResult> Login([FromBody] LoginDTO login)
-{
-    var user = await userManager.FindByNameAsync(login.UserName);
-    if (user == null)
-    {
-        return BadRequest("User is not registered");
-    }
-    var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
-    if (!response.Succeeded)
-    {
-        return BadRequest(new
-        {
-            Message = "Login failed."
-        });
-
-    }
-
-    var authenticationResponse = jwtService.CreateJwtToken(user);
-
-    return Ok(authenticationResponse);
-
-
-}
-
-
-//sign the user in after sucessful registration
-await signInManager.SignInAsync(user, isPersistent: false);
 //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
 return Ok(new
 {
@@ -219,5 +229,16 @@ return Ok(new
            
         }
 
-    }
+
+            //sign the user in after sucessful registration
+            await signInManager.SignInAsync(user, isPersistent: false);
+//isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
+return Ok(new
+{
+    Message = "Registration sucessful."
+
+});
+           
+        }
+   }
 }

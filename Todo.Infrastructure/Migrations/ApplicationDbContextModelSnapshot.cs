@@ -159,8 +159,11 @@ namespace Todo.Infrastructure.Migrations
                     b.ToTable("TodoData");
                 });
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
             modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationRole", b =>
                 {
                     b.Property<Guid>("Id")
@@ -245,6 +248,7 @@ namespace Todo.Infrastructure.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+<<<<<<< HEAD
 
                     b.Property<int>("UserType")
                         .HasColumnType("int");
@@ -254,6 +258,8 @@ namespace Todo.Infrastructure.Migrations
                         .HasColumnType("int");
 
 
+=======
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -317,9 +323,13 @@ namespace Todo.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
+<<<<<<< HEAD
 
 
 
+=======
+#pragma warning restore 612, 618
+>>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
         }
     }
 }
