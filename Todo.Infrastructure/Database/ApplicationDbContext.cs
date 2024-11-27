@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -13,19 +13,21 @@ using TodoApp.Core.Domain.IdentityEntities;
 
 namespace TodoApp.Infrastructure.Database
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
 
-=======
->>>>>>> 41e5918 (feat(infrastructure): add application db context and service implementation)
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TodoApp.Core.Domain.Entities;
+    using Microsoft.EntityFrameworkCore;
 
-namespace Todo.Infrastructure.Database
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
+
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using TodoApp.Core.Domain.Entities;
+    using TodoApp.Core.Domain.IdentityEntities;
+
+    namespace Todo.Infrastructure.Database
     {
         public class ApplicationDbContext : DbContext
         {
@@ -41,7 +43,7 @@ namespace Todo.Infrastructure.Database
     }
 
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<ToDo> TodoData { get; set; }
