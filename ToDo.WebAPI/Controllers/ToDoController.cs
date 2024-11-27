@@ -1,17 +1,65 @@
 
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+
+using Microsoft.AspNetCore.Http;
+
+using Microsoft.AspNetCore.Http;
+
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+
+using Microsoft.AspNetCore.Http;
+
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using TodoApp.Core.Domain.Entities;
+using TodoApp.Core.Domain.Interface;
+using TodoApp.Core.DTO;
+
 return Ok(new
 {
         Message = "Task Added!"
 });
+[Route("api/todo")]
+[ApiController]
+[Authorize]
+public class ToDoController : ControllerBase
+{
+        private readonly ITodoServices _services;
+
+        public ToDoController(ITodoServices services)
+        {
+                _services = services;
+        }
+
+        [HttpPost]
+        Console.WriteLine("The breakpoint has hit here");
+        }
+
+
+[HttpPost]
+[Route("")]
+Console.WriteLine("The breakpoint has hit here");
+        }
+
+        [HttpPost]
+{
+        if (!ModelState.IsValid)
+        {
+                return BadRequest();
+                {
+                        Message = "Task Added!"
+                   });
         }
 
         [HttpGet("{id}")]
-[Authorize(Roles = "Admin,User")]
+        [Authorize(Roles = "Admin,User")]
 
-return Ok(new { Message = "Task Added!" });
-        }
+        return Ok(new { Message = "Task Added!" });
+}
 
-        [HttpGet("{id}")]
+[HttpGet("{id}")]
 
             }
             await _services.AddTask(tododata);
@@ -89,15 +137,53 @@ public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequest
         if (tododata == null)
         {
                 return BadRequest(ModelState);
-        }
-        var Updatetodo = await _services.UpdateTask(id, tododata);
-        return Ok(Updatetodo);
-        if (tododata == null)
-        {
-                return BadRequest(ModelState);
-        }
-        var Updatetodo = await _services.UpdateTask(id, tododata);
-        return Ok(Updatetodo);
+
+
+                [Authorize(Roles = "Admin,User")]
+
+                public async Task<IActionResult> GetTaskById(int id)
+                {
+                        var GetTask = await _services.GetTaskById(id);
+                        return Ok(GetTask);
+                }
+
+                [HttpGet]
+                [Route("")]
+                public async Task<IActionResult> GetAllTasks()
+                {
+                        var GetAllTasks = await _services.GetAllTasks();
+                        return Ok(GetAllTasks);
+                }
+
+                [HttpPut("{id}")]
+                public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
+                {
+                        [HttpPut]
+                        [Route("{id}")]
+                        [Authorize(Roles = "Admin,User")]
+                        public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
+                        {
+
+                                [HttpPut]
+                                [Route("{id}")]
+                                public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
+                                {
+
+                                        if (tododata == null)
+                                        {
+                                                return BadRequest(ModelState);
+                                        }
+                                        var Updatetodo = await _services.UpdateTask(id, tododata);
+                                        return Ok(Updatetodo);
+                                }
+                                var Updatetodo = await _services.UpdateTask(id, tododata);
+                                return Ok(Updatetodo);
+                                if (tododata == null)
+                                {
+                                        return BadRequest(ModelState);
+                                }
+                                var Updatetodo = await _services.UpdateTask(id, tododata);
+                                return Ok(Updatetodo);
 
 
 
