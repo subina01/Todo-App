@@ -22,7 +22,7 @@ namespace Todo.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-<<<<<<< HEAD
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
@@ -126,8 +126,7 @@ namespace Todo.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-=======
->>>>>>> 7dda02d (refactor(repository): implement DTOs in repository methods for task operations)
+
             modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
                 {
                     b.Property<int>("Id")
@@ -161,7 +160,7 @@ namespace Todo.Infrastructure.Migrations
 
                     b.ToTable("TodoData");
                 });
-<<<<<<< HEAD
+
 
 
             modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationRole", b =>
@@ -322,9 +321,7 @@ namespace Todo.Infrastructure.Migrations
                 });
 
 
-=======
-#pragma warning restore 612, 618
->>>>>>> 7dda02d (refactor(repository): implement DTOs in repository methods for task operations)
+
         }
     }
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,8 @@ namespace TodoApp.Infrastructure.Database
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
 
+=======
+>>>>>>> 41e5918 (feat(infrastructure): add application db context and service implementation)
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -36,3 +39,18 @@ namespace Todo.Infrastructure.Database
             }
         }
     }
+
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+        public DbSet<ToDo> TodoData { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ToDo>().HasKey(t => t.Id);
+            base.OnModelCreating(modelBuilder);
+        }
+    }
+}
+
