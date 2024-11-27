@@ -20,6 +20,7 @@ namespace TodoApp.Core.Domain.Interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 0f689a6 (feat(core): complete core layer implementation)
 =======
@@ -27,7 +28,12 @@ namespace TodoApp.Core.Domain.Interface
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 =======
 >>>>>>> ca4de06 (feat(core): complete core layer implementation)
+<<<<<<< HEAD
 >>>>>>> c21a00c (feat(core): complete core layer implementation)
+=======
+=======
+>>>>>>> 0f689a6 (feat(core): complete core layer implementation)
+>>>>>>> 80c19f0 (feat(core): complete core layer implementation)
         public  Task<IEnumerable<GetAllTasksResponseDTO>> GetAllTasks();
 
         public Task<GetAllTaskByIdResponseDTO> GetTaskById(int id);
@@ -37,6 +43,7 @@ namespace TodoApp.Core.Domain.Interface
         public Task<UpdateTaskResponseDTO> UpdateTask(int id, UpdateTaskRequestDTO updateTodoTask);
         public  Task<UpdateStatusResponseDTO> UpdateTaskStatus(int id, UpdateStatusRequestDTO newStatus);
         public Task<DeleteTaskResponseDTO> DeleteTask(int id);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -117,6 +124,11 @@ namespace TodoApp.Core.Domain.Interface
 =======
 =======
 >>>>>>> e8c83a0 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
+<<<<<<< HEAD
 >>>>>>> 8273131 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
+=======
+=======
+>>>>>>> 0f689a6 (feat(core): complete core layer implementation)
+>>>>>>> 80c19f0 (feat(core): complete core layer implementation)
     }
 }
