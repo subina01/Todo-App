@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -48,19 +49,25 @@ using TodoApp.Core.Domain.Services;
 =======
 =======
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 using Microsoft.EntityFrameworkCore;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.Interface;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
 =======
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,12 +84,16 @@ var builder = WebApplication.CreateBuilder(args);
 =======
 
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+
+>>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnectionString")
     )
 );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -231,27 +242,36 @@ builder.Services.AddScoped<ITodoServices, TodoServices>();
 =======
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+builder.Services.AddScoped<ITodoServices, TodoRepository>();
+>>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 
 builder.Services.AddRazorPages();
 
 
 builder.Services.AddControllers();
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
 =======
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
 =======
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -264,6 +284,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.UseAuthentication();//for reading identity cookie
 app.UseAuthorization();//validates access permission of the user
 =======
@@ -274,10 +295,15 @@ app.UseAuthorization();
 
 app.UseAuthorization();
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+
+app.UseAuthorization();
+>>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 
 app.MapControllers();
 
 app.Run();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -288,3 +314,5 @@ app.Run();
 >>>>>>> efcbf6a (feat(startup): add ASP.NET Web API project with enabling openAi, layer references, and service registration)
 =======
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
