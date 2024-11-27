@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "todo.WebAPI.Controllers.AccountController",
+    "Method": "Register",
+    "RelativePath": "api/Account/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "register",
+        "Type": "TodoApp.Core.DTO.RegisterDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "todo.WebAPI.Controllers.ToDoController",
     "Method": "AddTask",
     "RelativePath": "api/todo",

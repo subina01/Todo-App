@@ -9,6 +9,7 @@ C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\ToDo.WebAPI\bin\Debug\net
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\ToDo.WebAPI\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\ToDo.WebAPI\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\ToDo.WebAPI\bin\Debug\net8.0\Humanizer.dll
+C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\ToDo.WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\ToDo.WebAPI\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\ToDo.WebAPI\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\subia\OneDrive\Desktop\Intern\TodoAppSolution\ToDo.WebAPI\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
