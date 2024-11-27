@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -14,22 +15,31 @@ using TodoApp.Infrastructure.Database;
 using TodoApp.Infrastructure.Repository;
 using TodoApp.Infrastructure.Map;
 
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 using Microsoft.EntityFrameworkCore;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.Interface;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnectionString")
     )
+<<<<<<< HEAD
 ); builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
@@ -98,6 +108,8 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 );
 
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
@@ -109,7 +121,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+<<<<<<< HEAD
 >>>>>>> d1de45d(refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 
 var app = builder.Build();
 
@@ -122,6 +137,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+<<<<<<< HEAD
 app.UseAuthentication();//for reading identity cookie
 app.UseAuthorization();//validates access permission of the user
 
@@ -130,9 +146,14 @@ app.MapControllers();
 
 app.Run();
 
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
