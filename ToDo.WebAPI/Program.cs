@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -15,26 +16,36 @@ using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.Domain.Services;
 =======
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 using Microsoft.EntityFrameworkCore;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.Interface;
 
+<<<<<<< HEAD
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnectionString")
     )
 );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // Register services for Dependency Injection (DI)
 builder.Services.AddScoped<ITodoServices, TodoRepository>();  // Scoped lifetime for Todo services
@@ -127,6 +138,8 @@ app.MapControllers();
 
 app.Run(); 
 =======
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
 
 builder.Services.AddRazorPages();
@@ -153,4 +166,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+<<<<<<< HEAD
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)

@@ -1,9 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 =======
 ﻿using Microsoft.AspNetCore.Http;
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+﻿using Microsoft.AspNetCore.Http;
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.Core.Domain.Entities;
 using TodoApp.Core.Domain.Interface;
@@ -25,21 +29,28 @@ namespace todo.WebAPI.Controllers
         {
             _services = services;
 <<<<<<< HEAD
+<<<<<<< HEAD
         }
 
         [HttpPost]
 =======
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
             Console.WriteLine("The breakpoint has hit here");
         }
 
         [HttpPost]
         [Route("")]
+<<<<<<< HEAD
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
         public async Task<IActionResult> AddTask([FromBody] ToDo tododata)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
+<<<<<<< HEAD
 <<<<<<< HEAD
             }
             await _services.AddTask(tododata);
@@ -61,6 +72,8 @@ namespace todo.WebAPI.Controllers
 >>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
 =======
 =======
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 
             }
             await _services.AddTask(tododata);
@@ -74,8 +87,14 @@ namespace todo.WebAPI.Controllers
 
         [HttpGet]
         [Route("{id}")]
+<<<<<<< HEAD
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+<<<<<<< HEAD
 >>>>>>> 3702509 (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+>>>>>>> d45a2c9 (feat(ui): add CRUD APIs with constructor-based dependency injection)
         public async Task<IActionResult> GetTaskById(int id)
         {
             var GetTask = await _services.GetTaskById(id);
@@ -84,9 +103,13 @@ namespace todo.WebAPI.Controllers
 
         [HttpGet]
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         [Route("")]
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+        [Route("")]
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
         public async Task<IActionResult> GetAllTasks()
         {
             var GetAllTasks = await _services.GetAllTasks();
@@ -94,22 +117,29 @@ namespace todo.WebAPI.Controllers
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
         {
 =======
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
         {
 
+<<<<<<< HEAD
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
             if (tododata == null)
             {
                 return BadRequest(ModelState);
             }
             var Updatetodo = await _services.UpdateTask(id, tododata);
             return Ok(Updatetodo);
+<<<<<<< HEAD
 <<<<<<< HEAD
         }
 
@@ -129,6 +159,8 @@ namespace todo.WebAPI.Controllers
 >>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
 =======
 =======
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 
         }
 
@@ -144,8 +176,14 @@ namespace todo.WebAPI.Controllers
 
         [HttpPut]
         [Route("Status/{id}")]
+<<<<<<< HEAD
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
+<<<<<<< HEAD
 >>>>>>> 3702509 (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+=======
+>>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+>>>>>>> d45a2c9 (feat(ui): add CRUD APIs with constructor-based dependency injection)
         public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
         {
             if (tododata == null)
