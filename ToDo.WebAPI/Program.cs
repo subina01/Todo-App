@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -33,6 +34,8 @@ using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.Domain.Services;
 
+=======
+>>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 using Microsoft.EntityFrameworkCore;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
