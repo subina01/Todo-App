@@ -27,6 +27,11 @@ namespace todo.WebAPI.Controllers
         [Route("api/[controller]")]
         [ApiController]
         public class AccountController : ControllerBase
+       // Business logic provided by ASP.NET Core Identity
+       [Route("api/[controller]")]
+      [Route("api/")]
+     [ApiController]
+    public class AccountController : ControllerBase
         {
             private readonly UserManager<ApplicationUser> userManager;
             private readonly SignInManager<ApplicationUser> signInManager;
@@ -35,6 +40,7 @@ namespace todo.WebAPI.Controllers
 
             public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
    [Route("api/[controller]")]
+            [Route("api/")]
             [ApiController]
             public class AccountController : ControllerBase
             {
@@ -42,118 +48,132 @@ namespace todo.WebAPI.Controllers
                 private readonly UserManager<ApplicationUser> userManager;
                 private readonly SignInManager<ApplicationUser> signInManager;
                 private readonly RoleManager<ApplicationRole> roleManager;
-
                 private readonly IJwtService jwtService;
 
 
-                public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)       public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
+                public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
+
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
                 {
-                    this.userManager = userManager;
-                    this.signInManager = signInManager;
-                    this.roleManager = roleManager;
-                    this.jwtService = jwtService;
-                }
-                private readonly UserManager<ApplicationUser> userManager;
+            private readonly UserManager<ApplicationUser> userManager;
                 private readonly SignInManager<ApplicationUser> signInManager;
                 private readonly RoleManager<ApplicationRole> roleManager;
                 private readonly IJwtService jwtService;
 
                 public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
+   [Route("api/[controller]")]
+                [ApiController]
+                public class AccountController : ControllerBase
+                {
+
+                    private readonly UserManager<ApplicationUser> userManager;
+                    private readonly SignInManager<ApplicationUser> signInManager;
+                    private readonly RoleManager<ApplicationRole> roleManager;
+
+                    private readonly IJwtService jwtService;
+
+
+                    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)       public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
+
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
+                    {
+                        this.userManager = userManager;
+                        this.signInManager = signInManager;
+                        this.roleManager = roleManager;
+                        this.jwtService = jwtService;
+                    }
+                    private readonly UserManager<ApplicationUser> userManager;
+                    private readonly SignInManager<ApplicationUser> signInManager;
+                    private readonly RoleManager<ApplicationRole> roleManager;
+                    private readonly IJwtService jwtService;
+
+                    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
 
 
 
         private readonly IJwtService jwtService;
 
-                public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
+                    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
              public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
-                {
-                    this.userManager = userManager;
-                    this.signInManager = signInManager;
-                    this.roleManager = roleManager;
+                    {
+                        this.userManager = userManager;
+                        this.signInManager = signInManager;
+                        this.roleManager = roleManager;
 
 
-                    this.jwtService = jwtService;
-                }
+                        this.jwtService = jwtService;
+                    }
 
-                [HttpPost]
-                [Route("register")]
+                    [HttpPost]
+                    [Route("register")]
 
 
-                [HttpPost]
+                    [HttpPost]
 
-                [Route("Register")]
-                [Route("register")]
-                private readonly UserManager<ApplicationUser> userManager;
-                private readonly SignInManager<ApplicationUser> signInManager;
-                private readonly RoleManager<ApplicationRole> roleManager;
-                private readonly IJwtService jwtService;
+                    [Route("Register")]
+                    [Route("register")]
+                    private readonly UserManager<ApplicationUser> userManager;
+                    private readonly SignInManager<ApplicationUser> signInManager;
+                    private readonly RoleManager<ApplicationRole> roleManager;
+                    private readonly IJwtService jwtService;
 
-                public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
+                    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
           //business logic provided by asp.net core Identity
         private readonly UserManager<ApplicationUser> userManager;
-                private readonly SignInManager<ApplicationUser> signInManager;
-                private readonly RoleManager<ApplicationRole> roleManager;
+                    private readonly SignInManager<ApplicationUser> signInManager;
+                    private readonly RoleManager<ApplicationRole> roleManager;
 
-                public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
-                {
-                    this.userManager = userManager;
-                    this.signInManager = signInManager;
-                    this.roleManager = roleManager;
-                    this.jwtService = jwtService;
-                }
+                    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
+                    {
+                        this.userManager = userManager;
+                        this.signInManager = signInManager;
+                        this.roleManager = roleManager;
+                        this.jwtService = jwtService;
+                    }
 
-                [HttpPost]
-                [HttpPost("register")]
-                [HttpPost]
-                [Route("register")]
-                private readonly SignInManager<ApplicationUser> signInManager;
-                private readonly RoleManager<ApplicationRole> roleManager;
-                private readonly IJwtService jwtService;
+                    [HttpPost]
+                    [HttpPost("register")]
+                    [HttpPost]
+                    [Route("register")]
+                    private readonly SignInManager<ApplicationUser> signInManager;
+                    private readonly RoleManager<ApplicationRole> roleManager;
+                    private readonly IJwtService jwtService;
 
-                public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
+                    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
-                {
-                    this.userManager = userManager;
-                    this.signInManager = signInManager;
-                    this.jwtService = jwtService;
+                    {
+                        this.userManager = userManager;
+                        this.signInManager = signInManager;
+                        this.jwtService = jwtService;
+                    }
+
                 }
 
+                [HttpPost]
+                [Route("Register")]
+                [Route("register")]
             }
 
             [HttpPost]
             [Route("Register")]
             [Route("register")]
-        }
-
-        [HttpPost]
-        [Route("Register")]
-        public async Task<IActionResult> Register([FromBody] RegisterDTO register)
-        {
-            if (!ModelState.IsValid)
+            public async Task<IActionResult> Register([FromBody] RegisterDTO register)
             {
-                return BadRequest(ModelState);
-            }
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
 
-            if (register.Password != register.ConfirmPassword)
-            {
                 if (register.Password != register.ConfirmPassword)
                 {
-                    return BadRequest("Password doesn't match with the confirmed password");
                     if (register.Password != register.ConfirmPassword)
                     {
                         return BadRequest("Password doesn't match with the confirmed password");
                         if (register.Password != register.ConfirmPassword)
                         {
-                            try
-                            {
-                                throw new Exception("Password doesn't match with the confirmed password");
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine($"{ex}");
-                            }
+                            return BadRequest("Password doesn't match with the confirmed password");
                             if (register.Password != register.ConfirmPassword)
                             {
                                 try
@@ -164,58 +184,36 @@ namespace todo.WebAPI.Controllers
                                 {
                                     Console.WriteLine($"{ex}");
                                 }
-                            }
-
-                            var existingUser = await userManager.FindByEmailAsync(register.Email);
-                            if (existingUser != null)
-                            {
-                                return Conflict(new
+                                if (register.Password != register.ConfirmPassword)
                                 {
-                                    Message = "A user with this email already exists."
-                                });
-                            }
-                            ApplicationUser user = new ApplicationUser
-                            {
-                                UserName = register.Name,
-                                Email = register.Email,
-                                Name = register.Name,
-                                var user = new ApplicationUser
-                         // Creating the user
-            var response = await userManager.CreateAsync(user, register.Password);
+                                    try
+                                    {
+                                        throw new Exception("Password doesn't match with the confirmed password");
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        Console.WriteLine($"{ex}");
+                                    }
+                                }
 
-                                // This represents the result of operations such as creating, updating, and deleting
-                                var user = new ApplicationUser
+                                var existingUser = await userManager.FindByEmailAsync(register.Email);
+                                if (existingUser != null)
+                                {
+                                    return Conflict(new
+                                    {
+                                        Message = "A user with this email already exists."
+                                    });
+                                }
+                                ApplicationUser user = new ApplicationUser
                                 {
                                     UserName = register.Name,
                                     Email = register.Email,
-                                    Name = register.Name
-                                };
+                                    Name = register.Name,
+                                    var user = new ApplicationUser
+                             // Creating the user
+            var response = await userManager.CreateAsync(user, register.Password);
 
-                                var response = await userManager.CreateAsync(user, register.Password);
-          if (!response.Succeeded)
-                            {
-                                //creating the user
-                                var response = await userManager.CreateAsync(user, register.Password);
-                                //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
-                                if (!response.Succeeded)
-                                {
-                                    return BadRequest(new
-                                    {
-                                        UserName = register.Name,
-                                        Email = register.Email,
-                                        Name = register.Name
-                              ApplicationUser user = new ApplicationUser
-                      {
-                          UserName = register.Name,
-                          Email = register.Email,
-                          Name = register.Name,
-
-
-                      };
-
-                                    //creating the user
-                                    var response = await userManager.CreateAsync(user, register.Password);
-                                    //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
+                                    // This represents the result of operations such as creating, updating, and deleting
                                     var user = new ApplicationUser
                                     {
                                         UserName = register.Name,
@@ -224,8 +222,30 @@ namespace todo.WebAPI.Controllers
                                     };
 
                                     var response = await userManager.CreateAsync(user, register.Password);
-\           if (!response.Succeeded)
+          if (!response.Succeeded)
+                                {
+                                    //creating the user
+                                    var response = await userManager.CreateAsync(user, register.Password);
+                                    //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
+                                    if (!response.Succeeded)
                                     {
+                                        return BadRequest(new
+                                        {
+                                            UserName = register.Name,
+                                            Email = register.Email,
+                                            Name = register.Name
+                                  ApplicationUser user = new ApplicationUser
+                                  {
+                                      UserName = register.Name,
+                                      Email = register.Email,
+                                      Name = register.Name,
+
+
+                                  };
+
+                                        //creating the user
+                                        var response = await userManager.CreateAsync(user, register.Password);
+                                        //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
                                         var user = new ApplicationUser
                                         {
                                             UserName = register.Name,
@@ -233,35 +253,87 @@ namespace todo.WebAPI.Controllers
                                             Name = register.Name
                                         };
 
-                                        //creating the user
                                         var response = await userManager.CreateAsync(user, register.Password);
-                                        //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
-                                        if (!response.Succeeded)
+\           if (!response.Succeeded)
                                         {
-                                            return BadRequest(new
+                                            var user = new ApplicationUser
                                             {
-                                                Message = "Registration failed."
-                                            });
+                                                UserName = register.Name,
+                                                Email = register.Email,
+                                                Name = register.Name
+                                            };
+
+                                            //creating the user
+                                            var response = await userManager.CreateAsync(user, register.Password);
+                                            //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
+                                            if (!response.Succeeded)
+                                            {
+                                                return BadRequest(new
+                                                {
+                                                    Message = "Registration failed."
+                                                });
+                                            }
+
+
+
+
+
+
+
+
+
+
+                                            //sign the user in after sucessful registration
+                                            await signInManager.SignInAsync(user, isPersistent: false);
+                                            var authenticationResponse = jwtService.CreateJwtToken(user);
+                                            //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
+                                            return Ok(authenticationResponse);
                                         }
 
 
 
 
+                                        [HttpPost]
+                                        [Route("login")]
+                                        public async Task<IActionResult> Login([FromBody] LoginDTO login)
+                                        {
+                                            var user = await userManager.FindByNameAsync(login.UserName);
+                                            if (user == null)
+                                            {
+                                                return BadRequest("User is not registered");
+                                            }
+                                            var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
+                                            if (!response.Succeeded)
+                                            {
+                                                return BadRequest(new
+                                                {
+                                                    Message = "Login failed."
+                                                });
+
+                                            }
+
+                                            var authenticationResponse = jwtService.CreateJwtToken(user);
+
+                                            return Ok(authenticationResponse);
 
 
-
-
+                                        }
 
 
                                         //sign the user in after sucessful registration
                                         await signInManager.SignInAsync(user, isPersistent: false);
                                         var authenticationResponse = jwtService.CreateJwtToken(user);
                                         //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
+                                        await signInManager.SignInAsync(user, isPersistent: false);
+                                        var authenticationResponse = jwtService.CreateJwtToken(user);
+
+                                        // isPersistent false means the user will be logged in only for the current browser session, and true means the user remains logged in even after the browser is closed
+
+                                        await signInManager.SignInAsync(user, isPersistent: false);
+                                        var authenticationResponse = jwtService.CreateJwtToken(user);
+
                                         return Ok(authenticationResponse);
                                     }
-
-
-
 
                                     [HttpPost]
                                     [Route("login")]
@@ -272,6 +344,10 @@ namespace todo.WebAPI.Controllers
                                         {
                                             return BadRequest("User is not registered");
                                         }
+
+
+
+
                                         var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
                                         if (!response.Succeeded)
                                         {
@@ -285,52 +361,17 @@ namespace todo.WebAPI.Controllers
                                         var authenticationResponse = jwtService.CreateJwtToken(user);
 
                                         return Ok(authenticationResponse);
-
-
-                                    }
-
-
-                                    //sign the user in after sucessful registration
-                                    await signInManager.SignInAsync(user, isPersistent: false);
-                                    var authenticationResponse = jwtService.CreateJwtToken(user);
-                                    //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
-                                    await signInManager.SignInAsync(user, isPersistent: false);
-                                    var authenticationResponse = jwtService.CreateJwtToken(user);
-
-                                    // isPersistent false means the user will be logged in only for the current browser session, and true means the user remains logged in even after the browser is closed
-
-                                    await signInManager.SignInAsync(user, isPersistent: false);
-                                    var authenticationResponse = jwtService.CreateJwtToken(user);
-
-                                    return Ok(authenticationResponse);
-                                }
-
-                                [HttpPost]
-                                [Route("login")]
-                                public async Task<IActionResult> Login([FromBody] LoginDTO login)
-                                {
-                                    var user = await userManager.FindByNameAsync(login.UserName);
-                                    if (user == null)
-                                    {
-                                        return BadRequest("User is not registered");
-                                    }
-
-
-
-
-                                    var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
-                                    if (!response.Succeeded)
-                                    {
-                                        return BadRequest(new
+                                        //sign the user in after sucessful registration
+                                        await signInManager.SignInAsync(user, isPersistent: false);
+                                        //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
+                                        return Ok(new
                                         {
-                                            Message = "Login failed."
-                                        });
+                                            Message = "Registration sucessful."
 
+                                        });
                                     }
 
-                                    var authenticationResponse = jwtService.CreateJwtToken(user);
 
-                                    return Ok(authenticationResponse);
                                     //sign the user in after sucessful registration
                                     await signInManager.SignInAsync(user, isPersistent: false);
                                     //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
@@ -339,6 +380,7 @@ namespace todo.WebAPI.Controllers
                                         Message = "Registration sucessful."
 
                                     });
+
                                 }
 
 
@@ -352,19 +394,114 @@ namespace todo.WebAPI.Controllers
                                 });
 
                             }
+                        }
+                        [HttpPost]
+                        [Route("login")]
+                        public async Task<IActionResult> Login([FromBody] LoginDTO login)
+                        {
+                            var user = await userManager.FindByNameAsync(login.UserName);
+                            if (user == null)
+                            {
+                                return BadRequest("User is not registered");
+                            }
+                            var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
+                            if (!response.Succeeded)
+                            {
+                                return BadRequest(new
+                                {
+                                    Message = "Login failed."
+                                });
 
+                            }
 
-                            //sign the user in after sucessful registration
-                            await signInManager.SignInAsync(user, isPersistent: false);
-                            //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
                             return Ok(new
                             {
-                                Message = "Registration sucessful."
-
+                                Message = "Login sucessful"
                             });
-
                         }
+
+                        // Creating object for application user class
+                        ApplicationUser user = new ApplicationUser
+                        {
+                            UserName = register.Name,
+                            Email = register.Email,
+                            Name = register.Name,
+                        };
+
+                        // Creating the user
+                        var response = await userManager.CreateAsync(user, register.Password);
+
+                        // This represents the result of operations such as creating, updating, and deleting
+                        if (!response.Succeeded)
+
+                            var response = await userManager.CreateAsync(user, register.Password);
+                        //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
+                        {
+                            Message = "Registration failed."
+                              });
                     }
+
+                    {
+
+                        //creating object for application user class
+                        var user = new ApplicationUser
+                        {
+                            UserName = register.Name,
+                            Email = register.Email,
+                            Name = register.Name
+                        };
+
+                        //creating the user
+                        var response = await userManager.CreateAsync(user, register.Password);
+                        //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
+                        if (!response.Succeeded)
+                        {
+                            return BadRequest(new
+                            {
+                                Message = "Registration failed."
+                            });
+                        }
+
+
+
+
+                        await signInManager.SignInAsync(user, isPersistent: false);
+                        var authenticationResponse = jwtService.CreateJwtToken(user);
+
+                        // isPersistent false means the user will be logged in only for the current browser session, and true means the user remains logged in even after the browser is closed
+                        await signInManager.SignInAsync(user, isPersistent: false);
+                        var authenticationResponse = jwtService.CreateJwtToken(user);
+                        return Ok(authenticationResponse);
+                    }
+
+                    [HttpPost("login")]
+                    public async Task<IActionResult> Login([FromBody] LoginDTO login)
+                    {
+                        var user = await userManager.FindByNameAsync(login.UserName);
+                        if (user == null)
+                        {
+                            return BadRequest("User is not registered");
+                        }
+                        var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
+                        if (!response.Succeeded)
+                        {
+                            return BadRequest(new
+                            {
+                                Message = "Login failed."
+                            });
+                        }
+
+                        var authenticationResponse = jwtService.CreateJwtToken(user);
+
+                        return Ok(authenticationResponse);
+                        //sign the user in after sucessful registration
+                        await signInManager.SignInAsync(user, isPersistent: false);
+                        var authenticationResponse = jwtService.CreateJwtToken(user);
+                        //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
+                        return Ok(authenticationResponse);
+
+                    }
+
                     [HttpPost]
                     [Route("login")]
                     public async Task<IActionResult> Login([FromBody] LoginDTO login)
@@ -384,127 +521,125 @@ namespace todo.WebAPI.Controllers
 
                         }
 
+                        var authenticationResponse = jwtService.CreateJwtToken(user);
+
+                        return Ok(authenticationResponse);
+
+
+
+                        //sign the user in after sucessful registration
+                        await signInManager.SignInAsync(user, isPersistent: false);
+                        //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
                         return Ok(new
                         {
-                            Message = "Login sucessful"
+                            Message = "Registration sucessful."
+
                         });
+
                     }
-
-                    // Creating object for application user class
-                    ApplicationUser user = new ApplicationUser
-                    {
-                        UserName = register.Name,
-                        Email = register.Email,
-                        Name = register.Name,
-                    };
-
-                    // Creating the user
-                    var response = await userManager.CreateAsync(user, register.Password);
-
-                    // This represents the result of operations such as creating, updating, and deleting
-                    if (!response.Succeeded)
-
-                        var response = await userManager.CreateAsync(user, register.Password);
-                    //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
-                    {
-                        Message = "Registration failed."
-                          });
                 }
 
+
+
+
+                await signInManager.SignInAsync(user, isPersistent: false);
+                var authenticationResponse = jwtService.CreateJwtToken(user);
+
+                // isPersistent false means the user will be logged in only for the current browser 
+                await signInManager.SignInAsync(user, isPersistent: false);
+                var authenticationResponse = jwtService.CreateJwtToken(user);
+                return Ok(authenticationResponse);
+            }
+
+            [HttpPost("login")]
+            public async Task<IActionResult> Login([FromBody] LoginDTO login)
+            {
+                var user = await userManager.FindByNameAsync(login.UserName);
+                if (user == null)
                 {
-
-                    //creating object for application user class
-                    var user = new ApplicationUser
+                    return BadRequest("User is not registered");
+                }
+                var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
+                if (!response.Succeeded)
+                {
+                    return BadRequest(new
                     {
-                        UserName = register.Name,
-                        Email = register.Email,
-                        Name = register.Name
-                    };
-
-                    //creating the user
-                    var response = await userManager.CreateAsync(user, register.Password);
-                    //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
-                    if (!response.Succeeded)
-                    {
-                        return BadRequest(new
-                        {
-                            Message = "Registration failed."
-                        });
-                    }
-
-
-
-
-                    await signInManager.SignInAsync(user, isPersistent: false);
-                    var authenticationResponse = jwtService.CreateJwtToken(user);
-
-                    // isPersistent false means the user will be logged in only for the current browser session, and true means the user remains logged in even after the browser is closed
-                    await signInManager.SignInAsync(user, isPersistent: false);
-                    var authenticationResponse = jwtService.CreateJwtToken(user);
-                    return Ok(authenticationResponse);
+                        Message = "Login failed."
+                    });
                 }
 
-                [HttpPost("login")]
-                public async Task<IActionResult> Login([FromBody] LoginDTO login)
+                var authenticationResponse = jwtService.CreateJwtToken(user);
+
+                return Ok(authenticationResponse);
+                //sign the user in after sucessful registration
+                await signInManager.SignInAsync(user, isPersistent: false);
+                var authenticationResponse = jwtService.CreateJwtToken(user);
+                //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
+                return Ok(authenticationResponse);
+
+            }
+
+            [HttpPost]
+            [Route("login")]
+            public async Task<IActionResult> Login([FromBody] LoginDTO login)
+            {
+                var user = await userManager.FindByNameAsync(login.UserName);
+                if (user == null)
                 {
-                    var user = await userManager.FindByNameAsync(login.UserName);
-                    if (user == null)
-                    {
-                        return BadRequest("User is not registered");
-                    }
-                    var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
-                    if (!response.Succeeded)
-                    {
-                        return BadRequest(new
-                        {
-                            Message = "Login failed."
-                        });
-                    }
-
-                    var authenticationResponse = jwtService.CreateJwtToken(user);
-
-                    return Ok(authenticationResponse);
-                    //sign the user in after sucessful registration
-                    await signInManager.SignInAsync(user, isPersistent: false);
-                    var authenticationResponse = jwtService.CreateJwtToken(user);
-                    //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
-                    return Ok(authenticationResponse);
-
+                    return BadRequest("User is not registered");
                 }
-
-                [HttpPost]
-                [Route("login")]
-                public async Task<IActionResult> Login([FromBody] LoginDTO login)
+                var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
+                if (!response.Succeeded)
                 {
-                    var user = await userManager.FindByNameAsync(login.UserName);
-                    if (user == null)
+                    return BadRequest(new
                     {
-                        return BadRequest("User is not registered");
-                    }
-                    var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
-                    if (!response.Succeeded)
-                    {
-                        return BadRequest(new
-                        {
-                            Message = "Login failed."
-                        });
-
-                    }
-
-                    var authenticationResponse = jwtService.CreateJwtToken(user);
-
-                    return Ok(authenticationResponse);
-
-
-
-                    //sign the user in after sucessful registration
-                    await signInManager.SignInAsync(user, isPersistent: false);
-                    //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
-                    return Ok(new
-                    {
-                        Message = "Registration sucessful."
-
+                        Message = "Login failed."
                     });
 
                 }
+
+                var authenticationResponse = jwtService.CreateJwtToken(user);
+
+                return Ok(authenticationResponse);
+
+
             }
+
+
+            //sign the user in after sucessful registration
+            await signInManager.SignInAsync(user, isPersistent: false);
+            //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
+            return Ok(new
+            {
+                Message = "Registration sucessful."
+               
+            });
+           
+        }
+
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> Login([FromBody] LoginDTO login)
+        {
+            var user = await userManager.FindByNameAsync(login.UserName);
+            if (user == null)
+            {
+                return BadRequest("User is not registered");
+            }
+            var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
+            if (!response.Succeeded)
+            {
+                return BadRequest(new
+                {
+                    Message = "Login failed."
+                });
+
+            }
+
+            return Ok(new
+            {
+                Message = "Login sucessful"
+            });
+        }
+    }
+}
