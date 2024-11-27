@@ -7,7 +7,7 @@ using TodoApp.Core.DTO;
 
 namespace todo.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -24,7 +24,7 @@ namespace todo.WebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("Register")]
+        [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDTO register)
         {
             if (!ModelState.IsValid)
@@ -78,6 +78,31 @@ namespace todo.WebAPI.Controllers
                
             });
            
+        }
+
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> Login([FromBody] LoginDTO login)
+        {
+            var user = await userManager.FindByNameAsync(login.UserName);
+            if (user == null)
+            {
+                return BadRequest("User is not registered");
+            }
+            var response = await signInManager.PasswordSignInAsync(user, login.Password,false, false);
+            if (!response.Succeeded)
+            {
+                return BadRequest(new
+                {
+                    Message = "Login failed."
+                });
+
+            }
+
+            return Ok(new
+            {
+                Message = "Login sucessful"
+            });
         }
     }
 }
