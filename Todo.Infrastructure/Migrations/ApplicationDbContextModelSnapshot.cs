@@ -28,6 +28,7 @@ namespace Todo.Infrastructure.Migrations
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 =======
@@ -155,7 +156,12 @@ namespace Todo.Infrastructure.Migrations
 =======
 =======
 >>>>>>> 7dda02d (refactor(repository): implement DTOs in repository methods for task operations)
+<<<<<<< HEAD
 >>>>>>> 21f4e66 (refactor(repository): implement DTOs in repository methods for task operations)
+=======
+=======
+>>>>>>> 41e5918 (feat(infrastructure): add application db context and service implementation)
+>>>>>>> d0b2b5f (feat(infrastructure): add application db context and service implementation)
             modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
                 {
                     b.Property<int>("Id")
@@ -189,6 +195,7 @@ namespace Todo.Infrastructure.Migrations
 
                     b.ToTable("TodoData");
                 });
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -385,7 +392,12 @@ namespace Todo.Infrastructure.Migrations
 =======
 =======
 >>>>>>> 7dda02d (refactor(repository): implement DTOs in repository methods for task operations)
+<<<<<<< HEAD
 >>>>>>> 21f4e66 (refactor(repository): implement DTOs in repository methods for task operations)
+=======
+=======
+>>>>>>> 41e5918 (feat(infrastructure): add application db context and service implementation)
+>>>>>>> d0b2b5f (feat(infrastructure): add application db context and service implementation)
 #pragma warning restore 612, 618
         }
     }

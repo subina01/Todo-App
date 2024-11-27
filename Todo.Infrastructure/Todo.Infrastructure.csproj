@@ -24,6 +24,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
@@ -47,5 +48,10 @@
 =======
 =======
 >>>>>>> 7dda02d (refactor(repository): implement DTOs in repository methods for task operations)
+<<<<<<< HEAD
 >>>>>>> 21f4e66 (refactor(repository): implement DTOs in repository methods for task operations)
+=======
+=======
+>>>>>>> 41e5918 (feat(infrastructure): add application db context and service implementation)
+>>>>>>> d0b2b5f (feat(infrastructure): add application db context and service implementation)
 </Project>
