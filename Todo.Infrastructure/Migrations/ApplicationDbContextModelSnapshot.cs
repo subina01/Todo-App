@@ -265,11 +265,17 @@ namespace Todo.Infrastructure.Migrations
                         .HasColumnType("nvarchar(256)");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     b.Property<int>("UserType")
                         .HasColumnType("int");
 
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+                    b.Property<int>("UserType")
+                        .HasColumnType("int");
+
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 =======
@@ -8,6 +9,10 @@ using Microsoft.AspNetCore.Http;
 =======
 ﻿using Microsoft.AspNetCore.Http;
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.Core.Domain.Entities;
 using TodoApp.Core.Domain.Interface;
@@ -28,6 +33,7 @@ namespace todo.WebAPI.Controllers
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        
         
         [HttpPost]
@@ -43,6 +49,13 @@ namespace todo.WebAPI.Controllers
         [HttpPost]
         [Route("")]
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+       
+        
+        [HttpPost]
+        [Route("")]
+        [Authorize(Roles = "Admin,User")]
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
         public async Task<IActionResult> AddTask([FromBody] ToDo tododata)
         {
             if (!ModelState.IsValid)
@@ -62,6 +75,7 @@ namespace todo.WebAPI.Controllers
         [HttpGet]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        
         [Route("{id}")]
         [Authorize(Roles = "Admin,User")]
@@ -71,6 +85,11 @@ namespace todo.WebAPI.Controllers
 =======
         [Route("{id}")]
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+       
+        [Route("{id}")]
+        [Authorize(Roles = "Admin,User")]
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
         public async Task<IActionResult> GetTaskById(int id)
         {
             var GetTask = await _services.GetTaskById(id);
@@ -81,11 +100,15 @@ namespace todo.WebAPI.Controllers
         [Route("")]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         [Authorize(Roles = "Admin")]
 =======
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 =======
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+        [Authorize(Roles = "Admin")]
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
         public async Task<IActionResult> GetAllTasks()
         {
             var GetAllTasks = await _services.GetAllTasks();
@@ -96,11 +119,15 @@ namespace todo.WebAPI.Controllers
         [Route("{id}")]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         [Authorize(Roles = "Admin,User")]
 =======
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 =======
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+        [Authorize(Roles = "Admin,User")]
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
         {
 
@@ -117,6 +144,7 @@ namespace todo.WebAPI.Controllers
         [Route("{id}")]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         [Authorize(Roles = "Admin,User")]
 =======
 
@@ -124,6 +152,9 @@ namespace todo.WebAPI.Controllers
 =======
 
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+        [Authorize(Roles = "Admin,User")]
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
         public async Task<IActionResult> DeleteTask(int id)
         {
 
@@ -135,11 +166,15 @@ namespace todo.WebAPI.Controllers
         [Route("Status/{id}")]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         [Authorize(Roles = "Admin,User")]
 =======
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 =======
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+        [Authorize(Roles = "Admin,User")]
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
         public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
         {
             if (tododata == null)
