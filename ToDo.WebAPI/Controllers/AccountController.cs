@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -21,11 +22,17 @@ using TodoApp.Core.Domain.Interface;
 >>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 =======
 ﻿using Microsoft.AspNetCore.Http;
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq.Expressions;
 using TodoApp.Core.Domain.IdentityEntities;
+<<<<<<< HEAD
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+using TodoApp.Core.Domain.Interface;
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 using TodoApp.Core.DTO;
 
 namespace todo.WebAPI.Controllers
@@ -39,6 +46,7 @@ namespace todo.WebAPI.Controllers
     [Route("api/")]
     [ApiController]
     [AllowAnonymous]
+<<<<<<< HEAD
     public class AccountController : ControllerBase
     {
         // Business logic provided by ASP.NET Core Identity
@@ -68,6 +76,8 @@ namespace todo.WebAPI.Controllers
     [Route("api/")]
 >>>>>>> fb41d9c (feat(login): Add login functionality and its DTO)
     [ApiController]
+=======
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
     public class AccountController : ControllerBase
     {
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
@@ -75,6 +85,7 @@ namespace todo.WebAPI.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly RoleManager<ApplicationRole> roleManager;
+<<<<<<< HEAD
 <<<<<<< HEAD
         private readonly IJwtService jwtService;
 
@@ -88,6 +99,11 @@ namespace todo.WebAPI.Controllers
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+        private readonly IJwtService jwtService;
+
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -95,8 +111,11 @@ namespace todo.WebAPI.Controllers
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+=======
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
             this.jwtService = jwtService;
         }
 
@@ -227,11 +246,12 @@ namespace todo.WebAPI.Controllers
 =======
 =======
             //creating object for application user class
-            var user = new ApplicationUser
+            ApplicationUser user = new ApplicationUser
             {
                 UserName = register.Name,
                 Email = register.Email,
-                Name = register.Name
+                Name = register.Name,
+                
             };
 
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
@@ -248,6 +268,7 @@ namespace todo.WebAPI.Controllers
                     Message = "Registration failed."
                 });
             }
+<<<<<<< HEAD
 <<<<<<< HEAD
             
 
@@ -330,15 +351,17 @@ namespace todo.WebAPI.Controllers
         }
        
 =======
+=======
+            
+
+            
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 
             //sign the user in after sucessful registration
             await signInManager.SignInAsync(user, isPersistent: false);
+            var authenticationResponse = jwtService.CreateJwtToken(user);
             //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
-            return Ok(new
-            {
-                Message = "Registration sucessful."
-               
-            });
+            return Ok(authenticationResponse);
            
         }
 <<<<<<< HEAD
@@ -364,11 +387,16 @@ namespace todo.WebAPI.Controllers
 
             }
 
-            return Ok(new
-            {
-                Message = "Login sucessful"
-            });
+            var authenticationResponse = jwtService.CreateJwtToken(user);
+
+            return Ok(authenticationResponse);
+
+
         }
+<<<<<<< HEAD
 >>>>>>> fb41d9c (feat(login): Add login functionality and its DTO)
+=======
+       
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
     }
 }

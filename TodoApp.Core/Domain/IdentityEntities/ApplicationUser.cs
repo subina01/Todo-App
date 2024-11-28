@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 using TodoApp.Core.Domain.Enum;
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
@@ -36,13 +37,20 @@ using TodoApp.Core.Domain.Enum;
 =======
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+=======
+using TodoApp.Core.Domain.Enum;
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
+>>>>>>> 42f30ab (feat(auth): Add jwt based authentication)
 
 namespace TodoApp.Core.Domain.IdentityEntities
 {
     public class ApplicationUser : IdentityUser<Guid>
     {
         public string? Name { get; set; }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -71,6 +79,12 @@ namespace TodoApp.Core.Domain.IdentityEntities
 =======
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+=======
+     
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
+>>>>>>> 42f30ab (feat(auth): Add jwt based authentication)
     }
 }

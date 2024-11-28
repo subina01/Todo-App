@@ -6,14 +6,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+=======
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+<<<<<<< HEAD
 <<<<<<< HEAD
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -57,10 +61,16 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 using Microsoft.EntityFrameworkCore;
+=======
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
+using TodoApp.Core.Domain.Services;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -199,13 +209,18 @@ app.Run();
 >>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
 <<<<<<< HEAD
+<<<<<<< HEAD
 builder.Services.AddTransient<IJwtService, JwtService>();
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+builder.Services.AddTransient<IJwtService, JwtService>();
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 //enable identity in this project
 builder.Services.AddIdentity<ApplicationUser,
     ApplicationRole>()//Now it understood that we have to enable the identity services
     .AddEntityFrameworkStores<ApplicationDbContext>()//using entity framework to store the data and exact dbcontext we are using is ApplicationDBContext
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     .AddDefaultTokenProviders();//predefined token provider lai enable garxa
@@ -257,11 +272,34 @@ builder.Services.AddScoped<ITodoServices, TodoRepository>();
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 
 =======
+=======
+
+    .AddDefaultTokenProviders();//predefined token provider lai enable garxa
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
     
-    .AddDefaultTokenProviders()//predefined token provider lai enable garxa
     
-    .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()//whats the exact repository layer to use as we cannot use dbcontext directly in the userManager class
+
+
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;//Authentication ko primary system ho , JWT tokens use garxa.
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;//Authentication failed bhaye user lai Challenge garna token valid cha ki chaina check garna yaha specify garxa.
+})
+.AddJwtBearer(options => //Yo JWT ko details specify garxa for validation.
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
     
+<<<<<<< HEAD
     .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();//this is the repository layer for manipulating the roles data
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
 builder.Services.AddRazorPages();
@@ -275,10 +313,28 @@ builder.Services.AddControllers();
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 =======
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+});
+builder.Services.AddRazorPages();
+
+
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+        options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+    });
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -290,6 +346,10 @@ builder.Services.AddSwaggerGen();
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 =======
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+
+
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -300,6 +360,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -317,6 +378,10 @@ app.UseAuthorization();
 
 app.UseAuthorization();
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+app.UseAuthentication();//for reading identity cookie
+app.UseAuthorization();//validates access permission of the user
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 
 app.MapControllers();
 
