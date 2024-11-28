@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -15,6 +16,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http;
 
 
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 using TodoApp.Core.Domain.Entities;
 using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.DTO;
@@ -135,9 +141,11 @@ public class ToDoController : ControllerBase
                 _services = services;
 
         }
-
+       
+        
         [HttpPost]
         [Route("")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> AddTask([FromBody] ToDo tododata)
         {
                 if (!ModelState.IsValid)
@@ -167,7 +175,9 @@ public class ToDoController : ControllerBase
         }
 
         [HttpGet]
+       
         [Route("{id}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> GetTaskById(int id)
         {
                 var GetTask = await _services.GetTaskById(id);
@@ -179,6 +189,7 @@ public class ToDoController : ControllerBase
 
         [HttpGet]
         [Route("")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllTasks()
         {
                 var GetAllTasks = await _services.GetAllTasks();
@@ -189,6 +200,7 @@ public class ToDoController : ControllerBase
 
         [HttpPut]
         [Route("{id}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
         {
 
@@ -209,7 +221,7 @@ public class ToDoController : ControllerBase
 
         [HttpDelete]
         [Route("{id}")]
-
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> DeleteTask(int id)
         {
 
@@ -221,6 +233,7 @@ public class ToDoController : ControllerBase
 
         [HttpPut]
         [Route("Status/{id}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
         {
                 if (tododata == null)

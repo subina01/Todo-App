@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -15,14 +16,23 @@ using TodoApp.Infrastructure.Repository;
 using TodoApp.Infrastructure.Map;
 
 
+=======
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
+using TodoApp.Core.Domain.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -105,25 +115,68 @@ builder.Services.AddSwaggerGen(options =>
 );
 
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
+builder.Services.AddTransient<IJwtService, JwtService>();
 //enable identity in this project
 builder.Services.AddIdentity<ApplicationUser,
     ApplicationRole>()//Now it understood that we have to enable the identity services
     .AddEntityFrameworkStores<ApplicationDbContext>()//using entity framework to store the data and exact dbcontext we are using is ApplicationDBContext
 
+<<<<<<< HEAD
     .AddDefaultTokenProviders()//predefined token provider lai enable garxa
 
     .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()//whats the exact repository layer to use as we cannot use dbcontext directly in the userManager class
 
     .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();//this is the repository layer for manipulating the roles data
+=======
+    .AddDefaultTokenProviders();//predefined token provider lai enable garxa
+    
+    
+
+
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;//Authentication ko primary system ho , JWT tokens use garxa.
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;//Authentication failed bhaye user lai Challenge garna token valid cha ki chaina check garna yaha specify garxa.
+})
+.AddJwtBearer(options => //Yo JWT ko details specify garxa for validation.
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
+    
+});
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 builder.Services.AddRazorPages();
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+        options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+    });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -134,6 +187,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+<<<<<<< HEAD
 
 app.UseAuthentication();//for reading identity cookie
 app.UseAuthorization();//validates access permission of the user
@@ -144,6 +198,10 @@ app.MapControllers();
 app.Run();
 
 app.UseAuthorization();
+=======
+app.UseAuthentication();//for reading identity cookie
+app.UseAuthorization();//validates access permission of the user
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 
 app.MapControllers();
 
