@@ -58,6 +58,10 @@ obj/
 =======
 /bin/
 /obj/
+obj/
+bin/
+**/obj/
+**/bin/
 
 >>>>>>> 29e66fb (chore: remove bin and obj directories from Git tracking)
 >>>>>>> fcf158d (chore: remove bin and obj directories from Git tracking)
