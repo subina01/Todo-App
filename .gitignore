@@ -6,3 +6,7 @@ bin/
 **/obj/
 **/bin/
 
+
+
+.vs/
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)

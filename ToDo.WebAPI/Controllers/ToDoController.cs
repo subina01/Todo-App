@@ -28,6 +28,7 @@ namespace todo.WebAPI.Controllers
 {
 
 
+
         [Route("api/todo")]
         [ApiController]
 
@@ -163,6 +164,13 @@ public class ToDoController : ControllerBase
 
 [Route("api/todo")]
 [ApiController]
+
+    [Route("api/todo")]
+    [ApiController]
+
+    [Authorize]
+
+
     public class ToDoController : ControllerBase
 {
 
@@ -171,6 +179,7 @@ public class ToDoController : ControllerBase
         [ApiController]
         public class ToDoController : ControllerBase
         {
+
 
                 private readonly ITodoServices _services;
 
@@ -269,7 +278,36 @@ public class ToDoController : ControllerBase
                                 var GetAllTasks = await _services.GetAllTasks();
                                 return Ok(GetAllTasks);
 
-        public async Task<IActionResult> GetAllTasks()
+                                [HttpPost]
+                                public async Task<IActionResult> AddTask([FromBody] ToDo tododata)
+                                {
+                                        if (!ModelState.IsValid)
+                                        {
+                                                return BadRequest();
+                                        }
+                                        await _services.AddTask(tododata);
+
+                                        return Ok(new
+                                        {
+                                                Message = "Task Added!"
+                                        });
+                                }
+
+                                [HttpGet("{id}")]
+                                [Authorize(Roles = "Admin,User")]
+
+                                return Ok(new { Message = "Task Added!" });
+                        }
+
+                        [HttpGet("{id}")]
+                >>>>>>> 78b8029(refactor: updated sln file with updatedfeatures)
+        public async Task<IActionResult> GetTaskById(int id)
+                {
+                        var GetTask = await _services.GetTaskById(id);
+                        return Ok(GetTask);
+                }
+
+                public async Task<IActionResult> GetAllTasks()
                 {
                         var GetAllTasks = await _services.GetAllTasks();
                         return Ok(GetAllTasks);
@@ -299,6 +337,7 @@ public class ToDoController : ControllerBase
 
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
                 {
+
 
                         if (tododata == null)
                         {
@@ -346,24 +385,40 @@ public class ToDoController : ControllerBase
                         var UpdateStatus = await _services.UpdateTaskStatus(id, tododata);
                         return Ok(UpdateStatus);
                 }
-            if (tododata == null)
-            {
-                return BadRequest();
+
+                [HttpDelete("{id}")]
+                public async Task<IActionResult> DeleteTask(int id)
+                {
+                        var DeleteTasks = await _services.DeleteTask(id);
+                        return Ok(DeleteTasks);
+                }
+
+
+                [HttpPut("Status/{id}")]
+                [Authorize(Roles = "Admin,User")]
+
+                [HttpPut("Status/{id}")]
+
+                public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
+                {
+                        if (tododata == null)
+                        {
+                                return BadRequest();
+                        }
+                        var UpdateStatus = await _services.UpdateTaskStatus(id, tododata);
+                        return Ok(UpdateStatus);
+                }
         }
-        var UpdateStatus = await _services.UpdateTaskStatus(id, tododata);
-return Ok(UpdateStatus);
-}
-    }
 
 
         public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
-{
-        if (tododata == null)
         {
-                return BadRequest();
+                if (tododata == null)
+                {
+                        return BadRequest();
+                }
+                var UpdateStatus = await _services.UpdateTaskStatus(id, tododata);
+                return Ok(UpdateStatus);
         }
-        var UpdateStatus = await _services.UpdateTaskStatus(id, tododata);
-        return Ok(UpdateStatus);
 }
-    }
 }

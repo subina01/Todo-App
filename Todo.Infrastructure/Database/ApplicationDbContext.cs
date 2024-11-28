@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-=======
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+>>>>>>> c90400b(feat(Registration): Added Registration API using ASP.NET Identity)
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
