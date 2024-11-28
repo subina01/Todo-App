@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.Core.Domain.Entities;
 using TodoApp.Core.Domain.Interface;
@@ -17,9 +18,11 @@ namespace todo.WebAPI.Controllers
             _services = services;
             Console.WriteLine("The breakpoint has hit here");
         }
-
+       
+        
         [HttpPost]
         [Route("")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> AddTask([FromBody] ToDo tododata)
         {
             if (!ModelState.IsValid)
@@ -37,7 +40,9 @@ namespace todo.WebAPI.Controllers
         }
 
         [HttpGet]
+       
         [Route("{id}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> GetTaskById(int id)
         {
             var GetTask = await _services.GetTaskById(id);
@@ -46,6 +51,7 @@ namespace todo.WebAPI.Controllers
 
         [HttpGet]
         [Route("")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllTasks()
         {
             var GetAllTasks = await _services.GetAllTasks();
@@ -54,6 +60,7 @@ namespace todo.WebAPI.Controllers
 
         [HttpPut]
         [Route("{id}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
         {
 
@@ -68,7 +75,7 @@ namespace todo.WebAPI.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> DeleteTask(int id)
         {
 
@@ -78,6 +85,7 @@ namespace todo.WebAPI.Controllers
 
         [HttpPut]
         [Route("Status/{id}")]
+        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
         {
             if (tododata == null)

@@ -1,26 +1,29 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq.Expressions;
 using TodoApp.Core.Domain.IdentityEntities;
+using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.DTO;
 
 namespace todo.WebAPI.Controllers
 {
     [Route("api/")]
     [ApiController]
+    [AllowAnonymous]
     public class AccountController : ControllerBase
     {
         //business logic provided by asp.net core Identity
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly RoleManager<ApplicationRole> roleManager;
+        private readonly IJwtService jwtService;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.roleManager = roleManager;
+            this.jwtService = jwtService;
         }
 
         [HttpPost]
@@ -52,11 +55,12 @@ namespace todo.WebAPI.Controllers
                 });
             }
             //creating object for application user class
-            var user = new ApplicationUser
+            ApplicationUser user = new ApplicationUser
             {
                 UserName = register.Name,
                 Email = register.Email,
-                Name = register.Name
+                Name = register.Name,
+                
             };
 
             //creating the user
@@ -68,15 +72,15 @@ namespace todo.WebAPI.Controllers
                     Message = "Registration failed."
                 });
             }
+            
+
+            
 
             //sign the user in after sucessful registration
             await signInManager.SignInAsync(user, isPersistent: false);
+            var authenticationResponse = jwtService.CreateJwtToken(user);
             //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
-            return Ok(new
-            {
-                Message = "Registration sucessful."
-               
-            });
+            return Ok(authenticationResponse);
            
         }
 
@@ -99,10 +103,12 @@ namespace todo.WebAPI.Controllers
 
             }
 
-            return Ok(new
-            {
-                Message = "Login sucessful"
-            });
+            var authenticationResponse = jwtService.CreateJwtToken(user);
+
+            return Ok(authenticationResponse);
+
+
         }
+       
     }
 }
