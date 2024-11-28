@@ -17,4 +17,8 @@ obj/
 
 /bin/
 /obj/
+obj/
+bin/
+**/obj/
+**/bin/
 
