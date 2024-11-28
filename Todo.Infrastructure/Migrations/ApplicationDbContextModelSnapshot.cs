@@ -383,7 +383,8 @@ modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationUser", b =>
         b.Property<string>("UserName")
                                                         .HasMaxLength(256)
                                                         .HasColumnType("nvarchar(256)");
-
+        b.Property<int>("UserType")
+             .HasColumnType("int");
 
         b.Property<int>("UserType")
                                                              .HasColumnType("int");
@@ -393,7 +394,11 @@ modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationUser", b =>
                            .HasColumnType("int");
 
         b.Property<int>("UserType")
-                                                        .HasColumnType("int");
+                                                         .HasColumnType("int");
+        b.Property<int>("UserType")
+            .HasColumnType("int");
+
+        b.HasKey("Id");
 
         b.Property<int>("UserType")
                                                                   .HasColumnType("int");

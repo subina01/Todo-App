@@ -12,6 +12,11 @@ using TodoApp.Core.Domain.Enum;
 
 using TodoApp.Core.Domain.Enum;
 
+
+using TodoApp.Core.Domain.Enum;
+
+using TodoApp.Core.Domain.Enum;
+
 using TodoApp.Core.Domain.Enum;
 
 
@@ -93,23 +98,33 @@ namespace TodoApp.Core.DTO
                 [Required(ErrorMessage = "Email can't be blank")]
                 [EmailAddress]
 
+using TodoApp.Core.Domain.Enum;
 
-                namespace TodoApp.Core.DTO
+namespace TodoApp.Core.DTO
                 {
                         public class RegisterDTO
                         {
+
+
                                 [Required(ErrorMessage = "Name can't be blank")]
-                                [Required(ErrorMessage = "Name can't be blank")]
+=
+        [Required(ErrorMessage = "Name can't be blank")]
 
                                 [Required(ErrorMessage = "Name can't be blank")]
 
-                                [Required(ErrorMessage = "Name can't be blank")]
 
-                                [Required(ErrorMessage = "Name can't be blank")]
                                 [Required(ErrorMessage = "Name can't be blank")]
 
 
-                                [Required(ErrorMessage = "Name can't be blank")] public string? Name { get; set; }
+                                [Required(ErrorMessage = "Name can't be blank")]
+
+
+                                [Required(ErrorMessage = "Name can't be blank")]
+
+
+                                [Required(ErrorMessage = "Name can't be blank")]
+
+                                public string? Name { get; set; }
 
                                 [Required(ErrorMessage = "Email can't be blank")]
                                 [EmailAddress]
@@ -117,75 +132,114 @@ namespace TodoApp.Core.DTO
                                 public string? Email { get; set; }
 
 
-using TodoApp.Core.Domain.Enum;
 
-
-namespace TodoApp.Core.DTO
+                namespace TodoApp.Core.DTO
                         {
                                 public class RegisterDTO
                                 {
                                         [Required(ErrorMessage = "Name can't be blank")]
+                                        [Required(ErrorMessage = "Name can't be blank")]
+
+
+                                        [Required(ErrorMessage = "Name can't be blank")]
+
+                                        [Required(ErrorMessage = "Name can't be blank")]
 
                                         [Required(ErrorMessage = "Name can't be blank")]
                                         [Required(ErrorMessage = "Name can't be blank")]
-                                        [Required(ErrorMessage = "Name can't be blank")]
-                                        [Required(ErrorMessage = "Name can't be blank")]
-                                        [Required(ErrorMessage = "Name can't be blank")]
-                                        public string? Name { get; set; }
+
+
+                                        [Required(ErrorMessage = "Name can't be blank")] public string? Name { get; set; }
 
                                         [Required(ErrorMessage = "Email can't be blank")]
                                         [EmailAddress]
+
                                         public string? Email { get; set; }
-                                        public string? Email { get; set; }
 
-                                        [Required(ErrorMessage = "Password can't be blank")]
 
-                                        public string? Password { get; set; }
-                                        [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+using TodoApp.Core.Domain.Enum;
 
-                                        public string? ConfirmPassword { get; set; }
-                                        public UserTypeOptions UserType { get; set; }
 
+namespace TodoApp.Core.DTO
+                                {
+                                        public class RegisterDTO
+                                        {
+                                                [Required(ErrorMessage = "Name can't be blank")]
+
+                                                [Required(ErrorMessage = "Name can't be blank")]
+                                                [Required(ErrorMessage = "Name can't be blank")]
+                                                [Required(ErrorMessage = "Name can't be blank")]
+                                                [Required(ErrorMessage = "Name can't be blank")]
+                                                [Required(ErrorMessage = "Name can't be blank")]
+                                                public string? Name { get; set; }
+
+                                                [Required(ErrorMessage = "Email can't be blank")]
+                                                [EmailAddress]
+                                                public string? Email { get; set; }
+                                                public string? Email { get; set; }
+
+                                                [Required(ErrorMessage = "Password can't be blank")]
+
+                                                public string? Password { get; set; }
+                                                [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+
+                                                public string? ConfirmPassword { get; set; }
+                                                public UserTypeOptions UserType { get; set; }
+
+                                        }
                                 }
+
+                                public string? Email { get; set; }
+
+                                [Required(ErrorMessage = "Password can't be blank")]
+                                [DataType(DataType.Password)]
+                                public string? Password { get; set; }
+                                [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+                                [DataType(DataType.Password)]
+                                public string? ConfirmPassword { get; set; }
+
+
+                                [Required(ErrorMessage = "Password can't be blank")]
+                                [DataType(DataType.Password)]
+                                public string? Password { get; set; }
+                                [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+                                [DataType(DataType.Password)]
+                                public string? ConfirmPassword { get; set; }
+
+
+
+                                [Required(ErrorMessage = "Password can't be blank")]
+
+                                public string? Password { get; set; }
+                                [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+
+                                [DataType(DataType.Password)]
+                                public string? ConfirmPassword { get; set; }
+
+
+                                public string? ConfirmPassword { get; set; }
+                                public UserTypeOptions UserType { get; set; }
+                                public string? Email { get; set; }
+                                public string? Email { get; set; }
+
+                                [Required(ErrorMessage = "Password can't be blank")]
+
+                                public string? Password { get; set; }
+                                [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+                                [DataType(DataType.Password)]
+                                public string? ConfirmPassword { get; set; }
+
+
+
+                                public string? ConfirmPassword { get; set; }
+                                public UserTypeOptions UserType { get; set; }
                         }
 
-                        public string? Email { get; set; }
-
-                        [Required(ErrorMessage = "Password can't be blank")]
-                        [DataType(DataType.Password)]
-                        public string? Password { get; set; }
-                        [Required(ErrorMessage = "ConfirmPassword can't be blank")]
-                        [DataType(DataType.Password)]
-                        public string? ConfirmPassword { get; set; }
-
-
-                        [Required(ErrorMessage = "Password can't be blank")]
-                        [DataType(DataType.Password)]
-                        public string? Password { get; set; }
-                        [Required(ErrorMessage = "ConfirmPassword can't be blank")]
-                        [DataType(DataType.Password)]
-                        public string? ConfirmPassword { get; set; }
-
-
-
                         [Required(ErrorMessage = "Password can't be blank")]
 
                         public string? Password { get; set; }
                         [Required(ErrorMessage = "ConfirmPassword can't be blank")]
 
-                        [DataType(DataType.Password)]
-                        public string? ConfirmPassword { get; set; }
-
-
-                        public string? ConfirmPassword { get; set; }
-                        public UserTypeOptions UserType { get; set; }
-                        public string? Email { get; set; }
-                        public string? Email { get; set; }
-
-                        [Required(ErrorMessage = "Password can't be blank")]
-
-                        public string? Password { get; set; }
-                        [Required(ErrorMessage = "ConfirmPassword can't be blank")]
                         [DataType(DataType.Password)]
                         public string? ConfirmPassword { get; set; }
 
@@ -193,6 +247,14 @@ namespace TodoApp.Core.DTO
 
                         public string? ConfirmPassword { get; set; }
                         public UserTypeOptions UserType { get; set; }
+                        public string? Email { get; set; }
+
+                        [Required(ErrorMessage = "Password can't be blank")]
+                        [DataType(DataType.Password)]
+                        public string? Password { get; set; }
+                        [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+                        [DataType(DataType.Password)]
+                        public string? ConfirmPassword { get; set; }
                 }
 
                 [Required(ErrorMessage = "Password can't be blank")]
@@ -205,14 +267,27 @@ namespace TodoApp.Core.DTO
 
 
 
+
                 public string? ConfirmPassword { get; set; }
                 public UserTypeOptions UserType { get; set; }
+
+                public string? Email { get; set; }
+
                 public string? Email { get; set; }
 
                 [Required(ErrorMessage = "Password can't be blank")]
-                [DataType(DataType.Password)]
+
                 public string? Password { get; set; }
                 [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+
                 [DataType(DataType.Password)]
                 public string? ConfirmPassword { get; set; }
+
+
+
+
+                public string? ConfirmPassword { get; set; }
+                public UserTypeOptions UserType { get; set; }
+
         }
+}
