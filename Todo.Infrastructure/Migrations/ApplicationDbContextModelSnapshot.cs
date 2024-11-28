@@ -313,6 +313,7 @@ namespace Todo.Infrastructure.Migrations
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     b.Property<int>("UserType")
                         .HasColumnType("int");
 
@@ -332,7 +333,15 @@ namespace Todo.Infrastructure.Migrations
 =======
 =======
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
+=======
+=======
+                    b.Property<int>("UserType")
+                        .HasColumnType("int");
+
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+>>>>>>> 0ac0018 (feat(auth): Add jwt based authentication)
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")

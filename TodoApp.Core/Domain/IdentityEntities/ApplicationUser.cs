@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 using TodoApp.Core.Domain.Enum;
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
@@ -23,13 +24,20 @@ using TodoApp.Core.Domain.Enum;
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 =======
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
+=======
+=======
+using TodoApp.Core.Domain.Enum;
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+>>>>>>> 0ac0018 (feat(auth): Add jwt based authentication)
 
 namespace TodoApp.Core.Domain.IdentityEntities
 {
     public class ApplicationUser : IdentityUser<Guid>
     {
         public string? Name { get; set; }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,6 +53,12 @@ namespace TodoApp.Core.Domain.IdentityEntities
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 =======
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+<<<<<<< HEAD
 >>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
+=======
+=======
+     
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
+>>>>>>> 0ac0018 (feat(auth): Add jwt based authentication)
     }
 }

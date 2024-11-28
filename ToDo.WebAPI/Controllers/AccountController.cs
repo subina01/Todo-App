@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -6,11 +7,17 @@ using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 =======
 ﻿using Microsoft.AspNetCore.Http;
+=======
+﻿using Microsoft.AspNetCore.Authorization;
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq.Expressions;
 using TodoApp.Core.Domain.IdentityEntities;
+<<<<<<< HEAD
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+using TodoApp.Core.Domain.Interface;
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
 using TodoApp.Core.DTO;
 
 namespace todo.WebAPI.Controllers
@@ -19,6 +26,7 @@ namespace todo.WebAPI.Controllers
 <<<<<<< HEAD
     [Route("api/")]
     [ApiController]
+    [AllowAnonymous]
     public class AccountController : ControllerBase
     {
         // Business logic provided by ASP.NET Core Identity
@@ -46,14 +54,22 @@ namespace todo.WebAPI.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly RoleManager<ApplicationRole> roleManager;
+        private readonly IJwtService jwtService;
 
+<<<<<<< HEAD
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.roleManager = roleManager;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
             this.jwtService = jwtService;
         }
 
@@ -137,13 +153,18 @@ namespace todo.WebAPI.Controllers
 =======
 =======
             //creating object for application user class
+<<<<<<< HEAD
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
 >>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
             var user = new ApplicationUser
+=======
+            ApplicationUser user = new ApplicationUser
+>>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
             {
                 UserName = register.Name,
                 Email = register.Email,
-                Name = register.Name
+                Name = register.Name,
+                
             };
 
 <<<<<<< HEAD
@@ -162,6 +183,9 @@ namespace todo.WebAPI.Controllers
                     Message = "Registration failed."
                 });
             }
+            
+
+            
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -206,12 +230,9 @@ namespace todo.WebAPI.Controllers
 =======
             //sign the user in after sucessful registration
             await signInManager.SignInAsync(user, isPersistent: false);
+            var authenticationResponse = jwtService.CreateJwtToken(user);
             //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
-            return Ok(new
-            {
-                Message = "Registration sucessful."
-               
-            });
+            return Ok(authenticationResponse);
            
 >>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
         }
@@ -235,10 +256,12 @@ namespace todo.WebAPI.Controllers
 
             }
 
-            return Ok(new
-            {
-                Message = "Login sucessful"
-            });
+            var authenticationResponse = jwtService.CreateJwtToken(user);
+
+            return Ok(authenticationResponse);
+
+
         }
+       
     }
 }
