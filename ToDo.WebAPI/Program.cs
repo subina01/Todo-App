@@ -292,6 +292,7 @@ builder.Services.AddIdentity<ApplicationUser,
     ApplicationRole>()//Now it understood that we have to enable the identity services
     .AddEntityFrameworkStores<ApplicationDbContext>()//using entity framework to store the data and exact dbcontext we are using is ApplicationDBContext
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     .AddDefaultTokenProviders();//predefined token provider lai enable garxa
 
@@ -407,6 +408,10 @@ builder.Services.AddSwaggerGen();
 >>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
 =======
 >>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+
+
+>>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
