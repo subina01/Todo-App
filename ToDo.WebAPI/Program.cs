@@ -37,10 +37,15 @@ using TodoApp.Core.Domain.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
 using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
+using TodoApp.Core.Domain.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -185,7 +190,17 @@ builder.Services.AddScoped<ITodoServices, TodoServices>();
 builder.Services.AddRazorPages();
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+        options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+    });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

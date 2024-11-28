@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.Core.Domain.IdentityEntities;
+using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.DTO;
 
 namespace todo.WebAPI.Controllers
@@ -156,6 +157,9 @@ namespace todo.WebAPI.Controllers
                 return Ok(authenticationResponse);
             }
 
+
+
+
             [HttpPost]
             [Route("login")]
             public async Task<IActionResult> Login([FromBody] LoginDTO login)
@@ -188,7 +192,6 @@ namespace todo.WebAPI.Controllers
             var authenticationResponse = jwtService.CreateJwtToken(user);
             //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
             return Ok(authenticationResponse);
-
         }
 
         [HttpPost]
