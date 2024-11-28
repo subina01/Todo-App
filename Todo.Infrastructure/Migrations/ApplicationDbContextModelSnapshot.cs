@@ -365,7 +365,7 @@ namespace Todo.Infrastructure.Migrations
                                         .HasColumnType("nvarchar(256)");
 
                     b.Property<int>("UserType")
-                                        .HasColumnType("int");
+                                             .HasColumnType("int");
 
 
                     b.Property<int>("UserType")
@@ -373,6 +373,9 @@ namespace Todo.Infrastructure.Migrations
 
                     b.Property<int>("UserType")
                                                   .HasColumnType("int");
+                    b.Property<int>("UserType")
+                             .HasColumnType("int");
+
 
                     b.HasIndex("NormalizedEmail")
                                         .HasDatabaseName("EmailIndex");
