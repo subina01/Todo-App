@@ -41,10 +41,18 @@ namespace TodoApp.Core.Domain.Interface
 
 
 <<<<<<< HEAD
+=======
+        public  Task<IEnumerable<TodoResponseDTO>> GetAllTasks();
+
+        Task<TodoResponseDTO> GetTaskById(int id);
+
+
+>>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
         Task AddTask(ToDo tododata);
         Task<string> UpdateTask(int id, TodoResponseDTO updateTodoTask);
         Task<string> UpdateTaskStatus(int id, TodoResponseDTO newStatus);
         Task<string> DeleteTask(int id);
+<<<<<<< HEAD
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
 =======
         public Task AddTask(ToDo tododata);
@@ -55,6 +63,10 @@ namespace TodoApp.Core.Domain.Interface
 =======
 >>>>>>> 0f689a6 (feat(core): complete core layer implementation)
 =======
+<<<<<<< HEAD
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+=======
+>>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
     }
 }

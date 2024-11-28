@@ -7,11 +7,18 @@ using TodoApp.Core.DTO;
 
 namespace todo.WebAPI.Controllers
 {
+<<<<<<< HEAD
     [Route("api/")]
     [ApiController]
     public class AccountController : ControllerBase
     {
         // Business logic provided by ASP.NET Core Identity
+=======
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AccountController : ControllerBase
+    {
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly RoleManager<ApplicationRole> roleManager;
@@ -25,14 +32,22 @@ namespace todo.WebAPI.Controllers
             this.jwtService = jwtService;
         }
 
+<<<<<<< HEAD
         [HttpPost("register")]
+=======
+        [HttpPost]
+        [Route("register")]
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
         public async Task<IActionResult> Register([FromBody] RegisterDTO register)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
             if (register.Password != register.ConfirmPassword)
             {
                 return BadRequest("Password doesn't match with the confirmed password");
@@ -47,6 +62,7 @@ namespace todo.WebAPI.Controllers
                 });
             }
 
+<<<<<<< HEAD
             // Creating object for application user class
             ApplicationUser user = new ApplicationUser
             {
@@ -59,6 +75,16 @@ namespace todo.WebAPI.Controllers
             var response = await userManager.CreateAsync(user, register.Password);
 
             // This represents the result of operations such as creating, updating, and deleting
+=======
+            var user = new ApplicationUser
+            {
+                UserName = register.Name,
+                Email = register.Email,
+                Name = register.Name
+            };
+
+            var response = await userManager.CreateAsync(user, register.Password);
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
             if (!response.Succeeded)
             {
                 return BadRequest(new
@@ -67,11 +93,16 @@ namespace todo.WebAPI.Controllers
                 });
             }
 
+<<<<<<< HEAD
             // Sign the user in after successful registration
             await signInManager.SignInAsync(user, isPersistent: false);
             var authenticationResponse = jwtService.CreateJwtToken(user);
 
             // isPersistent false means the user will be logged in only for the current browser session, and true means the user remains logged in even after the browser is closed
+=======
+            await signInManager.SignInAsync(user, isPersistent: false);
+            var authenticationResponse = jwtService.CreateJwtToken(user);
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
             return Ok(authenticationResponse);
         }
 
@@ -83,7 +114,10 @@ namespace todo.WebAPI.Controllers
             {
                 return BadRequest("User is not registered");
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
             var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
             if (!response.Succeeded)
             {

@@ -21,7 +21,12 @@ namespace TodoApp.Core.DTO
 =======
 >>>>>>> 0f689a6 (feat(core): complete core layer implementation)
 =======
+<<<<<<< HEAD
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+=======
+
+>>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
         public string? UserName { get; set; }
         public string? TaskType { get; set; }
 

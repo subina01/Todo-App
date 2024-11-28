@@ -9,7 +9,10 @@ namespace todo.WebAPI.Controllers
 {
     [Route("api/todo")]
     [ApiController]
+<<<<<<< HEAD
     [Authorize]
+=======
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
     public class ToDoController : ControllerBase
     {
         private readonly ITodoServices _services;
@@ -27,6 +30,7 @@ namespace todo.WebAPI.Controllers
                 return BadRequest();
             }
             await _services.AddTask(tododata);
+<<<<<<< HEAD
             return Ok(new
             {
                 Message = "Task Added!"
@@ -35,6 +39,12 @@ namespace todo.WebAPI.Controllers
 
         [HttpGet("{id}")]
         [Authorize(Roles = "Admin,User")]
+=======
+            return Ok(new { Message = "Task Added!" });
+        }
+
+        [HttpGet("{id}")]
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
         public async Task<IActionResult> GetTaskById(int id)
         {
             var GetTask = await _services.GetTaskById(id);
@@ -65,9 +75,13 @@ namespace todo.WebAPI.Controllers
             var DeleteTasks = await _services.DeleteTask(id);
             return Ok(DeleteTasks);
         }
+<<<<<<< HEAD
 
         [HttpPut("Status/{id}")]
         [Authorize(Roles = "Admin,User")]
+=======
+        [HttpPut("Status/{id}")]
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
         public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
         {
             if (tododata == null)

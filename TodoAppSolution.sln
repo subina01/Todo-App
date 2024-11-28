@@ -13,12 +13,16 @@ EndProject
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "todo.WebAPI", "ToDo.WebAPI\todo.WebAPI.csproj", "{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}"
 =======
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.UI", "TodoApp.UI\TodoApp.UI.csproj", "{1F1C7960-E9E0-48A9-BAF1-6AB7ACAE4982}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.WebAPI", "ToDo.WebAPI\ToDo.WebAPI.csproj", "{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}"
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
+<<<<<<< HEAD
 =======
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "todo.WebAPI", "ToDo.WebAPI\todo.WebAPI.csproj", "{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}"
 >>>>>>> e8c83a0 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
@@ -31,7 +35,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "todo.WebAPI", "ToDo.WebAPI\
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 =======
 >>>>>>> 2931b3b (refactor : updated sln file with updated functionality)
+<<<<<<< HEAD
 >>>>>>> 038fc40 (refactor : updated sln file with updated functionality)
+=======
+=======
+>>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,12 +60,16 @@ Global
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
 =======
 		{1F1C7960-E9E0-48A9-BAF1-6AB7ACAE4982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1F1C7960-E9E0-48A9-BAF1-6AB7ACAE4982}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F1C7960-E9E0-48A9-BAF1-6AB7ACAE4982}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F1C7960-E9E0-48A9-BAF1-6AB7ACAE4982}.Release|Any CPU.Build.0 = Release|Any CPU
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
+<<<<<<< HEAD
 =======
 >>>>>>> e8c83a0 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
 =======
@@ -66,7 +79,12 @@ Global
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 =======
 >>>>>>> 2931b3b (refactor : updated sln file with updated functionality)
+<<<<<<< HEAD
 >>>>>>> 038fc40 (refactor : updated sln file with updated functionality)
+=======
+=======
+>>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
+>>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Release|Any CPU.ActiveCfg = Release|Any CPU
