@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TodoApp.Core.Domain.Enum;
+
 
 namespace TodoApp.Core.DTO
 {
@@ -24,7 +24,7 @@ namespace TodoApp.Core.DTO
         [Required(ErrorMessage = "ConfirmPassword can't be blank")]
    
         public string? ConfirmPassword { get; set; }
-         public UserTypeOptions UserType { get; set; }
+        
       
     }
 }

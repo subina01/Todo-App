@@ -9,6 +9,7 @@ namespace todo.WebAPI.Controllers
 {
     [Route("api/todo")]
     [ApiController]
+
     public class ToDoController : ControllerBase
     {
         private readonly ITodoServices _services;
@@ -22,7 +23,7 @@ namespace todo.WebAPI.Controllers
         
         [HttpPost]
         [Route("")]
-        [Authorize(Roles = "Admin,User")]
+        [Authorize]
         public async Task<IActionResult> AddTask([FromBody] ToDo tododata)
         {
             if (!ModelState.IsValid)
@@ -42,7 +43,7 @@ namespace todo.WebAPI.Controllers
         [HttpGet]
        
         [Route("{id}")]
-        [Authorize(Roles = "Admin,User")]
+        [Authorize]
         public async Task<IActionResult> GetTaskById(int id)
         {
             var GetTask = await _services.GetTaskById(id);
@@ -51,7 +52,7 @@ namespace todo.WebAPI.Controllers
 
         [HttpGet]
         [Route("")]
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public async Task<IActionResult> GetAllTasks()
         {
             var GetAllTasks = await _services.GetAllTasks();
@@ -60,7 +61,7 @@ namespace todo.WebAPI.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        [Authorize(Roles = "Admin,User")]
+        [Authorize]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
         {
 
@@ -75,7 +76,7 @@ namespace todo.WebAPI.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        [Authorize(Roles = "Admin,User")]
+        [Authorize]
         public async Task<IActionResult> DeleteTask(int id)
         {
 
@@ -85,7 +86,7 @@ namespace todo.WebAPI.Controllers
 
         [HttpPut]
         [Route("Status/{id}")]
-        [Authorize(Roles = "Admin,User")]
+        [Authorize]
         public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
         {
             if (tododata == null)
