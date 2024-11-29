@@ -269,7 +269,6 @@ public class ToDoController : ControllerBase
                                 var GetAllTasks = await _services.GetAllTasks();
                                 return Ok(GetAllTasks);
 
-
         public async Task<IActionResult> GetAllTasks()
                 {
                         var GetAllTasks = await _services.GetAllTasks();
