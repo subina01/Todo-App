@@ -19,6 +19,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6af2c4c (feat(auth): implement authentication and authorization using jwt)
 using Microsoft.OpenApi.Models;
 using System.Text;
 using System.Text.Json;
@@ -332,7 +335,28 @@ builder.Services.AddControllers()
 >>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition(name: JwtBearerDefaults.AuthenticationScheme, securityScheme: new Microsoft.OpenApi.Models.OpenApiSecurityScheme{
+        Name = "Authorization",
+        Description = "Enter the Bearer Authorization : `Bearer Genreated-JWT-Token`",
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Type =Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+        Scheme ="Bearer"
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    { {
+        new OpenApiSecurityScheme
+        {
+            Reference = new OpenApiReference
+            {
+                Type=ReferenceType.SecurityScheme,
+                Id = JwtBearerDefaults.AuthenticationScheme
+            }
+        }, new String []{}
+        }
+    });
+});
 
 <<<<<<< HEAD
 <<<<<<< HEAD

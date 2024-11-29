@@ -36,9 +36,13 @@ namespace todo.WebAPI.Controllers
     [Route("api/todo")]
     [ApiController]
 <<<<<<< HEAD
+<<<<<<< HEAD
     [Authorize]
 =======
 >>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
+=======
+
+>>>>>>> 1ff3d99 (feat(auth): implement authentication and authorization using jwt)
     public class ToDoController : ControllerBase
     {
         private readonly ITodoServices _services;
@@ -64,6 +68,7 @@ namespace todo.WebAPI.Controllers
         [Route("")]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
 =======
 >>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
@@ -87,6 +92,9 @@ namespace todo.WebAPI.Controllers
 =======
         [Authorize(Roles = "Admin,User")]
 >>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
+=======
+        [Authorize]
+>>>>>>> 6af2c4c (feat(auth): implement authentication and authorization using jwt)
         public async Task<IActionResult> AddTask([FromBody] ToDo tododata)
         {
             if (!ModelState.IsValid)
@@ -171,9 +179,16 @@ namespace todo.WebAPI.Controllers
 =======
        
         [Route("{id}")]
+<<<<<<< HEAD
         [Authorize(Roles = "Admin,User")]
 >>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
+<<<<<<< HEAD
 >>>>>>> 42f30ab (feat(auth): Add jwt based authentication)
+=======
+=======
+        [Authorize]
+>>>>>>> 6af2c4c (feat(auth): implement authentication and authorization using jwt)
+>>>>>>> 1ff3d99 (feat(auth): implement authentication and authorization using jwt)
         public async Task<IActionResult> GetTaskById(int id)
         {
             var GetTask = await _services.GetTaskById(id);
@@ -187,6 +202,7 @@ namespace todo.WebAPI.Controllers
 <<<<<<< HEAD
 =======
         [Route("")]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
@@ -205,6 +221,9 @@ namespace todo.WebAPI.Controllers
 =======
         [Authorize(Roles = "Admin")]
 >>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
+=======
+        [Authorize]
+>>>>>>> 6af2c4c (feat(auth): implement authentication and authorization using jwt)
         public async Task<IActionResult> GetAllTasks()
         {
             var GetAllTasks = await _services.GetAllTasks();
@@ -223,7 +242,7 @@ namespace todo.WebAPI.Controllers
 >>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
         [HttpPut]
         [Route("{id}")]
-        [Authorize(Roles = "Admin,User")]
+        [Authorize]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO tododata)
         {
 
@@ -286,6 +305,7 @@ namespace todo.WebAPI.Controllers
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         [Authorize(Roles = "Admin,User")]
 =======
 
@@ -296,6 +316,9 @@ namespace todo.WebAPI.Controllers
 =======
         [Authorize(Roles = "Admin,User")]
 >>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
+=======
+        [Authorize]
+>>>>>>> 6af2c4c (feat(auth): implement authentication and authorization using jwt)
         public async Task<IActionResult> DeleteTask(int id)
         {
 
@@ -305,6 +328,7 @@ namespace todo.WebAPI.Controllers
 
         [HttpPut]
         [Route("Status/{id}")]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -338,7 +362,13 @@ namespace todo.WebAPI.Controllers
 =======
         [Authorize(Roles = "Admin,User")]
 >>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
+<<<<<<< HEAD
 >>>>>>> 42f30ab (feat(auth): Add jwt based authentication)
+=======
+=======
+        [Authorize]
+>>>>>>> 6af2c4c (feat(auth): implement authentication and authorization using jwt)
+>>>>>>> 1ff3d99 (feat(auth): implement authentication and authorization using jwt)
         public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
         {
             if (tododata == null)
