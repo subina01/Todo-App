@@ -12,6 +12,10 @@ using TodoApp.Core.Domain.Enum;
 
 using TodoApp.Core.Domain.Enum;
 
+using TodoApp.Core.Domain.Enum;
+
+using TodoApp.Core.Domain.Enum;
+
 
 using TodoApp.Core.Domain.Enum;
 
@@ -98,12 +102,27 @@ namespace TodoApp.Core.DTO
                 [Required(ErrorMessage = "Email can't be blank")]
                 [EmailAddress]
 
+
 using TodoApp.Core.Domain.Enum;
 
-namespace TodoApp.Core.DTO
+        [Required(ErrorMessage = "Password can't be blank")]
+
+                public string? Password { get; set; }
+                [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+
+                public string? ConfirmPassword { get; set; }
+
+                public UserTypeOptions UserType { get; set; }
+
+                public string? Email { get; set; }
+
+                public string? Email { get; set; }
+
+                namespace TodoApp.Core.DTO
                 {
                         public class RegisterDTO
                         {
+
 
 
                                 [Required(ErrorMessage = "Name can't be blank")]
@@ -290,4 +309,19 @@ namespace TodoApp.Core.DTO
                 public UserTypeOptions UserType { get; set; }
 
         }
+
+        [Required(ErrorMessage = "Password can't be blank")]
+
+        public string? Password { get; set; }
+        [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+
+        [DataType(DataType.Password)]
+        public string? ConfirmPassword { get; set; }
+
+
+        public string? ConfirmPassword { get; set; }
+        public UserTypeOptions UserType { get; set; }
+
+
+}
 }

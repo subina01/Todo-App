@@ -34,41 +34,63 @@ return Ok(new
 [Authorize]
 public class ToDoController : ControllerBase
 {
-        private readonly ITodoServices _services;
 
-        public ToDoController(ITodoServices services)
+        [Route("api/todo")]
+        [ApiController]
+
+        [Authorize]
+
+
+        public class ToDoController : ControllerBase
         {
-                _services = services;
+                private readonly ITodoServices _services;
+
+                public ToDoController(ITodoServices services)
+                {
+                        _services = services;
+                }
+
+                [HttpPost]
+                Console.WriteLine("The breakpoint has hit here");
         }
 
+
         [HttpPost]
+        [Route("")]
         Console.WriteLine("The breakpoint has hit here");
         }
 
 
 [HttpPost]
-[Route("")]
-Console.WriteLine("The breakpoint has hit here");
-        }
-       
-        
-        [HttpPost]
 
 {
         if (!ModelState.IsValid)
 
-        [Route("")]
+                [Route("")]
+
+
+                [Authorize(Roles = "Admin,User")]
+                Console.WriteLine("The breakpoint has hit here");
+}
+
+
+[HttpPost]
+[Route("")]
+
+[Authorize(Roles = "Admin,User")]
+[Authorize]
+public async Task<IActionResult> AddTask([FromBody] ToDo tododata)
+{
+        return BadRequest();
         {
-                return BadRequest();
-                {
-                        Message = "Task Added!"
+                Message = "Task Added!"
                    });
-        }
+}
 
-        [HttpGet("{id}")]
-        [Authorize(Roles = "Admin,User")]
+[HttpGet("{id}")]
+[Authorize(Roles = "Admin,User")]
 
-        return Ok(new { Message = "Task Added!" });
+return Ok(new { Message = "Task Added!" });
 }
 
 [HttpGet("{id}")]
@@ -85,7 +107,6 @@ return Ok
         }
 
         [HttpGet]
-
 
 
 [Route("{id}")]
@@ -124,8 +145,40 @@ public async Task<IActionResult> DeleteTask(int id)
 
         }
 
-
+     
         [Route("{id}")]
+
+
+
+[Authorize(Roles = "Admin,User")]
+
+[Route("{id}")]
+
+[Route("{id}")]
+
+
+[Route("{id}")]
+
+[Authorize(Roles = "Admin,User")]
+
+public async Task<IActionResult> GetTaskById(int id)
+{
+        var GetTask = await _services.GetTaskById(id);
+        return Ok(GetTask);
+}
+
+[HttpGet]
+
+[Route("")]
+
+[Authorize(Roles = "Admin")]
+public async Task<IActionResult> GetAllTasks()
+{
+        var GetAllTasks = await _services.GetAllTasks();
+        return Ok(GetAllTasks);
+}
+
+[Route("{id}")]
 
 
 [Route("{id}")]
@@ -373,6 +426,10 @@ public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequest
         [Route("{id}")]
 
         [Authorize(Roles = "Admin,User")]
+
+        [Authorize(Roles = "Admin,User")]
+
+        [Authorize]
         public async Task<IActionResult> DeleteTask(int id)
         {
 
@@ -386,6 +443,8 @@ public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequest
         [Authorize(Roles = "Admin,User")]
 
         [Authorize(Roles = "Admin,User")]
+
+        [Authorize]
         public async Task<IActionResult> UpdateTaskStatus(int id, [FromBody] UpdateStatusRequestDTO tododata)
         {
                 if (tododata == null)

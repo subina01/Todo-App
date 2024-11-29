@@ -9,6 +9,10 @@ using TodoApp.Core.Domain.Enum;
 
 using TodoApp.Core.Domain.Enum;
 
+using TodoApp.Core.Domain.Enum;
+
+using TodoApp.Core.Domain.Enum;
+
 
 sing TodoApp.Core.Domain.Enum;
 
@@ -22,6 +26,8 @@ using TodoApp.Core.Domain.Enum;
 
 
 using TodoApp.Core.Domain.Enum;
+
+
 
 namespace TodoApp.Core.Domain.IdentityEntities
 {
