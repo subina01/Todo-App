@@ -16,6 +16,7 @@ namespace TodoApp.Core.Domain.Interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 0f689a6 (feat(core): complete core layer implementation)
 =======
@@ -43,10 +44,14 @@ namespace TodoApp.Core.Domain.Interface
 <<<<<<< HEAD
 =======
         public  Task<IEnumerable<TodoResponseDTO>> GetAllTasks();
+=======
+        public  Task<IEnumerable<GetAllTasksResponseDTO>> GetAllTasks();
+>>>>>>> 83c617e (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
 
-        Task<TodoResponseDTO> GetTaskById(int id);
+        public Task<GetAllTaskByIdResponseDTO> GetTaskById(int id);
 
 
+<<<<<<< HEAD
 >>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
         Task AddTask(ToDo tododata);
         Task<string> UpdateTask(int id, TodoResponseDTO updateTodoTask);
@@ -55,10 +60,13 @@ namespace TodoApp.Core.Domain.Interface
 <<<<<<< HEAD
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
 =======
+=======
+>>>>>>> 83c617e (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
         public Task AddTask(ToDo tododata);
         public Task<UpdateTaskResponseDTO> UpdateTask(int id, UpdateTaskRequestDTO updateTodoTask);
         public  Task<UpdateStatusResponseDTO> UpdateTaskStatus(int id, UpdateStatusRequestDTO newStatus);
         public Task<DeleteTaskResponseDTO> DeleteTask(int id);
+<<<<<<< HEAD
 >>>>>>> e8c83a0 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
 =======
 >>>>>>> 0f689a6 (feat(core): complete core layer implementation)
@@ -67,6 +75,11 @@ namespace TodoApp.Core.Domain.Interface
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 =======
 >>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
+<<<<<<< HEAD
 >>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
+=======
+=======
+>>>>>>> 83c617e (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
+>>>>>>> 76a6841 (Removed unused files and assemblies)
     }
 }

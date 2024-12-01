@@ -13,6 +13,7 @@ namespace TodoApp.Core.DTO
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
@@ -26,7 +27,12 @@ namespace TodoApp.Core.DTO
 =======
 
 >>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
+<<<<<<< HEAD
 >>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
+=======
+=======
+>>>>>>> 83c617e (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
+>>>>>>> 76a6841 (Removed unused files and assemblies)
         public string? UserName { get; set; }
         public string? TaskType { get; set; }
 
