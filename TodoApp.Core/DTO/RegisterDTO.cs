@@ -19,8 +19,12 @@ using TodoApp.Core.Domain.Enum;
 
 >>>>>>> 6af2c4c (feat(auth): implement authentication and authorization using jwt)
 =======
+<<<<<<< HEAD
 
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+=======
+>>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
 
 namespace TodoApp.Core.DTO
 {
@@ -37,8 +41,13 @@ namespace TodoApp.Core.DTO
         [Required(ErrorMessage = "Name can't be blank")]
 >>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
 =======
+<<<<<<< HEAD
         [Required(ErrorMessage = "Name can't be blank")]
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+=======
+        [Required(ErrorMessage ="Name can't be blank")]
+>>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
         public string? Name { get; set; }
 
         [Required(ErrorMessage = "Email can't be blank")]
@@ -83,8 +92,21 @@ namespace TodoApp.Core.DTO
         
 >>>>>>> 6af2c4c (feat(auth): implement authentication and authorization using jwt)
 =======
+<<<<<<< HEAD
         
 >>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+=======
+        public string? Email {  get; set; }
+
+        [Required(ErrorMessage = "Password can't be blank")]
+        [DataType(DataType.Password)]
+        public string? Password { get; set; }
+        [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+        [DataType(DataType.Password)]
+        public string? ConfirmPassword {  get; set; }
+        
+>>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
       
     }
 }

@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 =======
@@ -40,13 +41,21 @@ using Microsoft.EntityFrameworkCore;
 =======
 ﻿using Microsoft.EntityFrameworkCore;
 >>>>>>> 41e5918 (feat(infrastructure): add application db context and service implementation)
+<<<<<<< HEAD
 >>>>>>> d0b2b5f (feat(infrastructure): add application db context and service implementation)
+=======
+=======
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+>>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TodoApp.Core.Domain.Entities;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -109,7 +118,17 @@ namespace Todo.Infrastructure.Database
 =======
 =======
 >>>>>>> 41e5918 (feat(infrastructure): add application db context and service implementation)
+<<<<<<< HEAD
 >>>>>>> d0b2b5f (feat(infrastructure): add application db context and service implementation)
+=======
+=======
+using TodoApp.Core.Domain.IdentityEntities;
+
+namespace Todo.Infrastructure.Database
+{
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
+>>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
+>>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<ToDo> TodoData { get; set; }

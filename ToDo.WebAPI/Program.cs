@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -18,9 +19,14 @@ using TodoApp.Core.Domain.Services;
 =======
 =======
 >>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+>>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
 using Microsoft.EntityFrameworkCore;
 using Todo.Infrastructure.Database;
 using Todo.Infrastructure.Services;
+using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
 
 <<<<<<< HEAD
@@ -141,7 +147,16 @@ app.Run();
 =======
 >>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
-
+//enable identity in this project
+builder.Services.AddIdentity<ApplicationUser,
+    ApplicationRole>()//Now it understood that we have to enable the identity services
+    .AddEntityFrameworkStores<ApplicationDbContext>()//using entity framework to store the data and exact dbcontext we are using is ApplicationDBContext
+    
+    .AddDefaultTokenProviders()//predefined token provider lai enable garxa
+    
+    .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()//whats the exact repository layer to use as we cannot use dbcontext directly in the userManager class
+    
+    .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();//this is the repository layer for manipulating the roles data
 builder.Services.AddRazorPages();
 
 

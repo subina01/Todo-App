@@ -4,11 +4,16 @@
     <ActiveDebugProfile>https</ActiveDebugProfile>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
 =======
 >>>>>>> d1de45d (refactor(controller): update controller methods to integrate request and response DTOs)
 =======
 >>>>>>> 7f01e22 (feat(ui): add CRUD APIs with constructor-based dependency injection)
+=======
+    <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
+    <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
+>>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
   </PropertyGroup>
 </Project>
