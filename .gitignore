@@ -1,22 +1,16 @@
+
 # Ignore Visual Studio settings folder
 .vs/
 
-<<<<<<< HEAD
 
-
-.vs/
->>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-.vs/
->>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
-=======
 # Ignore bin and obj directories at the root and recursively
 bin/
 obj/
 **/bin/
+
+
 **/obj/
->>>>>>> 3702509 (refactor(controller): update controller methods to integrate request and response DTOs)
->>>>>>> a89f9ed (refactor(controller): update controller methods to integrate request and response DTOs)
+
+.vs/
+/bin/
+/obj/
