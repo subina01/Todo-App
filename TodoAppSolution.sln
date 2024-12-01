@@ -64,6 +64,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.WebAPI", "ToDo.WebAPI\ToDo.WebAPI.csproj", "{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}"
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "todo.WebAPI", "ToDo.WebAPI\todo.WebAPI.csproj", "{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}"
 >>>>>>> e8c83a0 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
@@ -90,6 +91,7 @@ Global
 		{1F1C7960-E9E0-48A9-BAF1-6AB7ACAE4982}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F1C7960-E9E0-48A9-BAF1-6AB7ACAE4982}.Release|Any CPU.Build.0 = Release|Any CPU
 >>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> e8c83a0 (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)
