@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 =======
@@ -17,6 +18,10 @@ using Microsoft.EntityFrameworkCore;
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+>>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +32,15 @@ using TodoApp.Core.Domain.Entities;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 using TodoApp.Core.Domain.IdentityEntities;
 
 namespace Todo.Infrastructure.Database
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> c99b1a6 (refactor(repository): implement DTOs in repository methods for task operations)
@@ -55,6 +64,8 @@ namespace Todo.Infrastructure.Database
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+>>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<ToDo> TodoData { get; set; }

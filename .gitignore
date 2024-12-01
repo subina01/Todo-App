@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 .vs/
 /bin/
 /obj/
@@ -8,17 +6,3 @@ bin/
 **/obj/
 **/bin/
 
-=======
-.vs/
->>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
-=======
-.vs/
-<<<<<<< HEAD
-bin/
-obj/
->>>>>>> 0917c94 (chore: update .gitignore to exclude bin and obj folders)
-=======
-/bin/
-/obj/
-
->>>>>>> 29e66fb (chore: remove bin and obj directories from Git tracking)

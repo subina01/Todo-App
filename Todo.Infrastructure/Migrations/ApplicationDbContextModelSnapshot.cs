@@ -26,8 +26,11 @@ namespace Todo.Infrastructure.Migrations
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+>>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
@@ -132,6 +135,7 @@ namespace Todo.Infrastructure.Migrations
                 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
 =======
@@ -140,6 +144,8 @@ namespace Todo.Infrastructure.Migrations
 >>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+>>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
             modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
                 {
                     b.Property<int>("Id")
@@ -177,8 +183,11 @@ namespace Todo.Infrastructure.Migrations
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+>>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 
             modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationRole", b =>
                 {
@@ -266,6 +275,7 @@ namespace Todo.Infrastructure.Migrations
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     b.Property<int>("UserType")
                         .HasColumnType("int");
 
@@ -276,6 +286,11 @@ namespace Todo.Infrastructure.Migrations
                         .HasColumnType("int");
 
 >>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
+=======
+                    b.Property<int>("UserType")
+                        .HasColumnType("int");
+
+>>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -340,6 +355,7 @@ namespace Todo.Infrastructure.Migrations
                         .IsRequired();
                 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
 =======
@@ -348,6 +364,8 @@ namespace Todo.Infrastructure.Migrations
 >>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
 =======
 >>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
+=======
+>>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
 #pragma warning restore 612, 618
         }
     }
