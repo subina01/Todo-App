@@ -1,11 +1,10 @@
-
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +28,11 @@ using Microsoft.EntityFrameworkCore;
 
 using Microsoft.EntityFrameworkCore;
 
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -65,8 +69,13 @@ namespace Todo.Infrastructure.Database
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
 
 namespace Todo.Infrastructure.Database
+using TodoApp.Core.Domain.IdentityEntities;
+
+    namespace Todo.Infrastructure.Database
     {
-        public class ApplicationDbContext : DbContext
+        public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
+        {
+            public class ApplicationDbContext : DbContext
 using TodoApp.Core.Domain.IdentityEntities;
 
 namespace Todo.Infrastructure.Database

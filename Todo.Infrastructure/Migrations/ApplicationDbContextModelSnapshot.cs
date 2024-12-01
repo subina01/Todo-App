@@ -135,7 +135,8 @@ namespace Todo.Infrastructure.Migrations
                     {
                         b.Property<int>("Id")
                             .ValueGeneratedOnAdd()
-       
+
+
                 b.Property<DateTime>("CompletionDate")
                     .HasColumnType("datetime2");
 
@@ -166,6 +167,118 @@ namespace Todo.Infrastructure.Migrations
                 });
                 b.ToTable("TodoData");
             });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+            modelBuilder.Entity("TodoApp.Core.Domain.Entities.ToDo", b =>
+                 {
+                     b.Property<int>("Id")
+                         .ValueGeneratedOnAdd()
+                         .HasColumnType("int");
+
+                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                     b.Property<DateTime>("CompletionDate")
+                         .HasColumnType("datetime2");
+
+                     b.Property<string>("Description")
+                         .HasColumnType("nvarchar(max)");
+
+                     b.Property<DateTime>("DueDate")
+                         .HasColumnType("datetime2");
+
+                     b.Property<DateTime>("StartDate")
+                         .HasColumnType("datetime2");
+
+                     b.Property<string>("Status")
+                         .HasColumnType("nvarchar(max)");
+
+                     b.Property<string>("TaskType")
+                         .HasColumnType("nvarchar(max)");
+
+                     b.Property<string>("UserName")
+                         .HasColumnType("nvarchar(max)");
+
+                     b.HasKey("Id");
+
+                     b.ToTable("TodoData");
+                 });
 
             modelBuilder.Entity("TodoApp.Core.Domain.IdentityEntities.ApplicationRole", b =>
                 {
@@ -251,7 +364,6 @@ namespace Todo.Infrastructure.Migrations
                                         .HasMaxLength(256)
                                         .HasColumnType("nvarchar(256)");
 
-
                     b.Property<int>("UserType")
                                         .HasColumnType("int");
 
@@ -261,7 +373,6 @@ namespace Todo.Infrastructure.Migrations
 
                     b.Property<int>("UserType")
                                                   .HasColumnType("int");
-
 
                     b.HasIndex("NormalizedEmail")
                                         .HasDatabaseName("EmailIndex");

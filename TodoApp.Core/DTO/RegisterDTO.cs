@@ -76,25 +76,37 @@ namespace TodoApp.Core.DTO
 
                 }
         }
+
+        namespace TodoApp.Core.DTO
+        {
+                public class RegisterDTO
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "Email can't be blank")]
-        [EmailAddress]
+                [Required(ErrorMessage = "Email can't be blank")]
+                [EmailAddress]
 
-        public string? Email { get; set; }
+                public string? Email { get; set; }
 
-        [Required(ErrorMessage = "Password can't be blank")]
+                [Required(ErrorMessage = "Password can't be blank")]
 
-        public string? Password { get; set; }
-        [Required(ErrorMessage = "ConfirmPassword can't be blank")]
+                public string? Password { get; set; }
+                [Required(ErrorMessage = "ConfirmPassword can't be blank")]
 
-        public string? ConfirmPassword { get; set; }
-        public UserTypeOptions UserType { get; set; }
+                public string? ConfirmPassword { get; set; }
+                public UserTypeOptions UserType { get; set; }
 
+        }
 }
-}
 
-        public string? Email { get; set; }
+public string? Email { get; set; }
+
+[Required(ErrorMessage = "Password can't be blank")]
+[DataType(DataType.Password)]
+public string? Password { get; set; }
+[Required(ErrorMessage = "ConfirmPassword can't be blank")]
+[DataType(DataType.Password)]
+public string? ConfirmPassword { get; set; }
+
 
 [Required(ErrorMessage = "Password can't be blank")]
 [DataType(DataType.Password)]
@@ -103,6 +115,6 @@ public string? Password { get; set; }
 [DataType(DataType.Password)]
 public string? ConfirmPassword { get; set; }
         
-      
+     
     }
 }
