@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ignore Visual Studio settings folder
 .vs/
 
@@ -11,5 +12,14 @@
 bin/
 obj/
 **/bin/
+<<<<<<< HEAD
 **/obj/
 >>>>>>> 3702509 (refactor(controller): update controller methods to integrate request and response DTOs)
+=======
+**/obj/
+=======
+.vs/
+bin/
+obj/
+>>>>>>> 3fcf119 (chore: update .gitignore to exclude bin and obj folders)
+>>>>>>> 5f8b743 (chore: update .gitignore to exclude bin, obj, and .vs directories)
