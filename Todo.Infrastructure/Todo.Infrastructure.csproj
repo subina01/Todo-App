@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TodoApp.Core\TodoApp.Core.csproj" />
+  </ItemGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
+
+>>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+
+
+>>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
+
+>>>>>>> c99b1a6 (refactor(repository): implement DTOs in repository methods for task operations)
+
+>>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
+
+
+>>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
+
+>>>>>>> ea2fbee (feat(infrastructure): add application db context and service implementation)
+
+>>>>>>> b701d45 (feat(infrastructure): add application db context and service implementation)
+
+
+>>>>>>> 7dda02d (refactor(repository): implement DTOs in repository methods for task operations)
+
+>>>>>>> 21f4e66 (refactor(repository): implement DTOs in repository methods for task operations)
+
+
+>>>>>>> 41e5918 (feat(infrastructure): add application db context and service implementation)
+
+>>>>>>> d0b2b5f (feat(infrastructure): add application db context and service implementation)
+
+
+>>>>>>> ea898ab (feat(infrastructure): add application db context and service implementation)
+
+>>>>>>> 765cc0b (feat(infrastructure): add application db context and service implementation)
+
+
+>>>>>>> c99b1a6 (refactor(repository): implement DTOs in repository methods for task operations)
+
+>>>>>>> f254bfa (refactor(repository): implement DTOs in repository methods for task operations)
+
+
+>>>>>>> 769f1e3 (feat(infrastructure): add application db context and service implementation)
+>>>>>>> b67024d (feat(infrastructure): add application db context and service implementation)
+</Project>
