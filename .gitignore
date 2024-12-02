@@ -1,34 +1,15 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
+
 # Ignore Visual Studio settings folder
 .vs/
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-.vs/
->>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
-=======
+
+
+
+
 # Ignore bin and obj directories at the root and recursively
-bin/
-obj/
-**/bin/
-<<<<<<< HEAD
-**/obj/
->>>>>>> 3702509 (refactor(controller): update controller methods to integrate request and response DTOs)
-=======
-**/obj/
-=======
-.vs/
-<<<<<<< HEAD
-bin/
-obj/
->>>>>>> 3fcf119 (chore: update .gitignore to exclude bin and obj folders)
-<<<<<<< HEAD
->>>>>>> 5f8b743 (chore: update .gitignore to exclude bin, obj, and .vs directories)
-=======
-=======
+
 /bin/
 /obj/
 obj/
@@ -36,32 +17,4 @@ bin/
 **/obj/
 **/bin/
 
->>>>>>> a01c3c5 (chore: remove bin and obj directories from Git tracking)
-<<<<<<< HEAD
->>>>>>> 4bf37bf (chore: remove bin and obj directories from Git tracking)
-=======
-=======
-.vs/
->>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
-<<<<<<< HEAD
->>>>>>> e4238f5 (feat(core): complete core layer implementation)
-=======
-=======
-.vs/
-<<<<<<< HEAD
-bin/
-obj/
->>>>>>> 0917c94 (chore: update .gitignore to exclude bin and obj folders)
-<<<<<<< HEAD
->>>>>>> 5124e6e (chore: update .gitignore to exclude bin and obj folders)
-=======
-=======
-/bin/
-/obj/
-obj/
-bin/
-**/obj/
-**/bin/
 
->>>>>>> 29e66fb (chore: remove bin and obj directories from Git tracking)
->>>>>>> fcf158d (chore: remove bin and obj directories from Git tracking)

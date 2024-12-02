@@ -8,68 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="13.0.1" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
-=======
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
-=======
->>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
-=======
->>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
-=======
->>>>>>> 0f689a6 (feat(core): complete core layer implementation)
-=======
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
-=======
-<<<<<<< HEAD
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
->>>>>>> 6af2c4cf890176350c27058ed130352aecbf6b7c
-=======
->>>>>>> 3d1dbd0 (refactor: updated sln file with updatedfeatures)
-<<<<<<< HEAD
->>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
-=======
-=======
->>>>>>> ca4de06 (feat(core): complete core layer implementation)
-<<<<<<< HEAD
->>>>>>> c21a00c (feat(core): complete core layer implementation)
-=======
-=======
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
->>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
-<<<<<<< HEAD
->>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
-=======
-=======
->>>>>>> d8c1fe9 (feat(core): complete core layer implementation)
-<<<<<<< HEAD
->>>>>>> e4238f5 (feat(core): complete core layer implementation)
-=======
-=======
->>>>>>> 0f689a6 (feat(core): complete core layer implementation)
-<<<<<<< HEAD
->>>>>>> 80c19f0 (feat(core): complete core layer implementation)
-=======
-=======
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
->>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
-  </ItemGroup>
+
+ </ItemGroup>
 
 </Project>

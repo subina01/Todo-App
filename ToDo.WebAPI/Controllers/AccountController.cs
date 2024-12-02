@@ -1,201 +1,55 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
+
+using TodoApp.Core.Domain.Interface;
+
+using Microsoft.AspNetCore.Http;
+
 using Microsoft.AspNetCore.Authorization;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.Core.Domain.IdentityEntities;
+
+
 using TodoApp.Core.Domain.Interface;
-=======
-﻿using Microsoft.AspNetCore.Http;
-=======
-﻿using Microsoft.AspNetCore.Authorization;
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using TodoApp.Core.Domain.IdentityEntities;
-<<<<<<< HEAD
->>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
-=======
-using TodoApp.Core.Domain.Interface;
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
-=======
-﻿using Microsoft.AspNetCore.Http;
-=======
-﻿using Microsoft.AspNetCore.Authorization;
->>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using TodoApp.Core.Domain.IdentityEntities;
-<<<<<<< HEAD
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
-=======
-using TodoApp.Core.Domain.Interface;
->>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
+
 using TodoApp.Core.DTO;
 
 namespace todo.WebAPI.Controllers
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
-    [Route("api/")]
+    [Route("api/[controller]")]
     [ApiController]
-    [AllowAnonymous]
-<<<<<<< HEAD
     public class AccountController : ControllerBase
     {
         // Business logic provided by ASP.NET Core Identity
-=======
-    [Route("api/[controller]")]
-=======
-    [Route("api/")]
->>>>>>> 25050fb (feat(login): Add login functionality and its DTO)
-    [ApiController]
-    public class AccountController : ControllerBase
-    {
-<<<<<<< HEAD
->>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
-=======
-<<<<<<< HEAD
->>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
-        private readonly UserManager<ApplicationUser> userManager;
-        private readonly SignInManager<ApplicationUser> signInManager;
-        private readonly RoleManager<ApplicationRole> roleManager;
-        private readonly IJwtService jwtService;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
+        private readonly IJwtService _jwtService;
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
-=======
-=======
-    [Route("api/[controller]")]
-=======
-    [Route("api/")]
->>>>>>> fb41d9c (feat(login): Add login functionality and its DTO)
-    [ApiController]
-=======
->>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
-    public class AccountController : ControllerBase
-    {
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
-        //business logic provided by asp.net core Identity
-        private readonly UserManager<ApplicationUser> userManager;
-        private readonly SignInManager<ApplicationUser> signInManager;
-        private readonly RoleManager<ApplicationRole> roleManager;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        private readonly IJwtService jwtService;
-
-<<<<<<< HEAD
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
->>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
-=======
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
-=======
-
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
-=======
-        private readonly IJwtService jwtService;
-
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
->>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
         {
-            this.userManager = userManager;
-            this.signInManager = signInManager;
-            this.roleManager = roleManager;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
-=======
->>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
-            this.jwtService = jwtService;
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _roleManager = roleManager;
+            _jwtService = jwtService;
         }
 
-<<<<<<< HEAD
         [HttpPost("register")]
-=======
-        [HttpPost]
-        [Route("register")]
-<<<<<<< HEAD
->>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
-=======
-=======
-        }
-
-        [HttpPost]
-<<<<<<< HEAD
-        [Route("Register")]
->>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
-<<<<<<< HEAD
->>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
-=======
-=======
-        [Route("register")]
->>>>>>> eb11733 (feat(login): Add login functionality and its DTO)
-<<<<<<< HEAD
->>>>>>> 25050fb (feat(login): Add login functionality and its DTO)
-=======
-=======
-        }
-
-        [HttpPost]
-<<<<<<< HEAD
-        [Route("Register")]
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
-<<<<<<< HEAD
->>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
-=======
-=======
-        [Route("register")]
->>>>>>> fb41d9c (feat(login): Add login functionality and its DTO)
->>>>>>> 5e24ca5 (t rm --cached -r TodoApp.Core/bin/ feat(login): Add login functionality and its DTO)
-        public async Task<IActionResult> Register([FromBody] RegisterDTO register)
+        public async Task<IActionResult> Register([FromBody] RegistrationDTO register)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
-=======
->>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
-=======
->>>>>>> ebe6794 (feat(Registration): Added Registration API using ASP.NET Identity)
             if (register.Password != register.ConfirmPassword)
             {
                 return BadRequest("Password doesn't match with the confirmed password");
-=======
-=======
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
-            if(register.Password != register.ConfirmPassword)
-            {
-                try
-                {
-                    throw new Exception("Password doesn't match with the confirmed password");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"{ex}");
-                }
-<<<<<<< HEAD
->>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
-=======
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
             }
 
-            var existingUser = await userManager.FindByEmailAsync(register.Email);
+            var existingUser = await _userManager.FindByEmailAsync(register.Email);
             if (existingUser != null)
             {
                 return Conflict(new
@@ -203,11 +57,7 @@ namespace todo.WebAPI.Controllers
                     Message = "A user with this email already exists."
                 });
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-<<<<<<< HEAD
             // Creating object for application user class
             ApplicationUser user = new ApplicationUser
             {
@@ -217,92 +67,35 @@ namespace todo.WebAPI.Controllers
             };
 
             // Creating the user
-            var response = await userManager.CreateAsync(user, register.Password);
+            var response = await _userManager.CreateAsync(user, register.Password);
 
             // This represents the result of operations such as creating, updating, and deleting
-=======
-=======
-=======
-            //creating object for application user class
-<<<<<<< HEAD
->>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
->>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
-            var user = new ApplicationUser
-=======
-            ApplicationUser user = new ApplicationUser
->>>>>>> 5783ca4 (feat(auth): Add jwt based authentication)
-            {
-                UserName = register.Name,
-                Email = register.Email,
-                Name = register.Name,
-                
-            };
-
-<<<<<<< HEAD
-            var response = await userManager.CreateAsync(user, register.Password);
->>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
             if (!response.Succeeded)
             {
-=======
-=======
-            //creating object for application user class
-            ApplicationUser user = new ApplicationUser
-            {
-                UserName = register.Name,
-                Email = register.Email,
-                Name = register.Name,
-                
-            };
-
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
-            //creating the user
-            var response = await userManager.CreateAsync(user, register.Password);
-            //THIS REPRESENTS THE RESULT OF OPERATIONS SUCH AS CREATING UPDATING AND DELETING
-            if (!response.Succeeded) {
-<<<<<<< HEAD
->>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
-=======
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
                 return BadRequest(new
                 {
                     Message = "Registration failed."
                 });
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
 
-            
-
-<<<<<<< HEAD
-<<<<<<< HEAD
             // Sign the user in after successful registration
-=======
->>>>>>> be0f8e4 (chore: Remove bin and obj folders from version control)
-            await signInManager.SignInAsync(user, isPersistent: false);
-            var authenticationResponse = jwtService.CreateJwtToken(user);
+            await _signInManager.SignInAsync(user, isPersistent: false);
+            var authenticationResponse = _jwtService.CreateJwtToken(user);
 
             // isPersistent false means the user will be logged in only for the current browser session, and true means the user remains logged in even after the browser is closed
-=======
-            await signInManager.SignInAsync(user, isPersistent: false);
-            var authenticationResponse = jwtService.CreateJwtToken(user);
->>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
             return Ok(authenticationResponse);
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO login)
         {
-            var user = await userManager.FindByNameAsync(login.UserName);
+            var user = await _userManager.FindByNameAsync(login.UserName);
             if (user == null)
             {
                 return BadRequest("User is not registered");
             }
-<<<<<<< HEAD
 
-=======
->>>>>>> 78b8029 (refactor: updated sln file with updatedfeatures)
-            var response = await signInManager.PasswordSignInAsync(user, login.Password, false, false);
+            var response = await _signInManager.PasswordSignInAsync(user, login.Password, false, false);
             if (!response.Succeeded)
             {
                 return BadRequest(new
@@ -311,92 +104,10 @@ namespace todo.WebAPI.Controllers
                 });
             }
 
-            var authenticationResponse = jwtService.CreateJwtToken(user);
+            var authenticationResponse = _jwtService.CreateJwtToken(user);
 
             return Ok(authenticationResponse);
-=======
-            //sign the user in after sucessful registration
-            await signInManager.SignInAsync(user, isPersistent: false);
-            var authenticationResponse = jwtService.CreateJwtToken(user);
-            //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
-            return Ok(authenticationResponse);
-           
->>>>>>> 73d3215 (feat(Registration): Added Registration API using ASP.NET Identity)
         }
-
-        [HttpPost]
-        [Route("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDTO login)
-        {
-            var user = await userManager.FindByNameAsync(login.UserName);
-            if (user == null)
-            {
-                return BadRequest("User is not registered");
-            }
-            var response = await signInManager.PasswordSignInAsync(user, login.Password,false, false);
-            if (!response.Succeeded)
-            {
-                return BadRequest(new
-                {
-                    Message = "Login failed."
-                });
-
-            }
-
-            var authenticationResponse = jwtService.CreateJwtToken(user);
-
-            return Ok(authenticationResponse);
-
-
-        }
-       
-=======
-=======
-            
-
-            
->>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
-
-            //sign the user in after sucessful registration
-            await signInManager.SignInAsync(user, isPersistent: false);
-            var authenticationResponse = jwtService.CreateJwtToken(user);
-            //isPersistent false huda chai current browser session chalda samma matra user loggedin hunxa ani true huda chai user remains logged in even after browser close garisakepaxi
-            return Ok(authenticationResponse);
-           
-        }
-<<<<<<< HEAD
->>>>>>> c90400b (feat(Registration): Added Registration API using ASP.NET Identity)
-=======
-
-        [HttpPost]
-        [Route("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDTO login)
-        {
-            var user = await userManager.FindByNameAsync(login.UserName);
-            if (user == null)
-            {
-                return BadRequest("User is not registered");
-            }
-            var response = await signInManager.PasswordSignInAsync(user, login.Password,false, false);
-            if (!response.Succeeded)
-            {
-                return BadRequest(new
-                {
-                    Message = "Login failed."
-                });
-
-            }
-
-            var authenticationResponse = jwtService.CreateJwtToken(user);
-
-            return Ok(authenticationResponse);
-
-
-        }
-<<<<<<< HEAD
->>>>>>> fb41d9c (feat(login): Add login functionality and its DTO)
-=======
-       
->>>>>>> 86a57ab (feat(auth): Add jwt based authentication)
     }
+
 }

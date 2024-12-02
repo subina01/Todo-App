@@ -18,17 +18,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Todo.Infrastructure\Todo.Infrastructure.csproj" />
     <ProjectReference Include="..\TodoApp.Core\TodoApp.Core.csproj" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <ProjectReference Include="..\TodoApp.UI\TodoApp.UI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-=======
->>>>>>> 3cfe03a (refactor(controller): update controller methods to integrate request and response DTOs)
-=======
->>>>>>> 87b39c6 (feat(ui): add CRUD APIs with constructor-based dependency injection)
   </ItemGroup>
 
 </Project>
