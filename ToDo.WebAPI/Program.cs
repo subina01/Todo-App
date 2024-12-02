@@ -1,29 +1,26 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using System.Text.Json;
 using System.Text.Json.Serialization;
-using Todo.Infrastructure.Database;
-using Todo.Infrastructure.Services;
+using System.Text.Json;
 using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
-using TodoApp.Core.Domain.Services;
+using TodoApp.Core.Services;
+using TodoApp.Infrastructure.Database;
+using TodoApp.Infrastructure.Repository;
+using TodoApp.Infrastructure.Map;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnectionString")
     )
-);
+); builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddScoped<ITodoServices, TodoRepository>();
 builder.Services.AddTransient<IJwtService, JwtService>();
@@ -33,11 +30,6 @@ builder.Services.AddIdentity<ApplicationUser,
     .AddEntityFrameworkStores<ApplicationDbContext>()//using entity framework to store the data and exact dbcontext we are using is ApplicationDBContext
 
     .AddDefaultTokenProviders();//predefined token provider lai enable garxa
-    
-    
-
-
-
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;//Authentication ko primary system ho , JWT tokens use garxa.
@@ -55,10 +47,8 @@ builder.Services.AddAuthentication(options =>
         ValidAudience = builder.Configuration["Jwt:Audience"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
-    
-});
-builder.Services.AddRazorPages();
 
+});
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
@@ -75,12 +65,13 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.AddSecurityDefinition(name: JwtBearerDefaults.AuthenticationScheme, securityScheme: new Microsoft.OpenApi.Models.OpenApiSecurityScheme{
+    options.AddSecurityDefinition(name: JwtBearerDefaults.AuthenticationScheme, securityScheme: new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
         Name = "Authorization",
         Description = "Enter the Bearer Authorization : `Bearer Genreated-JWT-Token`",
         In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-        Type =Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
-        Scheme ="Bearer"
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
     });
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
     { {
@@ -97,7 +88,6 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -108,8 +98,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseAuthentication();//for reading identity cookie
 app.UseAuthorization();//validates access permission of the user
+
 
 app.MapControllers();
 
