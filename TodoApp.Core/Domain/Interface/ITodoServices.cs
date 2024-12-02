@@ -16,7 +16,9 @@ namespace TodoApp.Core.Domain.Interface
                 public Task<GetAllTaskResponseDTO> GetAllTask();
                 public Task<GetTaskByIdResponseDTO> GetTaskById(int id);
 
+
                 public Task<DeleteTaskResponseDTO> DeleteTask(int id);
 
         }
+
 }

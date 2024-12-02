@@ -9,7 +9,6 @@ namespace TodoApp.Core.DTO
     public class TodoResponseDTO
     {
         public int Id { get; set; }
-
         public string? UserName { get; set; }
         public string? TaskType { get; set; }
 
