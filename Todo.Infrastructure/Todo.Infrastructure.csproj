@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -24,6 +24,9 @@
 
 
  <ItemGroup>
+
+  <ItemGroup>
+
     <Folder Include="Services\" />
   </ItemGroup>
 
@@ -67,5 +70,6 @@
   </ItemGroup>
 
 
+</Project>
 </Project>
 

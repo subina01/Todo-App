@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TodoApp.Core.Domain.IdentityEntities;
+
+
 using TodoApp.Core.Domain.Interface;
 using Microsoft.AspNetCore.Http;
 sing Microsoft.AspNetCore.Identity;
@@ -276,12 +278,12 @@ namespace todo.WebAPI.Controllers
                                                 Email = register.Email,
                                                 Name = register.Name
                                       ApplicationUser user = new ApplicationUser
-                                  {
-                                      UserName = register.Name,
-                                      Email = register.Email,
-                                      Name = register.Name,
+                                      {
+                                          UserName = register.Name,
+                                          Email = register.Email,
+                                          Name = register.Name,
 
-                                      var response = await userManager.CreateAsync(user, register.Password);
+                                          var response = await userManager.CreateAsync(user, register.Password);
             if (!response.Succeeded)
                                             {
 
@@ -628,7 +630,7 @@ namespace todo.WebAPI.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO login)
         {
-            var user = await userManager.FindByNameAsync(login.UserName);
+            var user = await _userManager.FindByNameAsync(login.UserName);
             if (user == null)
             {
                 return BadRequest("User is not registered");
@@ -674,7 +676,7 @@ namespace todo.WebAPI.Controllers
 
             }
 
-            var authenticationResponse = jwtService.CreateJwtToken(user);
+            var authenticationResponse = _jwtService.CreateJwtToken(user);
 
             return Ok(authenticationResponse);
 
@@ -716,4 +718,5 @@ namespace todo.WebAPI.Controllers
 
         }
     }
+
 }
