@@ -291,8 +291,6 @@ builder.Services.AddTransient<IJwtService, JwtService>();
 builder.Services.AddIdentity<ApplicationUser,
     ApplicationRole>()//Now it understood that we have to enable the identity services
     .AddEntityFrameworkStores<ApplicationDbContext>()//using entity framework to store the data and exact dbcontext we are using is ApplicationDBContext
-<<<<<<< HEAD
-<<<<<<< HEAD
 
     .AddDefaultTokenProviders();//predefined token provider lai enable garxa
 
@@ -319,8 +317,6 @@ builder.Services.AddAuthentication(options =>
     };
 
 });
-builder.Services.AddRazorPages();
-
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {

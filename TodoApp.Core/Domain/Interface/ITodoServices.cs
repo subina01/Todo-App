@@ -29,7 +29,7 @@ Global
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Debug | Any CPU.Build.0 = Debug | Any CPU
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Release | Any CPU.ActiveCfg = Release | Any CPU
 		{07A1DA0B-840C-42F7-8C9F-FBC5262E5507}.Release | Any CPU.Build.0 = Release | Any CPU
-                                EndGlobalSection
+																EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
@@ -40,26 +40,9 @@ EndGlobalSection
 
 
 
-                                GlobalSection(ExtensibilityGlobals) = postSolution
 
-<<<<<<< HEAD
-                                                                SolutionGuid = { FD3227B4 - 4BC7 - 48F3 - B8D7 - 2FDAE77E2271}
+																GlobalSection(ExtensibilityGlobals) = postSolution
+
+																																SolutionGuid = { FD3227B4 - 4BC7 - 48F3 - B8D7 - 2FDAE77E2271}
 EndGlobalSection
 EndGlobal
-=======
-{
-    public interface ITodoServices
-    {
-
-        public  Task<IEnumerable<GetAllTasksResponseDTO>> GetAllTasks();
-
-        public Task<GetAllTaskByIdResponseDTO> GetTaskById(int id);
-
-
-        public Task AddTask(ToDo tododata);
-        public Task<UpdateTaskResponseDTO> UpdateTask(int id, UpdateTaskRequestDTO updateTodoTask);
-        public  Task<UpdateStatusResponseDTO> UpdateTaskStatus(int id, UpdateStatusRequestDTO newStatus);
-        public Task<DeleteTaskResponseDTO> DeleteTask(int id);
-    }
-}
->>>>>>> 83c617e (feat(dto):add request and response DTOs for updating, deleting, and retrieving tasks)

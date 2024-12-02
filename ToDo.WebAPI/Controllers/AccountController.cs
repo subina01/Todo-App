@@ -646,7 +646,7 @@ namespace todo.WebAPI.Controllers
                     });
             }
 
-            var authenticationResponse = jwtService.CreateJwtToken(user);
+            var authenticationResponse = _jwtService.CreateJwtToken(user);
 
             return Ok(authenticationResponse);
             //sign the user in after sucessful registration
