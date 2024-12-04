@@ -71,6 +71,3 @@ namespace TodoApp.Core.Domain.IdentityEntities
 
 
 
-
-
-

@@ -16,31 +16,30 @@ namespace TodoApp.Core.Domain.Services
     public class JwtService : IJwtService
     {
         private readonly IConfiguration configuration;
-        public JwtService(IConfiguration configuration) 
+        public JwtService(IConfiguration configuration)
         {
             this.configuration = configuration;
         }
         public AuthenticationResponse CreateJwtToken(ApplicationUser user)
         {
-          
-                var claims = new[]
-                {
-                new Claim(JwtRegisteredClaimNames.Sub, user.UserName),// holds the subject of the token, in this case, the username of the user
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),//each time naya id generate garda replay attacks naaos bhanerw
-              
+
+            var claims = new[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, user.UserName), // Holds the subject of the token, in this case, the username of the user
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()), // Every time generate a new ID to prevent replay attacks
 
             };
 
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
 
-                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);//Creates a symmetric encryption key to sign the token.
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256); // Creates a symmetric encryption key to sign the token.
 
-                var tokenGenerator = new JwtSecurityToken(
-                    issuer: configuration["Jwt:Issuer"],
-                    audience: configuration["Jwt:Audience"],
-                    claims: claims,
-                    expires: DateTime.Now.AddMinutes(30),
-                    signingCredentials: creds);
+            var tokenGenerator = new JwtSecurityToken(
+                issuer: configuration["Jwt:Issuer"],
+                audience: configuration["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(30),
+                signingCredentials: creds);
 
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
             string token = tokenHandler.WriteToken(tokenGenerator);
@@ -51,7 +50,7 @@ namespace TodoApp.Core.Domain.Services
                 Email = user.Email,
                 Name = user.Name,
             };
-            
+
 
         }
     }

@@ -1,23 +1,26 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Todo.Infrastructure.Database;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using TodoApp.Core.Domain.Entities;
 using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.DTO;
+using TodoApp.Infrastructure.Database;
 
-namespace Todo.Infrastructure.Services
+namespace TodoApp.Infrastructure.Repository
 {
     public class TodoRepository : ITodoServices
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public TodoRepository(ApplicationDbContext context)
+        public TodoRepository(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        public async Task AddTask(ToDo tododata)
+        public async Task AddTask(ToDo TodoData)
         {
-            await _context.AddAsync(tododata);
+            await _context.AddAsync(TodoData);
             await _context.SaveChangesAsync();
 
 
@@ -31,7 +34,7 @@ namespace Todo.Infrastructure.Services
             {
                 return new DeleteTaskResponseDTO
                 {
-                 Message = "No Task Found with the given Id."
+                    Message = "No Task Found with the given Id."
                 };
             }
 
@@ -46,11 +49,11 @@ namespace Todo.Infrastructure.Services
         }
         public async Task<GetAllTaskByIdResponseDTO> GetTaskById(int id)
         {
-            var task = await _context.TodoData
+            var TaskById = await _context.TodoData
                 .Where(x => x.Id == id)
                 .Select(task => new TodoResponseDTO
                 {
-                   Id = task.Id, 
+                    Id = task.Id,
                     UserName = task.UserName,
                     TaskType = task.TaskType,
                     Description = task.Description,
@@ -62,109 +65,55 @@ namespace Todo.Infrastructure.Services
 
             return new GetAllTaskByIdResponseDTO
             {
-              
-                Task = task,
+
+                Task = TaskById,
             };
         }
-        public async Task<IEnumerable<GetAllTasksResponseDTO>> GetAllTasks()
+        public async Task<GetAllTasksResponseDTO> GetAllTask()
         {
-            var tasks = await _context.TodoData
-           .Select(task => new TodoResponseDTO
-           {
-               Id = task.Id,
-               UserName = task.UserName,
-               TaskType = task.TaskType,
-               Description = task.Description,
-               StartDate = task.StartDate,
-               DueDate = task.DueDate,
-               CompletionDate = task.CompletionDate,
-               Status = task.Status
-           }).ToListAsync();
+            var TaskList = await _context.TodoData
+                .Select(task => new TodoResponseDTO
+                {
+                    Id = task.Id,
+                    UserName = task.UserName,
+                    TaskType = task.TaskType,
+                    Description = task.Description,
+                    StartDate = task.StartDate,
+                    DueDate = task.DueDate,
+                    CompletionDate = task.CompletionDate,
+                    Status = task.Status
+                }).ToListAsync(); 
 
-
-            var response = new GetAllTasksResponseDTO
+            return new GetAllTasksResponseDTO
             {
-                Tasks = tasks,
-                TotalTask = tasks.Count
+                Tasks = TaskList,
+                TotalTask = TaskList.Count(),
             };
-
-            return new List<GetAllTasksResponseDTO> { response };
-
         }
-
-
 
         public async Task<UpdateTaskResponseDTO> UpdateTask(int id, UpdateTaskRequestDTO updateTodoData)
         {
-            var taskUpdate = _context.TodoData.FirstOrDefault(x => x.Id == id);
+            var taskUpdate = await _context.TodoData.FirstOrDefaultAsync(x => x.Id == id);
 
-            if (taskUpdate == null) {
-
-                throw new Exception("NO TASK  UPDATE FOUND");
-                
+            if (taskUpdate == null)
+            {
+                throw new KeyNotFoundException("No task found with the provided ID.");
             }
-            if (updateTodoData.UserName != null)
-                taskUpdate.UserName = updateTodoData.UserName;
-            if (updateTodoData.TaskType != null)
-                taskUpdate.TaskType = updateTodoData.TaskType;
-            if (updateTodoData.Description != null)
-                taskUpdate.Description = updateTodoData.Description;
-            if (updateTodoData.StartDate.HasValue)
-                taskUpdate.StartDate = updateTodoData.StartDate.Value;
-            if (updateTodoData.DueDate.HasValue)
-                taskUpdate.DueDate = updateTodoData.DueDate.Value;
-            if (updateTodoData.CompletionDate.HasValue)
-                taskUpdate.CompletionDate = updateTodoData.CompletionDate.Value;
-            if (updateTodoData.UserName != null)
-                taskUpdate.Status = updateTodoData.UserName;
+
+            _mapper.Map(updateTodoData, taskUpdate);
 
             await _context.SaveChangesAsync();
+
+
+            var updatedTaskResponse = _mapper.Map<TodoResponseDTO>(taskUpdate);
 
             return new UpdateTaskResponseDTO
             {
                 Message = "Your Task Has Been Updated",
-                UserName = taskUpdate.UserName,
-                TaskType = taskUpdate.TaskType,
-                Description = taskUpdate.Description,
-                StartDate = taskUpdate.StartDate,
-                DueDate = taskUpdate.DueDate,
-                CompletionDate = taskUpdate.CompletionDate
+                UpdatedTask = updatedTaskResponse
             };
         }
 
-        public async Task<UpdateStatusResponseDTO> UpdateTaskStatus(int id, UpdateStatusRequestDTO newstatus)
-        {
-            var UpdatetheStatus = _context.TodoData.FirstOrDefault(x => x.Id == id);
 
-            if (UpdatetheStatus == null)
-            {
-
-                throw new Exception("NO STATUS  UPDATE FOUND");
-            }
-            if (newstatus.Status.ToLower() == "review") {
-                newstatus.Status = "Review";
-            }
-            else if(newstatus.Status.ToLower() == "completed")
-            {
-                newstatus.Status = "Completed";
-            }
-            else  if(newstatus.Status.ToLower() == "progress")
-            {
-                newstatus.Status = "Progress";
-
-            }
-            else
-            {
-                newstatus.Status = "Start";
-            }
-            UpdatetheStatus.Status = newstatus.Status;
-            await _context.SaveChangesAsync();
-
-            return new UpdateStatusResponseDTO
-            {
-                Message = "Your Status Has Been Updated",
-                UpdatedStatus = UpdatetheStatus.Status
-            };
-        }
     }
 }

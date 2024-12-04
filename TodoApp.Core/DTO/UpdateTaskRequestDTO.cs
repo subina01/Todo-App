@@ -20,5 +20,6 @@ namespace TodoApp.Core.DTO
         public DateTime? DueDate { get; set; }
 
         public DateTime? CompletionDate { get; set; }
+        public string? Status { get; set; }
     }
 }
