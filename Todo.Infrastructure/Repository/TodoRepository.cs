@@ -28,9 +28,9 @@ namespace TodoApp.Infrastructure.Repository
 
         public async Task<DeleteTaskResponseDTO> DeleteTask(int id)
         {
-            var taskToDelete = _context.TodoData.FirstOrDefault(x => x.Id == id);
+            var TaskToDelete = _context.TodoData.FirstOrDefault(x => x.Id == id);
 
-            if (taskToDelete == null)
+            if (TaskToDelete == null)
             {
                 return new DeleteTaskResponseDTO
                 {
@@ -38,7 +38,7 @@ namespace TodoApp.Infrastructure.Repository
                 };
             }
 
-            _context.TodoData.Remove(taskToDelete);
+            _context.TodoData.Remove(TaskToDelete);
             await _context.SaveChangesAsync();
 
             return new DeleteTaskResponseDTO
@@ -93,19 +93,19 @@ namespace TodoApp.Infrastructure.Repository
 
         public async Task<UpdateTaskResponseDTO> UpdateTask(int id, UpdateTaskRequestDTO updateTodoData)
         {
-            var taskUpdate = await _context.TodoData.FirstOrDefaultAsync(x => x.Id == id);
+            var TaskToUpdate = await _context.TodoData.FirstOrDefaultAsync(x => x.Id == id);
 
-            if (taskUpdate == null)
+            if (TaskToUpdate == null)
             {
                 throw new KeyNotFoundException("No task found with the provided ID.");
             }
 
-            _mapper.Map(updateTodoData, taskUpdate);
+            _mapper.Map(updateTodoData, TaskToUpdate);
 
             await _context.SaveChangesAsync();
 
 
-            var updatedTaskResponse = _mapper.Map<TodoResponseDTO>(taskUpdate);
+            var updatedTaskResponse = _mapper.Map<TodoResponseDTO>(TaskToUpdate);
 
             return new UpdateTaskResponseDTO
             {

@@ -48,10 +48,11 @@ builder.Services.AddTransient<IJwtService, JwtService>();      // Transient life
     .AddDefaultTokenProviders();//predefined token provider lai enable garxa
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;// The primary authentication scheme is set to JWT Bearer authentication which will be used for authenticating users using JWT tokens.
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;// If authentication fails this specifies that the system should challenge the user by checking whether the token is valid or not.
 })
-.AddJwtBearer(options =>
+.AddJwtBearer(options =>//Specifies JWT details for validation
+{
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
