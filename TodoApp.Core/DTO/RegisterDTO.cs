@@ -4,32 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TodoApp.Core.Domain.Enum;
-
-using TodoApp.Core.Domain.Enum;
-
-using TodoApp.Core.Domain.Enum;
-
-using TodoApp.Core.Domain.Enum;
-
-using TodoApp.Core.Domain.Enum;
-
-
-using TodoApp.Core.Domain.Enum;
-
-using TodoApp.Core.Domain.Enum;
-
-using TodoApp.Core.Domain.Enum;
-
-
-using TodoApp.Core.Domain.Enum;
-
-
-
-using TodoApp.Core.Domain.Enum;
-
-using TodoApp.Core.Domain.Enum;
-
 namespace TodoApp.Core.DTO
 {
         public class RegisterDTO

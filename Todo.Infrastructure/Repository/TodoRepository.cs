@@ -82,7 +82,7 @@ namespace TodoApp.Infrastructure.Repository
                     DueDate = task.DueDate,
                     CompletionDate = task.CompletionDate,
                     Status = task.Status
-                }).ToListAsync(); 
+                }).ToListAsync();
 
             return new GetAllTasksResponseDTO
             {
