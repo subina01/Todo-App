@@ -4,6 +4,7 @@ using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.DTO;
 using TodoApp.Core.Domain.Entities;
 using Microsoft.AspNetCore.Http.HttpResults;
+using System.Net;
 
 
 
@@ -27,11 +28,19 @@ namespace Todo.WebApi.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest();
+                return BadRequest((new
+                {
+                    error = new
+                    {
+                        key = HttpStatusCode.BadRequest,
+                        message = "The model is invalid"
+                    }
+                }));
             }
             await _services.AddTask(TodoData);
             return Ok(new
             {
+
                 Message = "Task Added!"
             });
         }
@@ -46,20 +55,35 @@ namespace Todo.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return NotFound(new
+                {
+                    error = new
+                    {
+                        key = HttpStatusCode.NotFound,
+                        message = ex.Message
+                    }
+                });
             }
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllTasks()
-        { try
+        {
+            try
             {
                 var GetAllTasks = await _services.GetAllTask();
                 return Ok(GetAllTasks);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return NotFound(new
+                {
+                    error = new
+                    {
+                        key = HttpStatusCode.NotFound,
+                        message = ex.Message
+                    }
+                });
             }
         }
 
@@ -72,8 +96,15 @@ namespace Todo.WebApi.Controllers
                 return Ok(UpdateTodo);
             }
             catch (Exception ex)
-            { 
-                return BadRequest(ex.Message); 
+            {
+                return NotFound(new
+                {
+                    error = new
+                    {
+                        key = HttpStatusCode.NotFound,
+                        message = ex.Message
+                    }
+                });
             }
         }
 
@@ -87,7 +118,14 @@ namespace Todo.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return NotFound(new
+                {
+                    error = new
+                    {
+                        key = HttpStatusCode.NotFound,
+                        message = ex.Message
+                    }
+                });
             }
         }
 
