@@ -12,6 +12,8 @@ namespace Todo.Infrastructure.Map
             .ForMember(dest => dest.Id, opt => opt.Ignore());
             CreateMap<UpdateTaskRequestDTO, ToDo>()
             .ForMember(dest => dest.Id, opt => opt.Ignore());
+            CreateMap<TodoRequestDTO, ToDo>();
+         
         }
     }
 }

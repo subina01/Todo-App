@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.DTO;
 using TodoApp.Core.Domain.Entities;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 
 
@@ -22,7 +23,7 @@ namespace Todo.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTask([FromBody] ToDo TodoData)
+        public async Task<IActionResult> AddTask([FromBody] TodoRequestDTO TodoData)
         {
             if (!ModelState.IsValid)
             {
@@ -38,33 +39,56 @@ namespace Todo.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTaskById(int id)
         {
-            var GetTask = await _services.GetTaskById(id);
-            return Ok(GetTask);
+            try
+            {
+                var GetTask = await _services.GetTaskById(id);
+                return Ok(GetTask);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllTasks()
-        {
-            var GetAllTasks = await _services.GetAllTask();
-            return Ok(GetAllTasks);
+        { try
+            {
+                var GetAllTasks = await _services.GetAllTask();
+                return Ok(GetAllTasks);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO TodoData)
         {
-            if (TodoData == null)
+            try
             {
-                return BadRequest(ModelState);
+                var UpdateTodo = await _services.UpdateTask(id, TodoData);
+                return Ok(UpdateTodo);
             }
-            var UpdateTodo = await _services.UpdateTask(id, TodoData);
-            return Ok(UpdateTodo);
+            catch (Exception ex)
+            { 
+                return BadRequest(ex.Message); 
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTask(int id)
         {
-            var DeleteTasks = await _services.DeleteTask(id);
-            return Ok(DeleteTasks);
+            try
+            {
+                var DeleteTasks = await _services.DeleteTask(id);
+                return Ok(DeleteTasks);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
     }

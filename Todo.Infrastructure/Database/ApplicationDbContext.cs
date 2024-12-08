@@ -14,6 +14,10 @@ namespace TodoApp.Infrastructure.Database
         {
             modelBuilder.Entity<ToDo>().HasKey(t => t.Id);
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<ToDo>()
+               .Property(t => t.Id)
+               .ValueGeneratedOnAdd();
         }
     }
 }

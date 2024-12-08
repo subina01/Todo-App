@@ -12,16 +12,16 @@ namespace TodoApp.Core.Domain.Entities
         
         public int Id { get; set; }
 
-        public string? UserName { get; set; }
-        public string? TaskType { get; set; }
-
-        public string? Description { get; set; }
-
+        public string? TaskAssignedTo { get; set; }
         public DateTime StartDate { get; set; } = DateTime.Now;
 
         public DateTime DueDate { get; set; }
 
-        public DateTime CompletionDate { get; set; }
+         public string? TaskType { get; set; }
+
+        public string? Description { get; set; }
+
+       public DateTime CompletionDate { get; set; }
 
         public string? Status { get; set; }
     }

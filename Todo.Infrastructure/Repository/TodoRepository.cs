@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 using TodoApp.Core.Domain.Entities;
 using TodoApp.Core.Domain.Interface;
 using TodoApp.Core.DTO;
@@ -18,24 +19,23 @@ namespace TodoApp.Infrastructure.Repository
             _mapper = mapper;
         }
 
-        public async Task AddTask(ToDo TodoData)
+
+        public async Task AddTask(TodoRequestDTO TodoData)
         {
-            await _context.AddAsync(TodoData);
+            var TodoInput = _mapper.Map<ToDo>(TodoData);
+            await _context.AddAsync(TodoInput);
             await _context.SaveChangesAsync();
-
-
         }
 
         public async Task<DeleteTaskResponseDTO> DeleteTask(int id)
         {
-            var TaskToDelete = _context.TodoData.FirstOrDefault(x => x.Id == id);
+
+            var TaskToDelete = await _context.TodoData.FirstOrDefaultAsync(x => x.Id == id);
 
             if (TaskToDelete == null)
             {
-                return new DeleteTaskResponseDTO
-                {
-                    Message = "No Task Found with the given Id."
-                };
+
+                throw new Exception("An unexpected error occurred while deleting the task.");
             }
 
             _context.TodoData.Remove(TaskToDelete);
@@ -44,76 +44,92 @@ namespace TodoApp.Infrastructure.Repository
             return new DeleteTaskResponseDTO
             {
                 Message = "The task has been successfully deleted."
-            };
 
-        }
+            };      
+            }
+
         public async Task<GetAllTaskByIdResponseDTO> GetTaskById(int id)
         {
-            var TaskById = await _context.TodoData
-                .Where(x => x.Id == id)
-                .Select(task => new TodoResponseDTO
+           
+                var TaskById = await _context.TodoData
+                    .Where(x => x.Id == id)
+                    .Select(task => new TodoResponseDTO
+                    {
+                        Id = task.Id,
+                        TaskAssignedTo = task.TaskAssignedTo,
+                        TaskType = task.TaskType,
+                        Description = task.Description,
+                        StartDate = task.StartDate,
+                        DueDate = task.DueDate,
+                        CompletionDate = task.CompletionDate,
+                        Status = task.Status
+                    }).FirstOrDefaultAsync();
+
+                if (TaskById == null)
                 {
-                    Id = task.Id,
-                    UserName = task.UserName,
-                    TaskType = task.TaskType,
-                    Description = task.Description,
-                    StartDate = task.StartDate,
-                    DueDate = task.DueDate,
-                    CompletionDate = task.CompletionDate,
-                    Status = task.Status
-                }).FirstOrDefaultAsync();
 
-            return new GetAllTaskByIdResponseDTO
-            {
+                throw new Exception("An unexpected error occurred while fetching the task.");
+                 }
 
-                Task = TaskById,
-            };
+                return new GetAllTaskByIdResponseDTO
+                {
+                    Task = TaskById,
+                };
+            
         }
+
         public async Task<GetAllTasksResponseDTO> GetAllTask()
         {
-            var TaskList = await _context.TodoData
-                .Select(task => new TodoResponseDTO
+          
+                var TaskList = await _context.TodoData
+                    .Select(task => new TodoResponseDTO
+                    {
+                        Id = task.Id,
+                        TaskAssignedTo = task.TaskAssignedTo,
+                        TaskType = task.TaskType,
+                        Description = task.Description,
+                        StartDate = task.StartDate,
+                        DueDate = task.DueDate,
+                        CompletionDate = task.CompletionDate,
+                        Status = task.Status
+                    }).ToListAsync();
+                if (TaskList == null)
                 {
-                    Id = task.Id,
-                    UserName = task.UserName,
-                    TaskType = task.TaskType,
-                    Description = task.Description,
-                    StartDate = task.StartDate,
-                    DueDate = task.DueDate,
-                    CompletionDate = task.CompletionDate,
-                    Status = task.Status
-                }).ToListAsync();
 
-            return new GetAllTasksResponseDTO
-            {
-                Tasks = TaskList,
-                TotalTask = TaskList.Count(),
-            };
+                    throw new Exception("An unexpected error occurred while fetching all tasks.");
+                }
+                return new GetAllTasksResponseDTO
+                {
+                    Tasks = TaskList,
+                    TotalTask = TaskList.Count(),
+                };
+            
         }
 
         public async Task<UpdateTaskResponseDTO> UpdateTask(int id, UpdateTaskRequestDTO updateTodoData)
         {
-            var TaskToUpdate = await _context.TodoData.FirstOrDefaultAsync(x => x.Id == id);
+          
+                var TaskToUpdate = await _context.TodoData.FirstOrDefaultAsync(x => x.Id == id);
 
-            if (TaskToUpdate == null)
-            {
-                throw new KeyNotFoundException("No task found with the provided ID.");
-            }
+                if (TaskToUpdate == null)
+                {
+                    throw new Exception("An unexpected error occurred while updating the task.");
+                }
 
-            _mapper.Map(updateTodoData, TaskToUpdate);
+                _mapper.Map(updateTodoData, TaskToUpdate);
 
-            await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
+                var updatedTaskResponse = _mapper.Map<TodoResponseDTO>(TaskToUpdate);
 
-            var updatedTaskResponse = _mapper.Map<TodoResponseDTO>(TaskToUpdate);
-
-            return new UpdateTaskResponseDTO
-            {
-                Message = "Your Task Has Been Updated",
-                UpdatedTask = updatedTaskResponse
-            };
+                return new UpdateTaskResponseDTO
+                {
+                    Message = "Your Task Has Been Updated",
+                    UpdatedTask = updatedTaskResponse
+                };
+            
+            
         }
-
 
     }
 }
