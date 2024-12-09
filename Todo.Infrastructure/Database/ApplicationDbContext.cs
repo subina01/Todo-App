@@ -5,6 +5,10 @@ using TodoApp.Core.Domain.IdentityEntities;
 
 namespace TodoApp.Infrastructure.Database
 {
+    /// <summary>
+    /// Configures the model for the database context, defining the schema and entity relationships.
+    /// This method is called when the model for a derived context is being created.
+    /// </summary>
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }

@@ -15,7 +15,12 @@ namespace Todo.WebApi.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly IJwtService _jwtService;
-
+        /// <summary>
+        /// Initializes the controller with the required services.
+        /// </summary>
+        /// <param name="userManager">Handles user-related actions </param>
+        /// <param name="signInManager">Manages user sign-in operations.</param>
+        /// <param name="jwtService">Provides services to generate JWT tokens for authentication.</param>
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJwtService jwtService)
         {
             _userManager = userManager;
@@ -23,7 +28,11 @@ namespace Todo.WebApi.Controllers
             _roleManager = roleManager;
             _jwtService = jwtService;
         }
-
+        /// <summary>
+        /// Handles user registration, ensuring the passwords match and the email is unique.
+        /// </summary>
+        /// <param name="register">The registration details including name, email, and password.</param>
+        /// <returns>Returns a success or error message depending on the registration result.</returns>
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDTO register)
         {
@@ -45,7 +54,7 @@ namespace Todo.WebApi.Controllers
                     Message = "A user with this email already exists."
                 });
             }
-
+            
             // Creating object for application user class
             ApplicationUser user = new ApplicationUser
             {
@@ -73,7 +82,11 @@ namespace Todo.WebApi.Controllers
             // isPersistent false means the user will be logged in only for the current browser session, and true means the user remains logged in even after the browser is closed
             return Ok(authenticationResponse);
         }
-
+        /// <summary>
+        /// Handles user login, checking the username and password, and generating a JWT token if successful.
+        /// </summary>
+        /// <param name="login">The login details including username and password.</param>
+        /// <returns>Returns a success or error message depending on the login result.</returns>
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO login)
         {

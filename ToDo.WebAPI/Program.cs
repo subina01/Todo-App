@@ -4,8 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using Todo.Infrastructure.Map;
 using TodoApp.Core.Domain.IdentityEntities;
 using TodoApp.Core.Domain.Interface;
@@ -17,30 +15,48 @@ using TodoApp.Infrastructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
+/// <summary>
+/// Configures the database context to use SQL Server and specifies the connection string from the configuration.
+/// </summary>
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnectionString")
     )
 );
+/// <summary>
+/// Registers services with a scoped lifetime for dependency injection.
+/// </summary>
+builder.Services.AddScoped<ITodoServices, TodoRepository>();
+/// <summary>
+/// Registers services with transient for handling JWT token functionality.
+/// </summary>
+builder.Services.AddTransient<IJwtService, JwtService>();
 
-builder.Services.AddScoped<ITodoServices, TodoRepository>();  // Scoped lifetime for Todo services
-builder.Services.AddTransient<IJwtService, JwtService>();      // Transient lifetime for JWT services
+/// <summary>
+/// Configures AutoMapper for object mapping based on the specified mapping profile.
+/// </summary>
 builder.Services.AddAutoMapper(typeof(MappingProfile));
-//enable identity to this project
-builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()//Now it understood that we have to enable the identity services
-    .AddEntityFrameworkStores<ApplicationDbContext>()//using entity framework to store the data and exact dbcontext we are using is ApplicationDBContext
-    .AddDefaultTokenProviders(); // Enable predefined token providers
+/// <summary>
+/// Enables Identity for managing user authentication, roles, and token providers using Entity Framework.
+/// </summary>
+builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
 
-// Authentication and JWT setup
+/// <summary>
+/// Configures authentication services, specifying JWT Bearer as the primary authentication scheme.
+/// The primary authentication scheme is set to JWT Bearer authentication, which will be used for authenticating users using JWT tokens.
+/// If authentication fails, this specifies that the system should challenge the user by checking whether the token is valid or not.
+/// </summary>
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;// The primary authentication scheme is set to JWT Bearer authentication which will be used for authenticating users using JWT tokens.
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;// If authentication fails this specifies that the system should challenge the user by checking whether the token is valid or not.
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
-.AddJwtBearer(options =>//Specifies JWT details for validation
-
-{
+.AddJwtBearer(options =>
+{ /// <summary>
+  /// Specifies parameters for validating JWT tokens.
+  /// </summary>
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
@@ -57,6 +73,9 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
+    /// <summary>
+    /// Adds security definition for JWT authentication in Swagger UI.
+    /// </summary>
     options.AddSecurityDefinition(name: JwtBearerDefaults.AuthenticationScheme, securityScheme: new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -65,6 +84,9 @@ builder.Services.AddSwaggerGen(options =>
         Type = SecuritySchemeType.ApiKey,
         Scheme = "Bearer"
     });
+    /// <summary>
+    /// Adds security requirements to all API endpoints to enforce the use of JWT Bearer tokens.
+    /// </summary>
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
     {

@@ -17,12 +17,19 @@ namespace Todo.WebApi.Controllers
     public class ToDoController : ControllerBase
     {
         private readonly ITodoServices _services;
-
+        /// <summary>
+        /// Sets up the controller with the necessary task service.
+        /// </summary>
+        /// <param name="services">The service used to manage tasks.</param>
         public ToDoController(ITodoServices services)
         {
             _services = services;
         }
-
+        // <summary>
+        /// Adds a new task.
+        /// </summary>
+        /// <param name="TodoData">The details of the task to be added.</param>
+        /// <returns>A success message if the task is added or an error message if something goes wrong.</returns>
         [HttpPost]
         public async Task<IActionResult> AddTask([FromBody] TodoRequestDTO TodoData)
         {
@@ -44,7 +51,11 @@ namespace Todo.WebApi.Controllers
                 Message = "Task Added!"
             });
         }
-
+        /// <summary>
+        /// Gets the details of a specific task by its ID.
+        /// </summary>
+        /// <param name="id">The id of the task.</param>
+        /// <returns>The task details if found, otherwise an error message.</returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTaskById(int id)
         {
@@ -65,7 +76,10 @@ namespace Todo.WebApi.Controllers
                 });
             }
         }
-
+        /// <summary>
+        /// Gets a list of all tasks.
+        /// </summary>
+        /// <returns>A list of tasks or an error message if task not found.</returns>
         [HttpGet]
         public async Task<IActionResult> GetAllTasks()
         {
@@ -86,7 +100,12 @@ namespace Todo.WebApi.Controllers
                 });
             }
         }
-
+        /// <summary>
+        /// Updates an existing task by its ID.
+        /// </summary>
+        /// <param name="id">The id of the task to update.</param>
+        /// <param name="TodoData">The updated task details.</param>
+        /// <returns>The updated task details or an error message if the task not found.</returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO TodoData)
         {
@@ -107,7 +126,11 @@ namespace Todo.WebApi.Controllers
                 });
             }
         }
-
+        /// <summary>
+        /// Deletes a task by its ID.
+        /// </summary>
+        /// <param name="id">The id of the task to delete.</param>
+        /// <returns>A success message if the task is deleted or an error message if task not found.</returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTask(int id)
         {
