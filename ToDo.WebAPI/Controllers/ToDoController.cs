@@ -31,7 +31,7 @@ namespace Todo.WebApi.Controllers
         /// <param name="TodoData">The details of the task to be added.</param>
         /// <returns>A success message if the task is added or an error message if something goes wrong.</returns>
         [HttpPost]
-        public async Task<IActionResult> AddTask([FromBody] TodoRequestDTO TodoData)
+        public async Task<IActionResult> AddTask([FromBody] TodoRequestDTO todoData)
         {
             if (!ModelState.IsValid)
             {
@@ -44,7 +44,7 @@ namespace Todo.WebApi.Controllers
                     }
                 }));
             }
-            await _services.AddTask(TodoData);
+            await _services.AddTask(todoData);
             return Ok(new
             {
 
@@ -61,8 +61,8 @@ namespace Todo.WebApi.Controllers
         {
             try
             {
-                var GetTask = await _services.GetTaskById(id);
-                return Ok(GetTask);
+                var taskById = await _services.GetTaskById(id);
+                return Ok(taskById);
             }
             catch (Exception ex)
             {
@@ -85,8 +85,8 @@ namespace Todo.WebApi.Controllers
         {
             try
             {
-                var GetAllTasks = await _services.GetAllTask();
-                return Ok(GetAllTasks);
+                var allTasksFromDb = await _services.GetAllTask();
+                return Ok(allTasksFromDb);
             }
             catch (Exception ex)
             {
@@ -107,12 +107,12 @@ namespace Todo.WebApi.Controllers
         /// <param name="TodoData">The updated task details.</param>
         /// <returns>The updated task details or an error message if the task not found.</returns>
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO TodoData)
+        public async Task<IActionResult> UpdateTask(int id, [FromBody] UpdateTaskRequestDTO todoData)
         {
             try
             {
-                var UpdateTodo = await _services.UpdateTask(id, TodoData);
-                return Ok(UpdateTodo);
+                var updateTodo = await _services.UpdateTask(id, todoData);
+                return Ok(updateTodo);
             }
             catch (Exception ex)
             {
@@ -136,8 +136,8 @@ namespace Todo.WebApi.Controllers
         {
             try
             {
-                var DeleteTasks = await _services.DeleteTask(id);
-                return Ok(DeleteTasks);
+                var deleteTasks = await _services.DeleteTask(id);
+                return Ok(deleteTasks);
             }
             catch (Exception ex)
             {
