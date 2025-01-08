@@ -136,8 +136,8 @@ namespace Todo.WebApi.Controllers
         {
             try
             {
-                var deleteTasks = await _services.DeleteTask(id);
-                return Ok(deleteTasks);
+                var deleteTaskResponse = await _services.DeleteTask(id);
+                return Ok(deleteTaskResponse);
             }
             catch (Exception ex)
             {
